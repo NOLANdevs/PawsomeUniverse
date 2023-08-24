@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
 
     private void Jump()
     {
-        const float almostZero = 0.1f;
+        const float almostZero = 0.02f;
         if (Mathf.Abs(rigidBody.velocity.y) < almostZero)
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
