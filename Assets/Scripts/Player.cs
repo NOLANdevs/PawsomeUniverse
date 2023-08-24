@@ -9,13 +9,4 @@ public class Player : MonoBehaviour
     public Animal animal;
     public Inventory inventory;
 
-    void Update()
-    {
-        playerControls();
-    }
-
-    private void playerControls()
-    {
-    }
-
 }
