@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
 
         // calculate movement vector
-        Vector3 moveDirection = new Vector3(horiz, vert, 0f).normalized;
+        Vector3 moveDirection = new Vector3(horiz, vert, 0f);
 
         // move character
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
