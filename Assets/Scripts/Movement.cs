@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         rigidBody.velocity = new Vector2(x * moveSpeed, rigidBody.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
         }
