@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 11182069}
   - component: {fileID: 11182072}
   - component: {fileID: 11182071}
+  - component: {fileID: 11182073}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -273,6 +274,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 21300000, guid: e2d282d479c6d574ba7499fce21fc95d, type: 3}
   sprite2: {fileID: 21300000, guid: c2e9f987b0476ed4ca3e1f15ac90a0e3, type: 3}
+--- !u!114 &11182073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11182067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: 0.15
+  maxScale: 0.2
+  scaleSpeed: 8.32
 --- !u!1 &129419021
 GameObject:
   m_ObjectHideFlags: 0
