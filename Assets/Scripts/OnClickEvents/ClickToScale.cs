@@ -15,17 +15,12 @@ public class ScaleOnButtonClick : MonoBehaviour
         originalScale = transform.localScale;
     }
 
-    private void Update()
-    {
-        // Detect mouse click
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!isShrinking)
+    private void OnMouseDown() {
+                    if (!isShrinking)
             {
                 // Start shrinking coroutine
                 StartCoroutine(ShrinkSprite());
             }
-        }
     }
 
     private IEnumerator ShrinkSprite()
