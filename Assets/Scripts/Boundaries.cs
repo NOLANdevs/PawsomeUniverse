@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Boundaries : MonoBehaviour
 {
+    public GameObject warningUI;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.rigidbody.velocity = new Vector2(0, collision.rigidbody.velocity.y);
+            warningUI.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            warningUI.SetActive(false);
         }
     }
 }
