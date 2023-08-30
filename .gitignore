@@ -1,6 +1,12 @@
 # macOS
 .DS_Store
 
+# Crash logs
+*.log
+crashlytics-build.properties
+mono_crash*
+sysinfo.txt
+
 # Unity
 /[Ll]ibrary/
 /[Tt]emp/
@@ -48,17 +54,11 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 
-# Unity3D generated file on crash reports
-sysinfo.txt
-
 # Builds
 *.apk
 *.aab
 *.unitypackage
 *.app
-
-# Crashlytics generated file
-crashlytics-build.properties
 
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
