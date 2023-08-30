@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ClickToChangeSprite : MonoBehaviour
 {
-    public Sprite sprite1;  
-    public Sprite sprite2; 
+    public Sprite sprite1;
+    public Sprite sprite2;
 
     private SpriteRenderer spriteRenderer;
 

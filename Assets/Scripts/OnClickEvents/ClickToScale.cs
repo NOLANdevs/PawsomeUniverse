@@ -15,12 +15,13 @@ public class ScaleOnButtonClick : MonoBehaviour
         originalScale = transform.localScale;
     }
 
-    private void OnMouseDown() {
-                    if (!isShrinking)
-            {
-                // Start shrinking coroutine
-                StartCoroutine(ShrinkSprite());
-            }
+    private void OnMouseDown()
+    {
+        if (!isShrinking)
+        {
+            // Start shrinking coroutine
+            StartCoroutine(ShrinkSprite());
+        }
     }
 
     private IEnumerator ShrinkSprite()
