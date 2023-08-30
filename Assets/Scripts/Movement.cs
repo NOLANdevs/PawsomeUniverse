@@ -17,6 +17,10 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        // Do nothing if game is paused
+        if (GameLogic.isPaused)
+            return;
+
         float x = Input.GetAxisRaw("Horizontal");
         rigidBody.velocity = new Vector2(x * moveSpeed, rigidBody.velocity.y);
 
