@@ -3,6 +3,7 @@ name: Sync Main into Dev Branches (Daily)
 on:
   schedule:
     - cron: '0 0 * * *' # run every day at midnight UTC
+  workflow_dispatch: # allows manual runs
 
 jobs:
   merge:
@@ -23,7 +24,12 @@ jobs:
           for branch in "${branches[@]}"; do
             git checkout "$branch" &&
             git pull &&
-            git merge main &&
+            if git merge main; then
+              git add . &&
+              git push
+            else
+              echo "Merge into $branch failed. Continuing with the next branch."
+            fi
             git add . &&
             git push
           done
