@@ -1,0 +1,29 @@
+name: Sync Main into Dev Branches (Daily)
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # run every day at midnight UTC
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Merge main into dev branches
+        run: |
+          # List of dev branch names
+          branches=("dev-Nicha" "dev-Oliver" "dev-Lily" "dev-Alvina" "dev-Nate")
+
+          git checkout main &&
+          git pull origin main
+
+          for branch in "${branches[@]}"; do
+            git checkout "$branch" &&
+            git pull &&
+            git merge main &&
+            git add . &&
+            git push
+          done
