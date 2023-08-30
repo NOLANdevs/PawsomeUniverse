@@ -15,3 +15,5 @@ for branch in "${branches[@]}"; do
     git add . &&
     git push
 done
+
+git checkout main
