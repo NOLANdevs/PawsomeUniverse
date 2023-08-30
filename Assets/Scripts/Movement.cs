@@ -7,19 +7,17 @@ public class Movement : MonoBehaviour
 
     public float moveSpeed = 1f;
     public float jumpForce = 1f;
+    public GameObject animatorHolder;
 
+    private Animal animal;
     private Rigidbody2D rigidBody;
-
     private Animator animator;
-    public GameObject frogAnimatorHolder;
-
-    private bool isEating = false;
 
     void Start()
     {
+        animal = GetComponent<Animal>();
         rigidBody = GetComponent<Rigidbody2D>();
-        animator = frogAnimatorHolder.GetComponent<Animator>(); // Get the animator from the frogAnimatorHolder
-
+        animator = animatorHolder.GetComponent<Animator>(); // Get the animator from the animatorHolder
     }
 
     void Update()
@@ -37,34 +35,29 @@ public class Movement : MonoBehaviour
             Jump();
         }
 
-        checkEat();
-        checkIdle(moveDirection);
-
+        CheckEat();
+        CheckIdle(moveDirection);
     }
 
-    private void checkEat()
+    private void CheckEat()
     {
         // press e to eat
-        if (Input.GetKey(KeyCode.E))
-        {
-            isEating = true;
-        }
-        else
-        {
-            isEating = false;
-        }
+        animal.isEating = Input.GetKey(KeyCode.E);
+        animator.SetBool("IsEating", animal.isEating);
 
-        animator.SetBool("IsEating", isEating);
-
-        // while frog is eating it cannot move horizontally
-        if (isEating)
+        if (animal.isEating)
         {
             animator.SetBool("IsEating", true);
+        }
+
+        // while frog is eating it cannot move horizontally
+        if (animal.isEating)
+        {
             rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y); // Maintain vertical velocity
-            return;
         }
     }
-    private void checkIdle(Vector2 moveDirection)
+
+    public void CheckIdle(Vector2 moveDirection)
     {
         // Check if the frog is not moving
         if (moveDirection.magnitude <= 0.1f)
@@ -76,7 +69,6 @@ public class Movement : MonoBehaviour
             animator.SetBool("IsIdle", false);
         }
     }
-
 
     private void Jump()
     {
