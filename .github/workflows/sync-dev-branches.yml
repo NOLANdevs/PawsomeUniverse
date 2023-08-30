@@ -1,8 +1,8 @@
 name: Sync Main into Dev Branches (Daily)
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # run every day at midnight UTC
+  #schedule:
+  #  - cron: '0 0 * * *' # run every day at midnight UTC
   workflow_dispatch: # allows manual runs
 
 jobs:
