@@ -9,12 +9,14 @@ public class GameLogic : MonoBehaviour
 
     void Update()
     {
+        // Pause game when Escape pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;
-            // TODO pause menu!
-            Debug.Log(isPaused);
         }
+
+        // Halt all physics when game is paused
+        Time.timeScale = isPaused ? 0 : 1; // set progression of time percentage: 0% if paused, 100% if not
     }
 
 }
