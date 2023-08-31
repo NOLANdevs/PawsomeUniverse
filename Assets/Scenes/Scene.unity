@@ -688,8 +688,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterToFollow: {fileID: 1034528166}
-  followSpeed: 5
-  zoomMultiplier: 1
+  followSpeed: 3
+  zoomPower: 1
   yBounds:
     min: -1.5
     max: Infinity
