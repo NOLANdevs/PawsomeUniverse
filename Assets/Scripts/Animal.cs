@@ -19,7 +19,6 @@ public class Animal : MonoBehaviour
     public string animalName;
     public Colour colour;
     public Species species;
-    public Vector2 position;
     // stats
     public float love;
     public float hunger;
@@ -27,6 +26,8 @@ public class Animal : MonoBehaviour
     // items
     public Inventory inventory;
     public Accessory[] accessories;
+    // statuses
+    public bool isEating = false;
 
     private Sprite sprite;
 
