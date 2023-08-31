@@ -21,7 +21,7 @@ public class Animal : MonoBehaviour
     public Species species;
     // stats
     public float love;
-    public float hunger;
+    public float hunger = 0;
     public float cleanliness;
     // items
     public Inventory inventory;
@@ -31,6 +31,9 @@ public class Animal : MonoBehaviour
 
     private Sprite sprite;
 
+    public void Start()
+    {
+    }
     public void equipAccessory(Accessory accessory)
     {
     }
@@ -39,4 +42,8 @@ public class Animal : MonoBehaviour
     {
     }
 
+    public void Feed(int amount)
+    {
+        hunger += amount;
+    }
 }
