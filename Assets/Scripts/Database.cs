@@ -17,6 +17,14 @@ public class Database : MonoBehaviour
         init();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) // testing
+        {
+            save(animal);
+        }
+    }
+
     public void init()
     {
         fullPath = Path.Combine(dbFilePath, dbFileName);
@@ -26,7 +34,6 @@ public class Database : MonoBehaviour
         }
 
         write("");
-        save(animal); // testing
     }
 
     public void save(Animal animal)

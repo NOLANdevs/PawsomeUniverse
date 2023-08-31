@@ -2246,7 +2246,7 @@ MonoBehaviour:
   inputMenu: {fileID: 3205699517680098436}
   shopMenu: {fileID: 8535096612894335712}
   nameTag: {fileID: 1943556881}
-  player: {fileID: 230428624}
+  player: {fileID: 230428632}
   inputName: {fileID: 5369244100897201724}
   playerNameText: 
 --- !u!1 &1155389705
