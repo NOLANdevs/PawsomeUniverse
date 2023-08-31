@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,18 @@ public class Animal : MonoBehaviour
 {
     public enum Species
     {
+        Frog,
     }
 
     public enum Colour
     {
         Black,
         White,
+        Green,
     }
 
     // metadata
-    public int id;
+    public string id;
     public string animalName;
     public Colour colour;
     public Species species;
@@ -31,9 +34,15 @@ public class Animal : MonoBehaviour
 
     private Sprite sprite;
 
-    public void Start()
+    void Awake()
+    {
+        id = Guid.NewGuid().ToString();
+    }
+
+    void Start()
     {
     }
+
     public void equipAccessory(Accessory accessory)
     {
     }
