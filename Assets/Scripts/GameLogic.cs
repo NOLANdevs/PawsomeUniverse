@@ -6,5 +6,4 @@ public class GameLogic : MonoBehaviour
 {
 
     public Player player;
-
 }
