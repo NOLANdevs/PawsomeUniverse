@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class UIController : MonoBehaviour
 {
     [SerializeField] private NameMenu inputMenu;
@@ -12,12 +11,20 @@ public class UIController : MonoBehaviour
     [SerializeField] private NameTag nameTag;
     public GameObject player;
     public TMP_InputField inputName;
-    
+
     [SerializeField] private string playerNameText = "";
 
-    public void Start()
+    void Start()
     {
         player = GameObject.FindWithTag("Player");
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            ShowNameMenu();
+        }
     }
 
     public void ShowNameMenu()

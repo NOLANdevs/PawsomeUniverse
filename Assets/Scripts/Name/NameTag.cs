@@ -7,21 +7,21 @@ using TMPro;
 public class NameTag : MonoBehaviour
 {
     public GameObject player;
+    public float horizOffset = 0;
+    public float vertOffset = 3;
+
     private TextMeshProUGUI playerName;
     private Vector3 offset;
 
-    // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0.0f, 1.2f, 0.0f);
         playerName = transform.Find("PlayerName").GetComponent<TextMeshProUGUI>();
         Hide();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + offset;
+        transform.position = player.transform.position + new Vector3(horizOffset, vertOffset, 0);
     }
 
     public void Show()
