@@ -6,9 +6,11 @@ using TMPro;
 
 public class ShopMenu : MonoBehaviour
 {
-    private Button feedButton;
-    private TextMeshProUGUI foodName;
-    public GameObject foodObject;
+    private Button buyButton;
+    private int maxIndex = 10;
+    private int minIndex = 0;
+    private int index = 0;
+    public GameObject[] items;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +24,28 @@ public class ShopMenu : MonoBehaviour
         
     }
 
-    public void SpawnFood()
+    public void SpawnItem()
     {
-        Instantiate(foodObject, foodObject.transform.position, foodObject.transform.rotation);
+        // Check if existing already
+        if (!GameObject.FindWithTag("Food"))
+        {
+            Instantiate(items[index], items[index].transform.position, items[index].transform.rotation);
+        }
     }
 
-    public void NextFood()
+    public void NextItem()
     {
-        // Scroll to next food
+        if (index + 1 < 10)
+        {
+            index++;
+        }
+    }
+
+    public void PrevItem()
+    {
+        if (index - 1 > 0)
+        {
+            index--;
+        }
     }
 }

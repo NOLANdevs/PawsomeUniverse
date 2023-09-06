@@ -13,6 +13,7 @@ public class NameMenu : MonoBehaviour
 
     public void Awake()
     {
+        // Find components in scene
         okBtn = transform.Find("OkBtn").GetComponent<Button>();
         cancelBtn = transform.Find("CancelBtn").GetComponent<Button>();
         title = transform.Find("TitleText").GetComponent<TextMeshProUGUI>();
@@ -23,6 +24,7 @@ public class NameMenu : MonoBehaviour
 
     public void Show(string titleString, string inputString, int characterLimit)
     {
+        // Show visibility
         gameObject.SetActive(true);
         title.text = titleString;
         inputName.text = inputString;

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        // Check for collisions
         if (collision.gameObject.CompareTag("Food"))
         {
             hungerBar.FeedAnimal(1);
