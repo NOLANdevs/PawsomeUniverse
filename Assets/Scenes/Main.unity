@@ -1499,7 +1499,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1625017289
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -517860065, guid: 746ff8f0e50c7b245a91f64d47707f95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2381,11 +2381,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181056154}
-  - component: {fileID: 1181056156}
   - component: {fileID: 1181056155}
+  - component: {fileID: 1181056157}
   m_Layer: 0
   m_Name: RightBoundary
-  m_TagString: Untagged
+  m_TagString: RBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2450,7 +2450,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 8.4992}
   m_EdgeRadius: 0
---- !u!114 &1181056156
+--- !u!114 &1181056157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2459,10 +2459,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1181056153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349b4fd5f223c40ac92209bb94991ad0, type: 3}
+  m_Script: {fileID: 11500000, guid: 938f73e431ca1e64da69d5451e471ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningUI: {fileID: 1061981579}
+  targetSceneName: Overworld
+  targetBoundaryTag: LBoundary
 --- !u!1 &1190549621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,7 +2477,7 @@ GameObject:
   - component: {fileID: 1190549624}
   m_Layer: 0
   m_Name: LeftBoundary
-  m_TagString: Untagged
+  m_TagString: LBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
