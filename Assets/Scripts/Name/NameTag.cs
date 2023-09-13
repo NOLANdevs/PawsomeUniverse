@@ -7,8 +7,8 @@ using TMPro;
 public class NameTag : MonoBehaviour
 {
     public GameObject player;
-    public float horizOffset = 0;
-    public float vertOffset = 3;
+    private float horizOffset = 0;
+    private float vertOffset = 2.3f;
 
     private TextMeshProUGUI playerName;
     private Vector3 offset;
@@ -21,6 +21,7 @@ public class NameTag : MonoBehaviour
 
     void Update()
     {
+        // Track player position
         transform.position = player.transform.position + new Vector3(horizOffset, vertOffset, 0);
     }
 

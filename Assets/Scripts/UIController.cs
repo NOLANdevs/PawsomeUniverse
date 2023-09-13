@@ -30,18 +30,22 @@ public class UIController : MonoBehaviour
     public void ShowNameMenu()
     {
         inputMenu.Show("Enter your pet's name:", playerNameText, 20);
+        // Disable movement while typing
         player.GetComponent<Movement>().enabled = false;
     }
 
     public void HideNameMenu()
     {
         inputMenu.Hide();
+        // Enable movement when exited
         player.GetComponent<Movement>().enabled = true;
     }
 
     public void SaveName()
     {
+        // Save name as string in scene
         playerNameText = inputName.text;
+        // Ensure current name displays when clicking on input field
         inputName.placeholder.GetComponent<TextMeshProUGUI>().text = playerNameText;
         DisplayName(playerNameText);
         inputMenu.Hide();
@@ -54,9 +58,9 @@ public class UIController : MonoBehaviour
         nameTag.ChangeName(name);
     }
 
-    public void SpawnFood()
+    public void SpawnItem()
     {
-        shopMenu.SpawnFood();
+        shopMenu.SpawnItem();
     }
 
     public void Feed()
