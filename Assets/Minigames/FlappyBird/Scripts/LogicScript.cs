@@ -10,6 +10,8 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
 
+    public string homeScene;
+
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
@@ -19,11 +21,20 @@ public class LogicScript : MonoBehaviour
 
     public void restartGame()
     {
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) + playerScore);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+    }
+
+    public void goHome()
+    {
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) + playerScore);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(homeScene);
     }
 }
