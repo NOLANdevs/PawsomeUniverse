@@ -2950,8 +2950,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1355994133}
-  - component: {fileID: 1355994136}
   - component: {fileID: 1355994135}
+  - component: {fileID: 1355994136}
   m_Layer: 0
   m_Name: RightBoundary
   m_TagString: RBoundary
@@ -3028,10 +3028,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1355994132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349b4fd5f223c40ac92209bb94991ad0, type: 3}
+  m_Script: {fileID: 11500000, guid: 938f73e431ca1e64da69d5451e471ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningUI: {fileID: 483141835}
+  targetSceneName: FlappyBird
+  targetBoundaryTag: 
 --- !u!1 &1391027115
 GameObject:
   m_ObjectHideFlags: 0
