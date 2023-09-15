@@ -11,7 +11,6 @@ public class BoundaryTransition : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            UnityEngine.Debug.Log("This is a Unity log message.");
             // Set a PlayerPrefs value to store the target boundary tag
             PlayerPrefs.SetString("TargetBoundaryTag", targetBoundaryTag);
 

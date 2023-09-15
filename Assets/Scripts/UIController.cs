@@ -58,9 +58,9 @@ public class UIController : MonoBehaviour
         nameTag.ChangeName(name);
     }
 
-    public void SpawnItem()
+    public void BuyItem()
     {
-        shopMenu.SpawnItem();
+        shopMenu.BuyItem();
     }
 
     public void Feed()
