@@ -6,7 +6,7 @@ using UnityEngine;
 public class Database : MonoBehaviour
 {
 
-    public Animal animal; // testing
+    public Animal animal;
     public string dbFileName = "database.db";
 
     private string dbFilePath = "./Database/";
@@ -21,7 +21,7 @@ public class Database : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P)) // testing
         {
-            save(animal);
+            save(this.animal);
         }
     }
 
@@ -38,18 +38,8 @@ public class Database : MonoBehaviour
 
     public void save(Animal animal)
     {
-        List<string> values = new List<string>
-        {
-            animal.id.ToString(),
-            animal.animalName,
-            animal.species.ToString(),
-            animal.colour.ToString(),
-            animal.love.ToString(),
-            animal.hunger.ToString(),
-            animal.cleanliness.ToString()
-        };
-        string writeStr = string.Join(",", values);
-        write($"{writeStr}\n");
+        string line = new AnimalStore(animal).createCSVLine();
+        write(line);
     }
 
     public void load(int id)
@@ -59,6 +49,12 @@ public class Database : MonoBehaviour
     private void write(string data)
     {
         File.WriteAllText(fullPath, data);
+        Debug.Log($"Wrote {data} to {fullPath}");
+    }
+
+    private string read()
+    {
+        return ""; // TODO
     }
 
 }
