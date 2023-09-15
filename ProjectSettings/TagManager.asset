@@ -3,20 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Logic
-  - Food
-  - LBoundary
-  - RBoundary
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Ground
-  - Item
+  - 
+  - 
   - 
   - 
   - 
@@ -50,7 +46,4 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1625017289
-    locked: 0
-  - name: Frontground
-    uniqueID: 1214540395
     locked: 0
