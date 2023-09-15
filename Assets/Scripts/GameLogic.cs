@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour
 {
-
     public static bool isPaused = false; // Whether the game is paused or not
 
     void Update()
@@ -18,5 +17,4 @@ public class GameLogic : MonoBehaviour
         // Halt all physics when game is paused
         Time.timeScale = isPaused ? 0 : 1; // set progression of time percentage: 0% if paused, 100% if not
     }
-
 }
