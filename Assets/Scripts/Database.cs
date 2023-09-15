@@ -38,7 +38,18 @@ public class Database : MonoBehaviour
 
     public void save(Animal animal)
     {
-        write($"{animal.id},{animal.animalName},{animal.species},{animal.colour},{animal.love},{animal.hunger},{animal.cleanliness}\n");
+        List<string> values = new List<string>
+        {
+            animal.id.ToString(),
+            animal.animalName,
+            animal.species.ToString(),
+            animal.colour.ToString(),
+            animal.love.ToString(),
+            animal.hunger.ToString(),
+            animal.cleanliness.ToString()
+        };
+        string writeStr = string.Join(",", values);
+        write($"{writeStr}\n");
     }
 
     public void load(int id)

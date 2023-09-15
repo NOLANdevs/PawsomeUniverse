@@ -36,7 +36,8 @@ public class Animal : MonoBehaviour
 
     void Awake()
     {
-        id = Guid.NewGuid().ToString();
+        System.Random random = new System.Random();
+        id = random.Next(10000, 99999 + 1).ToString(); // random 5-digit ID
     }
 
     void Start()
