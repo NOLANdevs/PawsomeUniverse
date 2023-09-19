@@ -14,7 +14,7 @@ public class HungerBar : MonoBehaviour
     private int currentFedAmount = 0;
 
     private float startTime = 5.0f;
-    private float delay = 10.0f;
+    public float delay = 10.0f;
 
     // Start is called before the first frame update
     void Start()
