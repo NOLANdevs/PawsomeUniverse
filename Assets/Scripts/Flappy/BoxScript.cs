@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BoxScript : MonoBehaviour
 {
-    public float moveSpeed = 5;
+    [SerializeField] public float moveSpeed = 5;
+    public float speedMultiplier = 2;
     public float deadZone = -40;
 
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class BoxScript : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
-
+        moveSpeed *= speedMultiplier * Time.deltaTime;
         if (transform.position.x < deadZone)
         {
             Debug.Log("Pipe Deleted");

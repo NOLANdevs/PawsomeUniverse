@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  speedMultiplier: 2
   deadZone: -40
 --- !u!1 &8661111488876417649
 GameObject:
