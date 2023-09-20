@@ -28,18 +28,14 @@ public class DatabaseInterface : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) // testing
-        {
-            saveCurAnimal();
-        }
-
         // Autosaving
         timeSinceLastSave += Time.deltaTime;
         if (timeSinceLastSave > autosaveInterval)
         {
             Save();
         }
-        // hide autosave text after 1 second
+
+        // Hide saving text after 1 second
         if (timeSinceLastSave > 1)
         {
             saveText.SetActive(false);
