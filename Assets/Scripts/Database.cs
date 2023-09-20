@@ -11,17 +11,18 @@ public class Database : MonoBehaviour
 
     private string dbFilePath = "./Database/";
     private string fullPath;
+    private Dictionary<string, Animal> animals;
 
     void Start()
     {
-        init();
+        this.init();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P)) // testing
         {
-            save(this.animal);
+            this.saveAnimal(this.animal);
         }
     }
 
@@ -33,28 +34,84 @@ public class Database : MonoBehaviour
             Directory.CreateDirectory(dbFilePath);
         }
 
-        write("");
+        this.writeLine("");
+        this.loadAnimals();
     }
 
-    public void save(Animal animal)
+    public void saveAnimal(Animal animal)
     {
-        string line = new AnimalStore(animal).createCSVLine();
-        write(line);
+        animals[animal.id] = animal;
+        this.saveDatabase();
     }
 
-    public void load(int id)
+    public Animal loadAnimal(string id)
     {
+        if (this.animals.ContainsKey(id))
+        {
+            return this.animals[id];
+        }
+        else
+        {
+            Debug.Log($"Animal ID ${id} does not exist.");
+            return null;
+        }
     }
 
-    private void write(string data)
+    public void loadAnimals()
     {
-        File.WriteAllText(fullPath, data);
+        this.animals = new Dictionary<string, Animal>();
+        try
+        {
+            string[] lines = this.readLines();
+            foreach (string line in lines)
+            {
+                AnimalStore store = new AnimalStore();
+                store.loadCSVLine(line);
+
+                Animal animal = store.loadAnimal();
+                this.animals[animal.id] = animal;
+                Debug.Log($"Loaded animal {animal.id}");
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            Debug.Log("Database not yet created.");
+        }
+        catch (IOException ex)
+        {
+            Debug.Log("An error occurred: " + ex.Message);
+        }
+    }
+
+    private void saveDatabase()
+    {
+        this.clearLines();
+        foreach (Animal animal in animals.Values)
+        {
+            this.writeAnimal(animal);
+        }
+    }
+
+    private void writeAnimal(Animal animal)
+    {
+        AnimalStore store = new AnimalStore(animal);
+        this.writeLine(store.createCSVLine());
+    }
+
+    private void writeLine(string data)
+    {
+        File.AppendAllText(fullPath, data);
         Debug.Log($"Wrote {data} to {fullPath}");
     }
 
-    private string read()
+    private void clearLines()
     {
-        return ""; // TODO
+        File.WriteAllText(fullPath, "");
+    }
+
+    private string[] readLines()
+    {
+        return File.ReadAllLines(fullPath);
     }
 
 }

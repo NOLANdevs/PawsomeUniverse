@@ -1,10 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class AnimalStore
 {
-    string id, name, species, colour, love, hunger, cleanliness;
+    private string id, name, species, colour, love, hunger, cleanliness;
+
+    public AnimalStore()
+    {
+    }
 
     public AnimalStore(Animal animal)
     {
@@ -19,7 +24,8 @@ public class AnimalStore
 
     public Animal loadAnimal()
     {
-        Animal animal = new Animal();
+        GameObject animalObj = new GameObject("Animal" + this.id);
+        Animal animal = animalObj.AddComponent<Animal>();
 
         animal.id = this.id;
         animal.animalName = this.name;
@@ -37,5 +43,16 @@ public class AnimalStore
         List<string> values = new List<string> { id, name, species, colour, love, hunger, cleanliness };
         string writeStr = string.Join(",", values);
         return writeStr + "\n";
+    }
+    public void loadCSVLine(string csvLine)
+    {
+        string[] parts = csvLine.Split(",");
+        this.id = parts[0];
+        this.name = parts[1];
+        this.species = parts[2];
+        this.colour = parts[3];
+        this.love = parts[4];
+        this.hunger = parts[5];
+        this.cleanliness = parts[6];
     }
 }
