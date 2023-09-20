@@ -60,10 +60,9 @@ public class Movement : MonoBehaviour
 
     private void CheckEat()
     {
-        animator.SetBool("IsEating", animal.isEating);
-
-        if (animal.isEating == true)
+        if (animal.isEating)
         {
+            animator.Play("eatfrog");
             animator.SetBool("IsEating", true);
             // while frog is eating it cannot move horizontally
             rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y); // Maintain vertical velocity
@@ -71,7 +70,6 @@ public class Movement : MonoBehaviour
         else
         {
             animator.SetBool("IsEating", false);
-            animator.Play("IsIdle");
         }
     }
 

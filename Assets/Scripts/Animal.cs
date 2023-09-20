@@ -48,7 +48,6 @@ public class Animal : MonoBehaviour
     public void Feed(int amount)
     {
         hunger += amount;
-        isEating = false;
     }
 
 }

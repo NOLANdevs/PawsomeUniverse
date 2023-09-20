@@ -9,16 +9,28 @@ public class Player : MonoBehaviour
     public GameObject animatorHolder;
     public Animal animal;
     public HungerBar hungerBar;
-    private Animator animator;
-
     public CleanBar cleanBar;
     public Inventory inventory;
     public float statsIncrementAmount = 0.05f;
+    public float eatingTime = 1;
+
+    private Animator animator;
+    private float timeSinceStartedEating = 0;
 
     public void Start()
     {
         animal = GetComponent<Animal>();
         animator = animatorHolder.GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        timeSinceStartedEating += Time.deltaTime;
+        if (timeSinceStartedEating > eatingTime)
+        {
+            animal.isEating = false;
+            animator.SetBool("IsEating", false);
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -29,16 +41,14 @@ public class Player : MonoBehaviour
             hungerBar.FeedAnimal(statsIncrementAmount);
             Destroy(collision.gameObject);
             animal.isEating = true;
-            animator.SetTrigger("CheckEat");
+            animator.Play("eatfrog");
+            animator.SetBool("IsEating", true);
+            timeSinceStartedEating = 0;
         }
         else if (collision.gameObject.CompareTag("Shower"))
         {
             // Check if the player collides with a shower object
             cleanBar.CleanAnimal(statsIncrementAmount);
-        }
-        else
-        {
-            animal.isEating = false;
         }
     }
 

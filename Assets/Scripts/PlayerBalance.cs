@@ -6,19 +6,16 @@ using UnityEngine.UI;
 public class PlayerBalance : MonoBehaviour
 {
     public Text balanceText;
+    public int startingBalance = 100;
 
     private void Start()
     {
         // initialise coins
-        PlayerPrefs.SetInt("Coins", 0);
+        PlayerPrefs.SetInt("Coins", startingBalance);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K)) // testing
-        {
-            addCoins(10);
-        }
         balanceUpdate();
     }
 
