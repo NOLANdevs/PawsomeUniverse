@@ -31,27 +31,23 @@ public class HungerBar : MonoBehaviour
 
     void Update()
     {
+        // Set fill colour to be proportional to the fill percentage
+        hungerSlider.value = fromPercent(animal.hunger);
+        fill.color = gradient.Evaluate(hungerSlider.normalizedValue);
     }
 
     public void FeedAnimal(float amount)
     {
-        // Increase hunger value
+        // Increase hunger
         animal.hunger += amount;
         animal.hunger = Mathf.Clamp(animal.hunger, 0, 1);
-
-        // Set fill colour to be proportional to the fill percentage
-        hungerSlider.value = fromPercent(animal.hunger);
-        fill.color = gradient.Evaluate(hungerSlider.normalizedValue);
     }
 
     public void ReduceHunger()
     {
         // Decay hunger
         animal.hunger -= hungerDecayAmount;
-
-        // Set fill colour to be proportional to the fill percentage
-        hungerSlider.value = fromPercent(animal.hunger);
-        fill.color = gradient.Evaluate(hungerSlider.normalizedValue);
+        animal.hunger = Mathf.Clamp(animal.hunger, 0, 1);
     }
 
     private float fromPercent(float pct)
