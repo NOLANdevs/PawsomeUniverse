@@ -30,28 +30,23 @@ public class CleanBar : MonoBehaviour
 
     void Update()
     {
+        // Update the cleanliness slider and UI color
+        cleanlinessSlider.value = fromPercent(animal.cleanliness);
+        fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
     }
 
     public void CleanAnimal(float amount)
     {
-        // Increase cleanliness value
+        // Increase cleanliness
         animal.cleanliness += amount;
         animal.cleanliness = Mathf.Clamp(animal.cleanliness, 0, 1);
-
-        // Update the cleanliness slider and UI color
-        cleanlinessSlider.value = fromPercent(animal.cleanliness);
-        fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
     }
 
     private void DecayCleanliness()
     {
-        // Decrease cleanliness + adjust the decay rate as needed
+        // Decrease cleanliness
         animal.cleanliness -= cleanlinessDecayAmount;
         animal.cleanliness = Mathf.Clamp(animal.cleanliness, 0, 1);
-
-        // Update the cleanliness slider and UI color
-        cleanlinessSlider.value = fromPercent(animal.cleanliness);
-        fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
     }
 
     private float fromPercent(float pct)
