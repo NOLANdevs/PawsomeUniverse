@@ -22,11 +22,9 @@ public class AnimalStore
         this.cleanliness = animal.cleanliness.ToString();
     }
 
-    public Animal loadAnimal()
+    // Apply current object's stats to new animal `animal`
+    public void applyToAnimal(Animal animal)
     {
-        GameObject animalObj = new GameObject("Animal" + this.id);
-        Animal animal = animalObj.AddComponent<Animal>();
-
         animal.id = this.id;
         animal.animalName = this.name;
         Enum.TryParse(this.species, out animal.species);
@@ -34,7 +32,13 @@ public class AnimalStore
         animal.love = float.Parse(this.love);
         animal.hunger = float.Parse(this.hunger);
         animal.cleanliness = float.Parse(this.cleanliness);
+    }
 
+    public Animal loadAnimal()
+    {
+        GameObject animalObj = new GameObject("Animal" + this.id);
+        Animal animal = animalObj.AddComponent<Animal>();
+        applyToAnimal(animal);
         return animal;
     }
 
@@ -44,9 +48,12 @@ public class AnimalStore
         string writeStr = string.Join(",", values);
         return writeStr + "\n";
     }
-    public void loadCSVLine(string csvLine)
+    public bool loadCSVLine(string csvLine)
     {
         string[] parts = csvLine.Split(",");
+        if (parts.Length != 7)
+            return false; // not as valid line
+
         this.id = parts[0];
         this.name = parts[1];
         this.species = parts[2];
@@ -54,5 +61,7 @@ public class AnimalStore
         this.love = parts[4];
         this.hunger = parts[5];
         this.cleanliness = parts[6];
+
+        return true; //success
     }
 }

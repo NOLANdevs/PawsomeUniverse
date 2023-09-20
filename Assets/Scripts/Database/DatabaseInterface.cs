@@ -59,11 +59,14 @@ public class DatabaseInterface : MonoBehaviour
         {
             writeAnimal(animal);
         }
+
+        Debug.Log($"Saved ${animals.Count} animals to database.");
     }
 
     private void applyToPlayer(Animal selected)
     {
-        this.curAnimal = new AnimalStore(selected).loadAnimal();
+        AnimalStore store = new AnimalStore(selected);
+        store.applyToAnimal(this.curAnimal);
     }
 
     private void saveCurAnimal()
@@ -75,6 +78,7 @@ public class DatabaseInterface : MonoBehaviour
     {
         if (this.animals.ContainsKey(id))
         {
+            Debug.Log($"Loaded animal {id} from database.");
             return this.animals[id];
         }
         else
@@ -92,11 +96,14 @@ public class DatabaseInterface : MonoBehaviour
         foreach (string line in lines)
         {
             AnimalStore store = new AnimalStore();
-            store.loadCSVLine(line);
+            bool success = store.loadCSVLine(line);
+            if (!success)
+                continue;
 
             Animal animal = store.loadAnimal();
             this.animals[animal.id] = animal;
         }
+        Debug.Log($"Loaded {this.animals.Count} animals from database.");
     }
 
     private void writeAnimal(Animal animal)
