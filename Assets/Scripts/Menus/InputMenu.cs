@@ -7,7 +7,6 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private NameMenu inputMenu;
-    [SerializeField] private ShopMenu shopMenu;
     [SerializeField] private NameTag nameTag;
     public Player player;
     public TMP_InputField inputName;
@@ -55,10 +54,5 @@ public class UIController : MonoBehaviour
     {
         nameTag.Show();
         nameTag.ChangeName(name);
-    }
-
-    public void BuyItem()
-    {
-        shopMenu.BuyItem();
     }
 }

@@ -2494,7 +2494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputMenu: {fileID: 3205699517680098436}
-  shopMenu: {fileID: 7925291619003144581}
   nameTag: {fileID: 1943556881}
   player: {fileID: 230428632}
   inputName: {fileID: 5369244100897201724}
@@ -3997,7 +3996,7 @@ GameObject:
   - component: {fileID: 7500711403143033313}
   - component: {fileID: 424647721797422249}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: ShopBuyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4502,8 +4501,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 7925291619003144581}
+        m_TargetAssemblyTypeName: ShopMenu, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
@@ -5472,7 +5471,7 @@ GameObject:
   - component: {fileID: 6901671634066305149}
   - component: {fileID: 3205699517680098436}
   m_Layer: 5
-  m_Name: Input Menu
+  m_Name: InputMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
