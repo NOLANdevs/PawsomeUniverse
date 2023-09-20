@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,14 @@ public class Animal : MonoBehaviour
 {
     public enum Species
     {
+        Frog,
     }
 
     public enum Colour
     {
         Black,
         White,
+        Green,
     }
 
     // metadata
@@ -20,9 +23,11 @@ public class Animal : MonoBehaviour
     public Colour colour;
     public Species species;
     // stats
-    public float love;
+    // values are from 0 to 1
+    public float love = 0;
     public float hunger = 0;
-    public float cleanliness;
+    public float cleanliness = 0;
+
     // items
     public Inventory inventory;
     public Accessory[] accessories;
@@ -31,9 +36,18 @@ public class Animal : MonoBehaviour
 
     private Sprite sprite;
 
-    public void Start()
+    void Awake()
+    {
+        System.Random random = new System.Random();
+        // Set random ID if it is not manually set
+        if (id == 0)
+            id = random.Next(10000, 99999 + 1); // random 5-digit ID
+    }
+
+    void Start()
     {
     }
+
     public void equipAccessory(Accessory accessory)
     {
     }
@@ -46,4 +60,5 @@ public class Animal : MonoBehaviour
     {
         hunger += amount;
     }
+
 }
