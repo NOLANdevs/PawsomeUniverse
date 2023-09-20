@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
     public CleanBar cleanBar;
     public Inventory inventory;
     public float statsIncrementAmount = 0.05f;
-    public float eatingTime = 1;
+    public float eatingTime = 0.1f;
 
     private Animator animator;
-    private float timeSinceStartedEating = 0;
+    private float timeSinceStartedEating = 0f;
 
     public void Start()
     {
