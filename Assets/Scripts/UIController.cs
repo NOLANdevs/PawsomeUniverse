@@ -21,24 +21,23 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
+        // Open pet name menu on N keypress
+        if (!GameLogic.isPaused && Input.GetKeyDown(KeyCode.N))
         {
             ShowNameMenu();
+            GameLogic.PauseGame();
         }
     }
 
     public void ShowNameMenu()
     {
         inputMenu.Show("Enter your pet's name:", playerNameText, 20);
-        // Disable movement while typing
-        player.GetComponent<Movement>().enabled = false;
     }
 
     public void HideNameMenu()
     {
+        GameLogic.UnpauseGame();
         inputMenu.Hide();
-        // Enable movement when exited
-        player.GetComponent<Movement>().enabled = true;
     }
 
     public void SaveName()
@@ -49,8 +48,7 @@ public class UIController : MonoBehaviour
         inputName.placeholder.GetComponent<TextMeshProUGUI>().text = playerNameText;
         player.animal.animalName = playerNameText;
         DisplayName(playerNameText);
-        inputMenu.Hide();
-        player.GetComponent<Movement>().enabled = true;
+        HideNameMenu();
     }
 
     public void DisplayName(string name)
@@ -62,10 +60,5 @@ public class UIController : MonoBehaviour
     public void BuyItem()
     {
         shopMenu.BuyItem();
-    }
-
-    public void Feed()
-    {
-
     }
 }

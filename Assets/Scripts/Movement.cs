@@ -44,7 +44,8 @@ public class Movement : MonoBehaviour
         CheckEat();
         CheckIdle(moveDirection);
     }
-    // checks if player has fallen over and corrects it 
+
+    // checks if player has fallen over and corrects it
     private void GetUp()
     {
         // Check if the player's rotation is not upright
