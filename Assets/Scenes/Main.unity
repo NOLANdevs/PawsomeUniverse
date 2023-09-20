@@ -484,7 +484,8 @@ MonoBehaviour:
   maxCleanliness: 20
   inventory: {fileID: 0}
   accessories: []
-  isEating: 0
+  isEating: 1
+  animatorHolder: {fileID: 1511718002}
 --- !u!50 &230428628
 Rigidbody2D:
   serializedVersion: 4
@@ -620,6 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+  animatorHolder: {fileID: 1511718002}
   animal: {fileID: 230428627}
   hungerBar: {fileID: 3059791525518707988}
   cleanBar: {fileID: 1603504895}

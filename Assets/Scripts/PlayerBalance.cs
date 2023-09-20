@@ -6,21 +6,33 @@ using UnityEngine.UI;
 public class PlayerBalance : MonoBehaviour
 {
     public Text balanceText;
-    private int playerBalance = 0;
+
+    private void Start()
+    {
+        // initialise coins
+        PlayerPrefs.SetInt("Coins", 0);
+    }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K)) // testing
+        {
+            addCoins(10);
+        }
         balanceUpdate();
     }
 
     void addCoins(int coins)
     {
+        int playerBalance = PlayerPrefs.GetInt("Coins", 0);
         playerBalance += coins;
+        PlayerPrefs.SetInt("Coins", playerBalance);
         balanceUpdate();
     }
+
     void balanceUpdate()
     {
-        playerBalance = PlayerPrefs.GetInt("Coins", 0);
+        int playerBalance = PlayerPrefs.GetInt("Coins", 0);
         balanceText.text = "PawCoins: $" + playerBalance.ToString();
     }
 }
