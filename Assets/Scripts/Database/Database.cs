@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class Database : ScriptableObject
 {
+    private const string dbFilePath = "./Database/";
 
-    public string dbFileName = "database.db";
+    private string dbFullPath;
 
-    private string dbFilePath = "./Database/";
-    private string fullPath;
-
-    public void Init()
+    public void Init(string dbFileName)
     {
-        this.fullPath = Path.Combine(dbFilePath, dbFileName);
+        this.dbFullPath = Path.Combine(dbFilePath, dbFileName);
         if (!Directory.Exists(dbFilePath))
         {
             Directory.CreateDirectory(dbFilePath);
@@ -24,17 +22,17 @@ public class Database : ScriptableObject
 
     public string[] ReadLines()
     {
-        return File.ReadAllLines(fullPath);
+        return File.ReadAllLines(dbFullPath);
     }
 
     public void Write(string data)
     {
-        File.AppendAllText(fullPath, data);
+        File.AppendAllText(dbFullPath, data);
     }
 
     public void Clear()
     {
-        File.WriteAllText(fullPath, "");
+        File.WriteAllText(dbFullPath, "");
     }
 
 }

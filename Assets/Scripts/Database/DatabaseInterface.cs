@@ -17,7 +17,7 @@ public class DatabaseInterface : MonoBehaviour
     void Start()
     {
         this.database = ScriptableObject.CreateInstance<Database>();
-        database.Init();
+        database.Init("animals.db");
 
         loadAnimals();
 
