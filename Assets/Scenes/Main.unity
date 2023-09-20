@@ -1086,7 +1086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 299888967}
-  - component: {fileID: 299888968}
+  - component: {fileID: 299888969}
   m_Layer: 0
   m_Name: Database
   m_TagString: Untagged
@@ -1109,7 +1109,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 521412682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &299888968
+--- !u!114 &299888969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1118,11 +1118,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 299888966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd509b704af1d646ad622258ef3ecb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 03c577233908d4a44832d77ba079fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: {fileID: 230428627}
-  dbFileName: database.db
+  curAnimal: {fileID: 230428627}
 --- !u!1 &380181463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,8 +3098,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 299888968}
-        m_TargetAssemblyTypeName: Database, Assembly-CSharp
+      - m_Target: {fileID: 299888969}
+        m_TargetAssemblyTypeName: DatabaseInterface, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
