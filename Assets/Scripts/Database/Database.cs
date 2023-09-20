@@ -30,7 +30,6 @@ public class Database : ScriptableObject
     public void Write(string data)
     {
         File.AppendAllText(fullPath, data);
-        Debug.Log($"Wrote {data} to {fullPath}");
     }
 
     public void Clear()

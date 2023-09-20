@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DatabaseInterface : MonoBehaviour
 {
     public Animal curAnimal;
+    public int autosaveInterval = 60; // seconds
+    public GameObject autosaveText;
 
     private Database database;
     private Dictionary<string, Animal> animals;
+    private float timeSinceLastSave = 0;
 
     void Start()
     {
@@ -27,6 +31,20 @@ public class DatabaseInterface : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) // testing
         {
             saveCurAnimal();
+        }
+
+        // Autosaving
+        timeSinceLastSave += Time.deltaTime;
+        if (timeSinceLastSave > autosaveInterval)
+        {
+            Save();
+            timeSinceLastSave = 0;
+            autosaveText.SetActive(true);
+        }
+        // hide autosave text after 1 second
+        if (timeSinceLastSave > 1)
+        {
+            autosaveText.SetActive(false);
         }
     }
 
@@ -78,7 +96,6 @@ public class DatabaseInterface : MonoBehaviour
 
             Animal animal = store.loadAnimal();
             this.animals[animal.id] = animal;
-            Debug.Log($"Loaded animal {animal.id}");
         }
     }
 
