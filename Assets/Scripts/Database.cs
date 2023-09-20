@@ -26,6 +26,11 @@ public class Database : MonoBehaviour
         }
     }
 
+    public void Save()
+    {
+        this.saveDatabase();
+    }
+
     public void init()
     {
         fullPath = Path.Combine(dbFilePath, dbFileName);
@@ -85,6 +90,8 @@ public class Database : MonoBehaviour
 
     private void saveDatabase()
     {
+        animals[animal.id] = animal;
+
         this.clearLines();
         foreach (Animal animal in animals.Values)
         {
