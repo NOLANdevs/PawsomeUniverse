@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PlayerBalance : MonoBehaviour
 {
     public Text balanceText;
-    public int startingBalance = 100;
+    public int defaultBalance = 100;
 
     private void Start()
     {
-        // initialise coins
-        PlayerPrefs.SetInt("Coins", startingBalance);
+        // initialise coins to the default balance if not loaded from database
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", defaultBalance));
     }
 
     void Update()

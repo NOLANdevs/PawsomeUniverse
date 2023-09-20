@@ -40,7 +40,6 @@ public class ShopMenu : MonoBehaviour
 
             // Deduct the item cost from the player's balance.
             PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) - items[index].itemPrice);
-            Debug.Log(PlayerPrefs.GetInt("Coins", 0));
         }
     }
 

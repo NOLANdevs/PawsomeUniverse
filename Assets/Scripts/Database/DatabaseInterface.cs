@@ -10,16 +10,19 @@ public class DatabaseInterface : MonoBehaviour
     public int autosaveInterval = 60; // seconds
     public GameObject saveText;
 
-    private Database database;
+    private Database animalsDB, statsDB;
     private Dictionary<int, Animal> animals;
     private float timeSinceLastSave = 0;
 
     void Start()
     {
-        this.database = ScriptableObject.CreateInstance<Database>();
-        database.Init("animals.db");
+        this.animalsDB = ScriptableObject.CreateInstance<Database>();
+        this.statsDB = ScriptableObject.CreateInstance<Database>();
+        animalsDB.Init("animals.db");
+        statsDB.Init("stats.db");
 
         loadAnimals();
+        loadStats();
 
         List<Animal> list = new List<Animal>(this.animals.Values);
         if (list.Count > 0)
@@ -52,16 +55,11 @@ public class DatabaseInterface : MonoBehaviour
         saveText.SetActive(true);
 
         // save current animal to loaded list
-        saveCurAnimal();
+        storeCurAnimal();
 
-        // save to database
-        database.Clear();
-        foreach (Animal animal in animals.Values)
-        {
-            writeAnimal(animal);
-        }
-
-        Debug.Log($"Saved {animals.Count} animals to database.");
+        // save to DB
+        saveAnimals();
+        saveStats();
     }
 
     private void applyToPlayer(Animal selected)
@@ -70,9 +68,20 @@ public class DatabaseInterface : MonoBehaviour
         store.applyToAnimal(this.curAnimal);
     }
 
-    private void saveCurAnimal()
+    private void storeCurAnimal()
     {
         animals[this.curAnimal.id] = this.curAnimal;
+    }
+
+    private void saveAnimals()
+    {
+        animalsDB.Clear();
+        foreach (Animal animal in animals.Values)
+        {
+            writeAnimal(animal);
+        }
+
+        Debug.Log($"Saved {animals.Count} animals to database.");
     }
 
     private Animal loadAnimal(int id)
@@ -93,7 +102,7 @@ public class DatabaseInterface : MonoBehaviour
     {
         this.animals = new Dictionary<int, Animal>();
 
-        string[] lines = database.ReadLines();
+        string[] lines = animalsDB.ReadLines();
         foreach (string line in lines)
         {
             AnimalStore store = new AnimalStore();
@@ -110,7 +119,18 @@ public class DatabaseInterface : MonoBehaviour
     private void writeAnimal(Animal animal)
     {
         AnimalStore store = new AnimalStore(animal);
-        database.Write(store.createCSVLine());
+        animalsDB.Write(store.createCSVLine());
+    }
+
+    private void saveStats()
+    {
+        statsDB.Clear();
+        statsDB.Write(PlayerPrefs.GetInt("Coins").ToString());
+    }
+
+    private void loadStats()
+    {
+        PlayerPrefs.SetInt("Coins", int.Parse(statsDB.Read()));
     }
 
 }
