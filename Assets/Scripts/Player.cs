@@ -6,12 +6,32 @@ public class Player : MonoBehaviour
 {
 
     public int money;
+    public GameObject animatorHolder;
     public Animal animal;
     public HungerBar hungerBar;
-
     public CleanBar cleanBar;
     public Inventory inventory;
     public float statsIncrementAmount = 0.05f;
+    public float eatingTime = 0.1f;
+
+    private Animator animator;
+    private float timeSinceStartedEating = 0f;
+
+    public void Start()
+    {
+        animal = GetComponent<Animal>();
+        animator = animatorHolder.GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        timeSinceStartedEating += Time.deltaTime;
+        if (timeSinceStartedEating > eatingTime)
+        {
+            animal.isEating = false;
+            animator.SetBool("IsEating", false);
+        }
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,6 +40,10 @@ public class Player : MonoBehaviour
         {
             hungerBar.FeedAnimal(statsIncrementAmount);
             Destroy(collision.gameObject);
+            animal.isEating = true;
+            animator.Play("eatfrog");
+            animator.SetBool("IsEating", true);
+            timeSinceStartedEating = 0;
         }
         else if (collision.gameObject.CompareTag("Shower"))
         {
