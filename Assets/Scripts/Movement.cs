@@ -60,19 +60,16 @@ public class Movement : MonoBehaviour
 
     private void CheckEat()
     {
-        // press e to eat
-        animal.isEating = Input.GetKey(KeyCode.E);
-        animator.SetBool("IsEating", animal.isEating);
-
         if (animal.isEating)
         {
+            animator.Play("eatfrog");
             animator.SetBool("IsEating", true);
-        }
-
-        // while frog is eating it cannot move horizontally
-        if (animal.isEating)
-        {
+            // while frog is eating it cannot move horizontally
             rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y); // Maintain vertical velocity
+        }
+        else
+        {
+            animator.SetBool("IsEating", false);
         }
     }
 

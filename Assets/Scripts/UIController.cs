@@ -9,14 +9,14 @@ public class UIController : MonoBehaviour
     [SerializeField] private NameMenu inputMenu;
     [SerializeField] private ShopMenu shopMenu;
     [SerializeField] private NameTag nameTag;
-    public GameObject player;
+    public Player player;
     public TMP_InputField inputName;
 
     [SerializeField] private string playerNameText = "";
+    private Animal animal;
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -47,6 +47,7 @@ public class UIController : MonoBehaviour
         playerNameText = inputName.text;
         // Ensure current name displays when clicking on input field
         inputName.placeholder.GetComponent<TextMeshProUGUI>().text = playerNameText;
+        player.animal.animalName = playerNameText;
         DisplayName(playerNameText);
         inputMenu.Hide();
         player.GetComponent<Movement>().enabled = true;

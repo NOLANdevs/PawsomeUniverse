@@ -17,4 +17,23 @@ public class GameLogic : MonoBehaviour
         // Halt all physics when game is paused
         Time.timeScale = isPaused ? 0 : 1; // set progression of time percentage: 0% if paused, 100% if not
     }
+
+    public void PauseGame()
+    {
+        isPaused = false;
+    }
+
+    public void UnpauseGame()
+    {
+        isPaused = false;
+    }
+
+    public void ForceQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }
