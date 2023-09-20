@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: ba4594042ac24b94c80e8fabb3ed321c
   - enabled: 1
-    path: Assets/Minigames/FlappyBird/Scenes/FlappyBird.unity
+    path: Assets/Scenes/Flappy Bird.unity
     guid: 5d12b99015def4ca99771cc0eb86a879
   - enabled: 1
     path: Assets/Scenes/MinigameMenu.unity
