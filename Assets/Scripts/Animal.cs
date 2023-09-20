@@ -20,9 +20,11 @@ public class Animal : MonoBehaviour
     public Colour colour;
     public Species species;
     // stats
-    public float love;
+    // values are from 0 to 1
+    public float love = 0;
     public float hunger = 0;
-    public float cleanliness;
+    public float cleanliness = 0;
+
     // items
     public Inventory inventory;
     public Accessory[] accessories;
@@ -34,6 +36,7 @@ public class Animal : MonoBehaviour
     public void Start()
     {
     }
+
     public void equipAccessory(Accessory accessory)
     {
     }
@@ -46,4 +49,5 @@ public class Animal : MonoBehaviour
     {
         hunger += amount;
     }
+
 }

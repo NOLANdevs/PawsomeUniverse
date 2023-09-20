@@ -11,6 +11,7 @@ for branch in "${branches[@]}"; do
         git push
     else
         echo "Merge into $branch failed. Continuing with the next branch."
+        git stash
     fi
     git add . &&
     git push
