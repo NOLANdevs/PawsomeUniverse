@@ -5,62 +5,58 @@ using UnityEngine.UI;
 
 public class HungerBar : MonoBehaviour
 {
+    public Animal animal;
     public Gradient gradient;
     public Image fill;
     public Slider hungerSlider;
-    private int maxHunger = 20;
-    private int initialHunger;
-
-    private int currentFedAmount = 0;
+    public float initialHunger = 0.5f;
+    public float hungerDecayAmount = 0.05f;
 
     private float startTime = 5.0f;
     public float delay = 10.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Trigger hunger decay over time
         InvokeRepeating("ReduceHunger", startTime, delay);
 
         // Set initial values
-        initialHunger = maxHunger / 2;
-        hungerSlider.maxValue = maxHunger;
-        currentFedAmount = initialHunger;
-        hungerSlider.value = currentFedAmount;
+        hungerSlider.value = fromPercent(initialHunger);
+        hungerSlider.maxValue = fromPercent(1);
 
         // Set fill colour to be proportional to the fill percentage
         hungerSlider.fillRect.gameObject.SetActive(true);
         fill.color = gradient.Evaluate(hungerSlider.normalizedValue);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
-    public void FeedAnimal(int amount)
+    public void FeedAnimal(float amount)
     {
-        // Check if new total will be under max
-        if (!(currentFedAmount + amount > maxHunger))
-        {
-            currentFedAmount += amount;
-        } else
-        {
-            // If over max add up to max value
-            currentFedAmount += maxHunger - currentFedAmount;
-        }
+        // Increase hunger value
+        animal.hunger += amount;
+        animal.hunger = Mathf.Clamp(animal.hunger, 0, 1);
 
         // Set fill colour to be proportional to the fill percentage
-        hungerSlider.value = currentFedAmount;
+        hungerSlider.value = fromPercent(animal.hunger);
         fill.color = gradient.Evaluate(hungerSlider.normalizedValue);
     }
 
     public void ReduceHunger()
     {
-        // Decay hunger by 1
-        hungerSlider.value--;
+        // Decay hunger
+        animal.hunger -= hungerDecayAmount;
+
+        // Set fill colour to be proportional to the fill percentage
+        hungerSlider.value = fromPercent(animal.hunger);
         fill.color = gradient.Evaluate(hungerSlider.normalizedValue);
+    }
+
+    private float fromPercent(float pct)
+    {
+        return pct * 100;
     }
 }
 
