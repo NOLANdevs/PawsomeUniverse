@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public LogicScript logic;
     public bool isAlive = true;
+    public Animator flap_animator;
 
     [SerializeField] int jumpMultiplier = 5;
 
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Space)) && isAlive)
         {
             myRigidbody.velocity = Vector2.up * jumpMultiplier;
+            flap_animator.SetTrigger("Flap");
         }
 
         if (transform.position.y >= 20 || transform.position.y <= -20)
