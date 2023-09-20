@@ -22,8 +22,11 @@ public class DatabaseInterface : MonoBehaviour
         loadAnimals();
 
         List<Animal> list = new List<Animal>(this.animals.Values);
-        Animal selected = list[0]; // default to first animal for now
-        applyToPlayer(selected);
+        if (list.Count > 0)
+        {
+            Animal selected = list[0]; // default to first animal for now
+            applyToPlayer(selected);
+        }
     }
 
     void Update()

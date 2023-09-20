@@ -24,9 +24,9 @@ public class Animal : MonoBehaviour
     public Species species;
     // stats
     // values are from 0 to 1
-    public float love = 0;
-    public float hunger = 0;
-    public float cleanliness = 0;
+    public float love = 0.5f;
+    public float hunger = 0.5f;
+    public float cleanliness = 0.5f;
 
     // items
     public Inventory inventory;
