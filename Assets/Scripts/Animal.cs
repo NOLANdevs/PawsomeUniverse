@@ -26,6 +26,9 @@ public class Animal : MonoBehaviour
     public float love;
     public float hunger = 0;
     public float cleanliness;
+
+    public float maxCleanliness = 20;
+
     // items
     public Inventory inventory;
     public Accessory[] accessories;
@@ -56,4 +59,5 @@ public class Animal : MonoBehaviour
     {
         hunger += amount;
     }
+
 }
