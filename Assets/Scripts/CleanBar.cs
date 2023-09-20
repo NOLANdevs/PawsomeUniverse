@@ -5,21 +5,17 @@ using UnityEngine.UI;
 
 public class CleanBar : MonoBehaviour
 {
+    public Animal animal;
     public Gradient gradient;
     public Image fill;
     public Slider cleanlinessSlider;
-    public int maxCleanliness = 20;
-    private int initialCleanliness = 10; 
-
-    private int currentCleanliness;
+    public float cleanlinessDecayAmount = 0.05f;
 
     private float startTime = 5.0f;
     public float decayDelay = 10.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-
         // Trigger cleanliness decay over time
         InvokeRepeating("DecayCleanliness", startTime, decayDelay);
 
@@ -28,37 +24,38 @@ public class CleanBar : MonoBehaviour
         fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
 
         // Initialize cleanliness
-        currentCleanliness = initialCleanliness;
-        cleanlinessSlider.maxValue = maxCleanliness;
-        cleanlinessSlider.value = currentCleanliness;
+        cleanlinessSlider.value = fromPercent(animal.cleanliness);
+        cleanlinessSlider.maxValue = fromPercent(1);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // You can add any additional update logic here if needed.
     }
 
-    public void CleanAnimal(int amount)
+    public void CleanAnimal(float amount)
     {
-        // Increase cleanliness by the specified amount
-        currentCleanliness += amount;
-
-        // Ensure cleanliness doesn't exceed the maximum
-        currentCleanliness = Mathf.Clamp(currentCleanliness, 0, maxCleanliness);
+        // Increase cleanliness value
+        animal.cleanliness += amount;
+        animal.cleanliness = Mathf.Clamp(animal.cleanliness, 0, 1);
 
         // Update the cleanliness slider and UI color
-        cleanlinessSlider.value = currentCleanliness;
+        cleanlinessSlider.value = fromPercent(animal.cleanliness);
         fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
     }
 
     private void DecayCleanliness()
     {
-        // Decrease cleanliness by 1 (adjust the decay rate as needed)
-        currentCleanliness--;
+        // Decrease cleanliness + adjust the decay rate as needed
+        animal.cleanliness -= cleanlinessDecayAmount;
+        animal.cleanliness = Mathf.Clamp(animal.cleanliness, 0, 1);
 
         // Update the cleanliness slider and UI color
-        cleanlinessSlider.value = currentCleanliness;
+        cleanlinessSlider.value = fromPercent(animal.cleanliness);
         fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
+    }
+
+    private float fromPercent(float pct)
+    {
+        return pct * 100;
     }
 }

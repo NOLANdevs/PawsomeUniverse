@@ -15,16 +15,12 @@ public class ShopMenu : MonoBehaviour
 
     private int playerBalance;
 
-    // Start is called before the first frame update
     void Start()
     {
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
     public void SpawnItem()
@@ -33,7 +29,6 @@ public class ShopMenu : MonoBehaviour
         Instantiate(itemPrefab, itemPrefab.transform.position, itemPrefab.transform.rotation);
 
     }
-
 
     public void BuyItem()
     {
@@ -49,10 +44,9 @@ public class ShopMenu : MonoBehaviour
         }
     }
 
-
     public void NextItem()
     {
-        if (index + 1 < 10)
+        if (index + 1 < maxIndex)
         {
             index++;
         }
@@ -60,7 +54,7 @@ public class ShopMenu : MonoBehaviour
 
     public void PrevItem()
     {
-        if (index - 1 > 0)
+        if (index - 1 > minIndex)
         {
             index--;
         }
