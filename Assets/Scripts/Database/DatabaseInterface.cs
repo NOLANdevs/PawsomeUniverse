@@ -8,10 +8,10 @@ public class DatabaseInterface : MonoBehaviour
 {
     public Animal curAnimal;
     public int autosaveInterval = 60; // seconds
-    public GameObject autosaveText;
+    public GameObject saveText;
 
     private Database database;
-    private Dictionary<string, Animal> animals;
+    private Dictionary<int, Animal> animals;
     private float timeSinceLastSave = 0;
 
     void Start()
@@ -38,18 +38,20 @@ public class DatabaseInterface : MonoBehaviour
         if (timeSinceLastSave > autosaveInterval)
         {
             Save();
-            timeSinceLastSave = 0;
-            autosaveText.SetActive(true);
         }
         // hide autosave text after 1 second
         if (timeSinceLastSave > 1)
         {
-            autosaveText.SetActive(false);
+            saveText.SetActive(false);
         }
     }
 
     public void Save()
     {
+        // show save text
+        timeSinceLastSave = 0;
+        saveText.SetActive(true);
+
         // save current animal to loaded list
         saveCurAnimal();
 
@@ -60,7 +62,7 @@ public class DatabaseInterface : MonoBehaviour
             writeAnimal(animal);
         }
 
-        Debug.Log($"Saved ${animals.Count} animals to database.");
+        Debug.Log($"Saved {animals.Count} animals to database.");
     }
 
     private void applyToPlayer(Animal selected)
@@ -74,7 +76,7 @@ public class DatabaseInterface : MonoBehaviour
         animals[this.curAnimal.id] = this.curAnimal;
     }
 
-    private Animal loadAnimal(string id)
+    private Animal loadAnimal(int id)
     {
         if (this.animals.ContainsKey(id))
         {
@@ -83,14 +85,14 @@ public class DatabaseInterface : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Animal ID ${id} does not exist.");
+            Debug.Log($"Animal ID {id} does not exist.");
             return null;
         }
     }
 
     private void loadAnimals()
     {
-        this.animals = new Dictionary<string, Animal>();
+        this.animals = new Dictionary<int, Animal>();
 
         string[] lines = database.ReadLines();
         foreach (string line in lines)

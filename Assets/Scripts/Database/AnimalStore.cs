@@ -25,7 +25,7 @@ public class AnimalStore
     // Apply current object's stats to new animal `animal`
     public void applyToAnimal(Animal animal)
     {
-        animal.id = this.id;
+        animal.id = int.Parse(this.id);
         animal.animalName = this.name;
         Enum.TryParse(this.species, out animal.species);
         Enum.TryParse(this.colour, out animal.colour);

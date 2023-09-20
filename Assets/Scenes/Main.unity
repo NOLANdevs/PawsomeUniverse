@@ -682,11 +682,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230428625}
+  - component: {fileID: 230428627}
   - component: {fileID: 230428631}
   - component: {fileID: 230428630}
   - component: {fileID: 230428629}
   - component: {fileID: 230428628}
-  - component: {fileID: 230428627}
   - component: {fileID: 230428632}
   - component: {fileID: 230428626}
   m_Layer: 3
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f05718b6493d4b91f4ce38558e7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
   animalName: 
   colour: 2
   species: 0
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curAnimal: {fileID: 230428627}
   autosaveInterval: 30
-  autosaveText: {fileID: 356934436}
+  saveText: {fileID: 356934436}
 --- !u!1 &356934436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 356934439}
   - component: {fileID: 356934438}
   m_Layer: 5
-  m_Name: AutosaveText
+  m_Name: SavingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Saving...
+  m_text: Saved
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

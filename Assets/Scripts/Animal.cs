@@ -18,7 +18,7 @@ public class Animal : MonoBehaviour
     }
 
     // metadata
-    public string id;
+    public int id;
     public string animalName;
     public Colour colour;
     public Species species;
@@ -39,7 +39,9 @@ public class Animal : MonoBehaviour
     void Awake()
     {
         System.Random random = new System.Random();
-        id = random.Next(10000, 99999 + 1).ToString(); // random 5-digit ID
+        // Set random ID if it is not manually set
+        if (id == 0)
+            id = random.Next(10000, 99999 + 1); // random 5-digit ID
     }
 
     void Start()
