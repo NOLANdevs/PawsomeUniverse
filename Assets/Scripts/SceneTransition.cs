@@ -1,21 +1,30 @@
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BoundaryTransition : MonoBehaviour
 {
-    public string targetSceneName; // The name of the target scene (Scene B)
-    public string targetBoundaryTag; // The tag of the target boundary in Scene B
+    public GameObject envToLoad;
+    public GameObject envToUnload;
+    public Vector3 playerSpawnPoint;
+
+    private GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            // Set a PlayerPrefs value to store the target boundary tag
-            PlayerPrefs.SetString("TargetBoundaryTag", targetBoundaryTag);
-
-            // Load the target scene
-            SceneManager.LoadScene(targetSceneName);
+            // Toggle environments
+            if (envToLoad != null)
+                envToLoad.SetActive(true);
+            if (envToUnload != null)
+                envToUnload.SetActive(false);
+            // Move player
+            player.transform.parent.position = playerSpawnPoint;
         }
     }
 }
