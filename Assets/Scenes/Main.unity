@@ -495,9 +495,9 @@ MonoBehaviour:
   animalName: 
   colour: 2
   species: 0
-  love: 0
-  hunger: 0
-  cleanliness: 0
+  love: 0.5
+  hunger: 0.5
+  cleanliness: 0.5
   inventory: {fileID: 0}
   accessories: []
   isEating: 1
@@ -2549,7 +2549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balanceText: {fileID: 1099800343}
-  startingBalance: 100
+  defaultBalance: 100
 --- !u!114 &1099800343
 MonoBehaviour:
   m_ObjectHideFlags: 0
