@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -130,7 +131,14 @@ public class DatabaseInterface : MonoBehaviour
 
     private void loadStats()
     {
-        PlayerPrefs.SetInt("Coins", int.Parse(statsDB.Read()));
+        try
+        {
+            PlayerPrefs.SetInt("Coins", int.Parse(statsDB.Read()));
+        }
+        catch (FormatException)
+        {
+            // leave Coins undefined
+        }
     }
 
 }
