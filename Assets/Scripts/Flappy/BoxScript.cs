@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class BoxScript : MonoBehaviour
 {
+    public float moveSpeed = 5;
     public float deadZone = -40;
-    public float initialSpeed = 1.0f; // Initial speed of the object
-    public float acceleration = 0.1f; // Rate at which speed increases
 
-    private float currentSpeed;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        currentSpeed = initialSpeed;
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Calculate the new position based on the current speed
-        transform.position += Vector3.left * currentSpeed * Time.deltaTime;
+        transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
 
-        // Increase the speed over time
-        currentSpeed += acceleration * Time.deltaTime;
-
-        // Delete the pipe when offscreen
         if (transform.position.x < deadZone)
         {
+            Debug.Log("Pipe Deleted");
             Destroy(gameObject);
         }
     }

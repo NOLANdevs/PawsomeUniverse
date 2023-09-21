@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Space)) && isAlive)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isAlive)
         {
             myRigidbody.velocity = Vector2.up * jumpMultiplier;
             flap_animator.SetTrigger("Flap");
