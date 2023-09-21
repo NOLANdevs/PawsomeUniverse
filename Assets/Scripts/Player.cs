@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Animal animal;
     public HungerBar hungerBar;
     public CleanBar cleanBar;
+    public LoveBar loveBar;
     public Inventory inventory;
     public float statsIncrementAmount = 0.05f;
     public float eatingTime = 0.1f;
@@ -49,6 +50,11 @@ public class Player : MonoBehaviour
         {
             // Check if the player collides with a shower object
             cleanBar.CleanAnimal(statsIncrementAmount);
+        }
+        else if (collision.gameObject.CompareTag("Brush"))
+        {
+            // Check if the player collides with a brush object
+            loveBar.PetAnimal(statsIncrementAmount);
         }
     }
 
