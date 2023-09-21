@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public GameObject animatorHolder;
     public Animal animal;
     public HungerBar hungerBar;
-    public CleanBar cleanBar;
     public Inventory inventory;
     public float eatingTime = 0.1f;
 
@@ -44,11 +43,6 @@ public class Player : MonoBehaviour
             animator.Play("eatfrog");
             animator.SetBool("IsEating", true);
             timeSinceStartedEating = 0;
-        }
-        else if (collision.gameObject.CompareTag("Shower"))
-        {
-            // Check if the player collides with a shower object
-            cleanBar.CleanAnimal(itemComponent.statsIncreaseAmount);
         }
     }
 

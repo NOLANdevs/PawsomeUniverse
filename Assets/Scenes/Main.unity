@@ -6436,7 +6436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b80d49413e044b41b3fda4a92227d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cleanBar: {fileID: 0}
+  cleanBar: {fileID: 1603504895}
+  showerItem: {fileID: 9097606190265718664}
 --- !u!61 &7459329172481008744
 BoxCollider2D:
   m_ObjectHideFlags: 0
