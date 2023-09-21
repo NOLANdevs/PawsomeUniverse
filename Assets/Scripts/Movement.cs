@@ -13,12 +13,6 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
 
-    // The threshold angle for considering the player as "fallen over"
-    public float fallThresholdAngle = 45f;
-
-    // The speed the player gets up
-    public float rightingSpeed = 5f;
-
     void Start()
     {
         animal = GetComponent<Animal>();
@@ -40,24 +34,10 @@ public class Movement : MonoBehaviour
         {
             Jump();
         }
-        GetUp();
         CheckEat();
         CheckIdle(moveDirection);
     }
 
-    // checks if player has fallen over and corrects it
-    private void GetUp()
-    {
-        // Check if the player's rotation is not upright
-        if (Mathf.Abs(transform.rotation.eulerAngles.z) > fallThresholdAngle)
-        {
-            // Calculate the target rotation (upright)
-            Quaternion targetRotation = Quaternion.Euler(0f, 0f, 0f);
-
-            // Smoothly interpolate towards the target rotation
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rightingSpeed * Time.deltaTime);
-        }
-    }
 
     private void CheckEat()
     {

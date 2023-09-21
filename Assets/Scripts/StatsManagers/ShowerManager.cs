@@ -5,11 +5,12 @@ public class ShowerManager : MonoBehaviour
     public CleanBar cleanBar;
     public Item showerItem;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (cleanBar != null && collision.gameObject.CompareTag("Player"))
+        if (cleanBar != null && other.gameObject.CompareTag("Player"))
         {
             cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
         }
     }
 }
+
