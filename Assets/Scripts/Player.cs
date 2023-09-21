@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.CompareTag("Brush"))
         {
             // Check if the player collides with a brush object
-            loveBar.PetAnimal(statsIncrementAmount);
+            loveBar.PetAnimal(0.1f); // TODO move to BrushManager
         }
     }
 

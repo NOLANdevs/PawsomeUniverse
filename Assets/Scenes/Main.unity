@@ -714,7 +714,7 @@ MonoBehaviour:
   animatorHolder: {fileID: 1511718002}
   animal: {fileID: 230428627}
   hungerBar: {fileID: 3059791525518707988}
-  cleanBar: {fileID: 1603504895}
+  loveBar: {fileID: 844670137}
   inventory: {fileID: 0}
   eatingTime: 0.1
 --- !u!1 &289978309
@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 593073276}
   m_Layer: 0
   m_Name: Brush
-  m_TagString: Shower
+  m_TagString: Brush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2063,6 +2063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca9c9cfe2fc54c72b947c7444d82d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loveBar: {fileID: 0}
 --- !u!50 &593073277
 Rigidbody2D:
   serializedVersion: 4
@@ -2403,9 +2404,9 @@ GameObject:
   m_Component:
   - component: {fileID: 844670134}
   - component: {fileID: 844670136}
-  - component: {fileID: 844670135}
+  - component: {fileID: 844670137}
   m_Layer: 5
-  m_Name: Lovebar
+  m_Name: LoveBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2432,53 +2433,6 @@ RectTransform:
   m_AnchoredPosition: {x: 121, y: 408}
   m_SizeDelta: {x: 288.54, y: 68.12}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &844670135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844670133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f161b383f1d81f249a60dbbf038452ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animal: {fileID: 230428627}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 0.20705767, g: 0.7182013, b: 0.9339623, a: 1}
-    key1: {r: 0.20705767, g: 0.7182013, b: 0.9339623, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 21974
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  fill: {fileID: 1842739909}
-  cleanlinessSlider: {fileID: 844670136}
-  cleanlinessDecayAmount: 0.05
-  decayDelay: 5
 --- !u!114 &844670136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2530,6 +2484,54 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &844670137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844670133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ebd0328520047ebbc63dfc7afc25a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animal: {fileID: 230428627}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0.95173645, a: 1}
+    key1: {r: 1, g: 0, b: 0.95173645, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1842739909}
+  loveSlider: {fileID: 844670136}
+  initialLove: 0.1
+  loveDecayAmount: 0.1
+  delay: 10
 --- !u!1 &921276514
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,7 +3673,6 @@ GameObject:
   - component: {fileID: 1603504891}
   - component: {fileID: 1603504893}
   - component: {fileID: 1603504895}
-  - component: {fileID: 1603504896}
   m_Layer: 5
   m_Name: CleanBar
   m_TagString: Untagged
@@ -3798,18 +3799,6 @@ MonoBehaviour:
   cleanlinessSlider: {fileID: 1603504893}
   cleanlinessDecayAmount: 0.05
   decayDelay: 5
---- !u!114 &1603504896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603504890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7ebd0328520047ebbc63dfc7afc25a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1723318943
 GameObject:
   m_ObjectHideFlags: 0
