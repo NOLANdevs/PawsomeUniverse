@@ -4,15 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIController : MonoBehaviour
+public class InputMenu : MonoBehaviour
 {
-    [SerializeField] private NameMenu inputMenu;
-    [SerializeField] private NameTag nameTag;
-    public Player player;
+    public Animal animal;
     public TMP_InputField inputName;
 
+    [SerializeField] private NameMenu inputMenu;
+    [SerializeField] private NameTag nameTag;
     [SerializeField] private string playerNameText = "";
-    private Animal animal;
 
     void Start()
     {
@@ -45,7 +44,7 @@ public class UIController : MonoBehaviour
         playerNameText = inputName.text;
         // Ensure current name displays when clicking on input field
         inputName.placeholder.GetComponent<TextMeshProUGUI>().text = playerNameText;
-        player.animal.animalName = playerNameText;
+        animal.animalName = playerNameText;
         DisplayName(playerNameText);
         HideNameMenu();
     }

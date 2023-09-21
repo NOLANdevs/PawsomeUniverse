@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class HungerManager : MonoBehaviour
 {
 
-    public int money;
-    public GameObject animatorHolder;
     public Animal animal;
+    public GameObject animatorHolder;
     public HungerBar hungerBar;
-    public Inventory inventory;
     public float eatingTime = 0.1f;
 
     private Animator animator;

@@ -710,11 +710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1982c825fb6147849b0bbbe665bbb790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
-  animatorHolder: {fileID: 1511718002}
   animal: {fileID: 230428627}
+  animatorHolder: {fileID: 1511718002}
   hungerBar: {fileID: 3059791525518707988}
-  inventory: {fileID: 0}
   eatingTime: 0.1
 --- !u!1 &289978309
 GameObject:
@@ -1786,6 +1784,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1243020275}
+  - {fileID: 1552041258}
   m_Father: {fileID: 521412682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573465385
@@ -2026,10 +2025,10 @@ GameObject:
   - component: {fileID: 593073275}
   - component: {fileID: 593073279}
   - component: {fileID: 593073277}
-  - component: {fileID: 593073276}
   - component: {fileID: 593073280}
   - component: {fileID: 593073282}
   - component: {fileID: 593073281}
+  - component: {fileID: 593073276}
   m_Layer: 0
   m_Name: Paw
   m_TagString: Untagged
@@ -2859,9 +2858,8 @@ GameObject:
   - component: {fileID: 1098383757}
   - component: {fileID: 1098383756}
   - component: {fileID: 1098383755}
-  - component: {fileID: 1098383758}
   m_Layer: 0
-  m_Name: UIEvents
+  m_Name: UICanvasEvents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,23 +2915,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 521412682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1098383758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098383754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd2313f1a28424e54a2b3ae4a5545297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputMenu: {fileID: 3205699517680098436}
-  nameTag: {fileID: 1943556881}
-  player: {fileID: 230428632}
-  inputName: {fileID: 5369244100897201724}
-  playerNameText: 
 --- !u!1 &1099800340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,6 +3662,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1552041257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552041258}
+  - component: {fileID: 1552041259}
+  m_Layer: 0
+  m_Name: InputMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1552041258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552041257}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 565327068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1552041259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552041257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2313f1a28424e54a2b3ae4a5545297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animal: {fileID: 230428627}
+  inputName: {fileID: 5369244100897201724}
+  inputMenu: {fileID: 3205699517680098436}
+  nameTag: {fileID: 1943556881}
+  playerNameText: 
 --- !u!1 &1603504890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,7 +3808,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603504890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f161b383f1d81f249a60dbbf038452ae, type: 3}
   m_Name: 
@@ -4695,7 +4725,7 @@ GameObject:
   - component: {fileID: 4767467629439961907}
   - component: {fileID: 7631019200067738829}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: InputNameTextarea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5896,7 +5926,7 @@ GameObject:
   - component: {fileID: 295564173806744165}
   - component: {fileID: 7855239367407832504}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CancelBtnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6937,20 +6967,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light2D: {fileID: 8656194274066555841}
---- !u!114 &7457970748385853421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097606190265718662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b80d49413e044b41b3fda4a92227d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cleanBar: {fileID: 1603504895}
-  showerItem: {fileID: 9097606190265718664}
 --- !u!61 &7459329172481008744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7290,8 +7306,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1098383758}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 1552041259}
+        m_TargetAssemblyTypeName: InputMenu, Assembly-CSharp
         m_MethodName: HideNameMenu
         m_Mode: 1
         m_Arguments:
@@ -7483,8 +7499,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1098383758}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 1552041259}
+        m_TargetAssemblyTypeName: InputMenu, Assembly-CSharp
         m_MethodName: SaveName
         m_Mode: 1
         m_Arguments:
@@ -7632,7 +7648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 0}
+  - {fileID: 4341917784809452291, guid: 69d71f66393994033b7d4ac74231b97e, type: 3}
 --- !u!222 &8026556686759738488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7786,7 +7802,7 @@ GameObject:
   - component: {fileID: 8026556686759738488}
   - component: {fileID: 4621215015547258612}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: OkBtnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8314,11 +8330,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3812689859623725583}
   - component: {fileID: 8690831796365832336}
-  - component: {fileID: 7457970748385853421}
   - component: {fileID: 3352419424104569244}
   - component: {fileID: 3378931886676390223}
   - component: {fileID: 9097606190265718663}
   - component: {fileID: 9097606190265718664}
+  - component: {fileID: 9097606190265718665}
   m_Layer: 0
   m_Name: Shower
   m_TagString: Untagged
@@ -8353,6 +8369,20 @@ MonoBehaviour:
   prefab: {fileID: 9097606190265718662}
   price: 0
   statsIncreaseAmount: 0.1
+--- !u!114 &9097606190265718665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097606190265718662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b80d49413e044b41b3fda4a92227d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleanBar: {fileID: 1603504895}
+  showerItem: {fileID: 9097606190265718664}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
