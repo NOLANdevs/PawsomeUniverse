@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item : ScriptableObject
 {
-
-    public int stackSize;
-
-    private Sprite sprite;
-
+    public GameObject prefab;
+    public int price;
+    public float statsIncreaseAmount;
 }

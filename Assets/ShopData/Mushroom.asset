@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528f724ec5a757e4ea308c2c6c1188c4, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 6493908789377684949, guid: 69d71f66393994033b7d4ac74231b97e, type: 3}
-  itemPrice: 1
+  prefab: {fileID: 6493908789377684949, guid: 69d71f66393994033b7d4ac74231b97e, type: 3}
+  price: 1
