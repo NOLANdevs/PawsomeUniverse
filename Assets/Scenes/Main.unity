@@ -570,9 +570,9 @@ MonoBehaviour:
   animalName: 
   colour: 2
   species: 0
-  love: 0
-  hunger: 0
-  cleanliness: 0
+  love: 0.5
+  hunger: 0.5
+  cleanliness: 0.5
   inventory: {fileID: 0}
   accessories: []
   isEating: 1
@@ -8309,6 +8309,7 @@ GameObject:
   - component: {fileID: 7457970748385853421}
   - component: {fileID: 3352419424104569244}
   - component: {fileID: 3378931886676390223}
+  - component: {fileID: 9097606190265718663}
   m_Layer: 0
   m_Name: Shower
   m_TagString: Shower
@@ -8316,6 +8317,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9097606190265718663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097606190265718662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c6bd65c791fc74dabbe8e26a75154b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
