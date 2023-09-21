@@ -236,7 +236,7 @@ MonoBehaviour:
   playerScore: 0
   scoreText: {fileID: 71883305}
   gameOverScreen: {fileID: 1110918777}
-  homeScene: 
+  homeScene: Main
 --- !u!4 &98849671
 Transform:
   m_ObjectHideFlags: 0
