@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public GameObject animatorHolder;
     public Animal animal;
     public HungerBar hungerBar;
-    public LoveBar loveBar;
     public Inventory inventory;
     public float eatingTime = 0.1f;
 
@@ -44,11 +43,6 @@ public class Player : MonoBehaviour
             animator.Play("eatfrog");
             animator.SetBool("IsEating", true);
             timeSinceStartedEating = 0;
-        }
-        else if (collision.gameObject.CompareTag("Brush"))
-        {
-            // Check if the player collides with a brush object
-            loveBar.PetAnimal(0.1f); // TODO move to BrushManager
         }
     }
 

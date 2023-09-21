@@ -714,7 +714,6 @@ MonoBehaviour:
   animatorHolder: {fileID: 1511718002}
   animal: {fileID: 230428627}
   hungerBar: {fileID: 3059791525518707988}
-  loveBar: {fileID: 844670137}
   inventory: {fileID: 0}
   eatingTime: 0.1
 --- !u!1 &289978309
@@ -2029,9 +2028,11 @@ GameObject:
   - component: {fileID: 593073277}
   - component: {fileID: 593073276}
   - component: {fileID: 593073280}
+  - component: {fileID: 593073282}
+  - component: {fileID: 593073281}
   m_Layer: 0
   m_Name: Paw
-  m_TagString: Brush
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2063,7 +2064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca9c9cfe2fc54c72b947c7444d82d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loveBar: {fileID: 0}
+  loveBar: {fileID: 844670137}
+  pawItem: {fileID: 593073281}
 --- !u!50 &593073277
 Rigidbody2D:
   serializedVersion: 4
@@ -2178,6 +2180,33 @@ CircleCollider2D:
   m_Offset: {x: -0.09897634, y: -0.024743456}
   serializedVersion: 2
   m_Radius: 3.0601087
+--- !u!114 &593073281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593073274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528f724ec5a757e4ea308c2c6c1188c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 593073274}
+  price: 0
+  statsIncreaseAmount: 0.2
+--- !u!114 &593073282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593073274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c6bd65c791fc74dabbe8e26a75154b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &669105460
 GameObject:
   m_ObjectHideFlags: 0
@@ -8292,7 +8321,7 @@ GameObject:
   - component: {fileID: 9097606190265718664}
   m_Layer: 0
   m_Name: Shower
-  m_TagString: Shower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

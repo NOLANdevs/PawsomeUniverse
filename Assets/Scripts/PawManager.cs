@@ -1,44 +1,15 @@
 using UnityEngine;
 
-public class BrushManager : MonoBehaviour
+public class PawManager : MonoBehaviour
 {
-    private bool isDragging = false;
-    private Vector3 offset;
-    public LoveBar loveBar; // Reference to the LoveBar script
+    public LoveBar loveBar;
+    public Item pawItem;
 
-
-    private void OnMouseDown()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        isDragging = true;
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    private void OnMouseDrag()
-    {
-        if (isDragging)
+        if (loveBar != null && collision.gameObject.CompareTag("Player"))
         {
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-            transform.position = new Vector3(newPosition.x, newPosition.y, 0f);
-        }
-    }
-
-    private void OnMouseUp()
-    {
-        isDragging = false;
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            // The Paw hits the player increase love using the LoveBar script
-            if (loveBar != null)
-            {
-                float loveIncreaseAmount = 1f;
-                loveBar.PetAnimal(loveIncreaseAmount);
-            }
-
+            loveBar.PetAnimal(pawItem.statsIncreaseAmount);
         }
     }
 }

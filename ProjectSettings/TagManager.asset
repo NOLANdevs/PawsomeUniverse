@@ -8,8 +8,6 @@ TagManager:
   - Food
   - LBoundary
   - RBoundary
-  - Shower
-  - Brush
   layers:
   - Default
   - TransparentFX
