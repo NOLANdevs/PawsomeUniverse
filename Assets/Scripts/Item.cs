@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Item : ScriptableObject
+public class Item : MonoBehaviour
 {
     public GameObject prefab;
     public int price;

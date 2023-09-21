@@ -641,7 +641,6 @@ MonoBehaviour:
   hungerBar: {fileID: 3059791525518707988}
   cleanBar: {fileID: 1603504895}
   inventory: {fileID: 0}
-  statsIncrementAmount: 0.05
   eatingTime: 0.1
 --- !u!1 &289978309
 GameObject:
@@ -7805,6 +7804,7 @@ GameObject:
   - component: {fileID: 3352419424104569244}
   - component: {fileID: 3378931886676390223}
   - component: {fileID: 9097606190265718663}
+  - component: {fileID: 9097606190265718664}
   m_Layer: 0
   m_Name: Shower
   m_TagString: Shower
@@ -7824,6 +7824,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c6bd65c791fc74dabbe8e26a75154b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9097606190265718664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097606190265718662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528f724ec5a757e4ea308c2c6c1188c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9097606190265718662}
+  price: 0
+  statsIncreaseAmount: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

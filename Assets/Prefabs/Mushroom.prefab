@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7416936714483840128}
   - component: {fileID: 5475356483084360503}
   - component: {fileID: 1943188152287509300}
+  - component: {fileID: 4341917784809452291}
   m_Layer: 7
   m_Name: Mushroom
   m_TagString: Food
@@ -158,3 +159,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 23.619156, y: 21.330833}
   m_EdgeRadius: 0
+--- !u!114 &4341917784809452291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6493908789377684949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528f724ec5a757e4ea308c2c6c1188c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6493908789377684949}
+  price: 1
+  statsIncreaseAmount: 0.1
