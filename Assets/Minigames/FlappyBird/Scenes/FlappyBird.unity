@@ -230,12 +230,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 98849669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aaccaed5b2ed46cfbc4d21ea7cccbe4, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e3ad768d1054f909861181a014ab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
   scoreText: {fileID: 71883305}
   gameOverScreen: {fileID: 1110918777}
+  homeScene: 
 --- !u!4 &98849671
 Transform:
   m_ObjectHideFlags: 0
@@ -347,7 +348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484666797}
-  - component: {fileID: 484666796}
   - component: {fileID: 484666795}
   - component: {fileID: 484666794}
   - component: {fileID: 484666793}
@@ -437,28 +437,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484666790}
   m_Mesh: {fileID: 0}
---- !u!114 &484666796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484666790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280f05718b6493d4b91f4ce38558e7cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 1
-  animalName: 
-  colour: 2
-  species: 0
-  love: 0
-  hunger: 0
-  cleanliness: 0
-  inventory: {fileID: 0}
-  accessories: []
-  isEating: 1
 --- !u!4 &484666797
 Transform:
   m_ObjectHideFlags: 0
@@ -548,7 +526,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 484666790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d708c65297b494dc5a9effb9b5fb3273, type: 3}
+  m_Script: {fileID: 11500000, guid: 47d0479a980a34183bdcd827c494914f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 484666793}
@@ -750,7 +728,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 842544560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56554be3239e64f69a6055a428b9a080, type: 3}
+  m_Script: {fileID: 11500000, guid: 23736c30d78d74457ac69b347934bde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pipe: {fileID: 7977077366578157050, guid: 79bad800c81cc4f1d86f18d77288ddd4, type: 3}
