@@ -7,21 +7,25 @@ using UnityEngine.UI;
 
 public class DatabaseInterface : MonoBehaviour
 {
+    public static Database animalsDB, statsDB;
+
     public Animal curAnimal;
     public int autosaveInterval = 60; // seconds
     public GameObject saveText;
 
-    private Database animalsDB, statsDB;
     private Dictionary<int, Animal> animals;
     private float timeSinceLastSave = 0;
 
-    void Start()
+    void Awake()
     {
-        this.animalsDB = ScriptableObject.CreateInstance<Database>();
-        this.statsDB = ScriptableObject.CreateInstance<Database>();
+        animalsDB = ScriptableObject.CreateInstance<Database>();
+        statsDB = ScriptableObject.CreateInstance<Database>();
         animalsDB.Init("animals.db");
         statsDB.Init("stats.db");
+    }
 
+    void Start()
+    {
         loadAnimals();
         loadStats();
 

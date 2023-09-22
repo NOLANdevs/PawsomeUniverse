@@ -10,8 +10,14 @@ public class LogicScript: MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
     public bool isAlive = true;
-
     public string homeScene;
+
+    private Database coinsDB;
+
+    void Start()
+    {
+        this.coinsDB = DatabaseInterface.statsDB;
+    }
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
@@ -34,8 +40,12 @@ public class LogicScript: MonoBehaviour
 
     public void goHome()
     {
-        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) + playerScore);
+        int newCoins = PlayerPrefs.GetInt("Coins", 0) + playerScore;
+        PlayerPrefs.SetInt("Coins", newCoins);
         PlayerPrefs.Save();
+        coinsDB.Clear();
+        coinsDB.Write(newCoins.ToString());
+
         SceneManager.LoadScene(homeScene);
     }
 }
