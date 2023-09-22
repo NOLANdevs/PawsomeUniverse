@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner: MonoBehaviour
 {
     public GameObject pipe;
     public float spawnRate = 4;

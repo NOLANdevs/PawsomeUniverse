@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LogicScript : MonoBehaviour
+public class LogicScript: MonoBehaviour
 {
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverScreen;
+    public bool isAlive = true;
 
     public string homeScene;
 
