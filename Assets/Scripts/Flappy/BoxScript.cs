@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxScript : MonoBehaviour
+public class BoxScript: MonoBehaviour
 {
     public float moveSpeed = 5;
     public float deadZone = -40;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeMiddle : MonoBehaviour
+public class PipeMiddle: MonoBehaviour
 {
     public LogicScript logic;
 
@@ -20,7 +20,7 @@ public class PipeMiddle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 3)
+        if(collision.gameObject.layer == 3 && logic.isAlive)
         {
             logic.addScore(1);
         }

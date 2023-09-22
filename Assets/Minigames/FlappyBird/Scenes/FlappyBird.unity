@@ -711,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842544562}
-  - component: {fileID: 842544561}
+  - component: {fileID: 842544563}
   m_Layer: 0
   m_Name: Pipe Spawner
   m_TagString: Untagged
@@ -719,21 +719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &842544561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842544560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23736c30d78d74457ac69b347934bde9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pipe: {fileID: 7977077366578157050, guid: 79bad800c81cc4f1d86f18d77288ddd4, type: 3}
-  spawnRate: 4
-  heightOffSet: 10
 --- !u!4 &842544562
 Transform:
   m_ObjectHideFlags: 0
@@ -749,6 +734,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842544563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842544560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23736c30d78d74457ac69b347934bde9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pipe: {fileID: 7977077366578157050, guid: 79bad800c81cc4f1d86f18d77288ddd4, type: 3}
+  spawnRate: 4
+  heightOffSet: 10
 --- !u!1 &865714548
 GameObject:
   m_ObjectHideFlags: 0

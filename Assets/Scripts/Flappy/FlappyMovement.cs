@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class FlappyMovement: MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     public LogicScript logic;
-    public bool isAlive = true;
     public Animator flap_animator;
 
     [SerializeField] int jumpMultiplier = 5;
@@ -20,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isAlive)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && logic.isAlive)
         {
             myRigidbody.velocity = Vector2.up * jumpMultiplier;
             flap_animator.SetTrigger("Flap");
@@ -40,6 +39,6 @@ public class PlayerMovement : MonoBehaviour
     private void kill()
     {
         logic.gameOver();
-        isAlive = false;
+        logic.isAlive = false;
     }
 }
