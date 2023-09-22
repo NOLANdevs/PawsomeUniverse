@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -780.99426, y: 380.53802}
+  m_AnchoredPosition: {x: -780, y: 360}
   m_SizeDelta: {x: 293.4258, y: 272.8467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71883305
@@ -236,6 +236,7 @@ MonoBehaviour:
   playerScore: 0
   scoreText: {fileID: 71883305}
   gameOverScreen: {fileID: 1110918777}
+  isAlive: 1
   homeScene: Main
 --- !u!4 &98849671
 Transform:
@@ -531,7 +532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 484666793}
   logic: {fileID: 0}
-  isAlive: 1
   flap_animator: {fileID: 1197123052}
   jumpMultiplier: 10
 --- !u!1 &594149625
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 842544562}
   - component: {fileID: 842544563}
   m_Layer: 0
-  m_Name: Pipe Spawner
+  m_Name: PipeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,10 +797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 1062773386}
   - component: {fileID: 1062773385}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,7 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110918778}
   m_Layer: 5
-  m_Name: Game Over Screen
+  m_Name: GameOverScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 1204108584}
   - component: {fileID: 1204108583}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: HomeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 1205858193}
   - component: {fileID: 1205858196}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 1338629266}
   - component: {fileID: 1338629265}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: TryAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1573,8 +1573,8 @@ Transform:
   m_GameObject: {fileID: 1505946282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 0.2, z: 10}
-  m_LocalScale: {x: 6.8744445, y: 5.29, z: 5.29}
+  m_LocalPosition: {x: 0, y: 0.2, z: 10}
+  m_LocalScale: {x: 6.9, y: 5.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1205858195}
@@ -1618,7 +1618,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1655201505
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f4a6cff09c054fbfbc708b57c185080, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1712,7 +1712,7 @@ GameObject:
   - component: {fileID: 1654313322}
   - component: {fileID: 1654313321}
   m_Layer: 5
-  m_Name: Button Home
+  m_Name: HomeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 1712588216}
   - component: {fileID: 1712588215}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TryAgainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
