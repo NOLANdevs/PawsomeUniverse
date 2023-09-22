@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LogicScript: MonoBehaviour
+public class LogicScript : MonoBehaviour
 {
     public int playerScore;
     public Text scoreText;
@@ -14,7 +14,7 @@ public class LogicScript: MonoBehaviour
 
     private Database coinsDB;
 
-    void Start()
+    void Awake()
     {
         this.coinsDB = DatabaseInterface.statsDB;
     }
@@ -43,8 +43,12 @@ public class LogicScript: MonoBehaviour
         int newCoins = PlayerPrefs.GetInt("Coins", 0) + playerScore;
         PlayerPrefs.SetInt("Coins", newCoins);
         PlayerPrefs.Save();
-        coinsDB.Clear();
-        coinsDB.Write(newCoins.ToString());
+
+        if (coinsDB != null)
+        {
+            coinsDB.Clear();
+            coinsDB.Write(newCoins.ToString());
+        }
 
         SceneManager.LoadScene(homeScene);
     }

@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MinigameMenu.unity
     guid: 2fbf911e084cdd440b34308051a872a1
   - enabled: 1
-    path: Assets/Minigames/FlappyBird/Scenes/FlappyBird.unity
+    path: Assets/Minigames/Flappy/Scenes/Flappy.unity
     guid: 7af06a0c28c8a49cfafbd98515f5128f
   m_configObjects: {}

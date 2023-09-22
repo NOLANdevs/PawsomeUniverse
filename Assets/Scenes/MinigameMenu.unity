@@ -179,7 +179,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1655201505
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.65882355, g: 0.93333334, b: 0.972549, a: 1}
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balanceText: {fileID: 1165084800}
-  startingBalance: 100
+  defaultBalance: 100
 --- !u!114 &1165084800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96131e094c9f256499b3a24aa4219bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: FlappyBird
+  sceneToLoad: Flappy
 --- !u!1 &1757022165
 GameObject:
   m_ObjectHideFlags: 0
