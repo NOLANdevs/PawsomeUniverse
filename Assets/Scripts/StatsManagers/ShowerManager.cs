@@ -4,13 +4,57 @@ public class ShowerManager : MonoBehaviour
 {
     public CleanBar cleanBar;
     public Item showerItem;
+    private bool isDragging;
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public GameObject particleSystemHolder;
+    private ParticleSystem showerParticleSystem;
+
+    private ParticleSystem.EmissionModule em;
+
+
+    void OnMouseDown()
     {
-        if (cleanBar != null && other.gameObject.CompareTag("Player"))
+        isDragging = true;
+    }
+
+    void OnMouseUp()
+    {
+        isDragging = false;
+    }
+
+    private void Start()
+    {
+        showerParticleSystem = particleSystemHolder.GetComponent<ParticleSystem>();
+        em = showerParticleSystem.emission;
+
+    }
+
+    private void Update()
+    {
+        if (isDragging)
+        {
+            // Activate the particle system
+            if (showerParticleSystem != null && em.enabled != true)
+            {
+                em.enabled = true;
+            }
+        }
+        else
+        {
+            // Deactivate the particle system
+            if (showerParticleSystem != null && em.enabled == true)
+            {
+                em.enabled = false;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Increase cleanliness
+        if (cleanBar != null && other.CompareTag("Player"))
         {
             cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
         }
     }
 }
-
