@@ -5,10 +5,14 @@ public class ClickToBall : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = true;
     public float force = 3;
+    private AudioSource audioSource;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     private void OnMouseDown()
@@ -16,6 +20,7 @@ public class ClickToBall : MonoBehaviour
         if (isGrounded)
         {
             HitBall(force);
+            audioSource.Play();
         }
     }
 
