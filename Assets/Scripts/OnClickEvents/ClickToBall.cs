@@ -4,7 +4,7 @@ public class ClickToBall : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isGrounded = true;
-    public float force = 10;
+    public float force = 3;
 
     private void Start()
     {
@@ -13,13 +13,13 @@ public class ClickToBall : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isGrounded) {
+        if (isGrounded)
+        {
             HitBall(force);
         }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -27,11 +27,11 @@ public class ClickToBall : MonoBehaviour
         }
     }
 
-    public void HitBall(float force)
+    public void HitBall(float hitForce)
     {
         if (isGrounded)
         {
-            rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * hitForce, ForceMode2D.Impulse);
             isGrounded = false;
         }
     }
