@@ -4,10 +4,11 @@ using UnityEngine;
 public class ScaleOnButtonClick : MonoBehaviour
 {
     private float scaleSpeed = 12f; // speed of scaling
-
-    private Vector3 originalScale; // og scale of sprite
+    private Vector3 originalScale; // original scale of sprite
     private bool isScaling = false; // check if scaling
     private float scaleNum = 0.005f;
+
+    private Coroutine scaleCoroutine; // ref to scaling coroutine
 
     private void Start()
     {
@@ -19,7 +20,14 @@ public class ScaleOnButtonClick : MonoBehaviour
         if (!isScaling)
         {
             // start scaling animation
-            StartCoroutine(ScaleSprite());
+            if (scaleCoroutine != null)
+            {
+                // If prev animation is still running, stop prev animation
+                StopCoroutine(scaleCoroutine);
+                ResetScale(); // reset scale to original size
+            }
+
+            scaleCoroutine = StartCoroutine(ScaleSprite());
         }
     }
 
@@ -36,7 +44,7 @@ public class ScaleOnButtonClick : MonoBehaviour
 
         transform.localScale = originalScale - new Vector3(scaleNum, scaleNum, scaleNum);
 
-        // scale up the sprite
+        // scale up sprite
         while (transform.localScale.x < originalScale.x + scaleNum)
         {
             transform.localScale += new Vector3(scaleNum, scaleNum, scaleNum) * scaleSpeed * Time.deltaTime;
@@ -46,5 +54,10 @@ public class ScaleOnButtonClick : MonoBehaviour
         transform.localScale = originalScale + new Vector3(scaleNum, scaleNum, scaleNum);
 
         isScaling = false;
+    }
+
+    private void ResetScale()
+    {
+        transform.localScale = originalScale;
     }
 }
