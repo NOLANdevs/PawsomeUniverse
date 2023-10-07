@@ -544,8 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.075
-  maxScale: 0.07
+  minScale: 0.07
+  maxScale: 0.075
   scaleSpeed: 6
 --- !u!212 &134344911
 SpriteRenderer:
@@ -1955,6 +1955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7484bfe8923882f40805a5b3974c63a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notPauseScenes:
+  - Minigame Menu
 --- !u!4 &528431040
 Transform:
   m_ObjectHideFlags: 0
@@ -9378,6 +9380,8 @@ GameObject:
   - component: {fileID: 1914743948}
   - component: {fileID: 1914743947}
   - component: {fileID: 1914743949}
+  - component: {fileID: 1914743950}
+  - component: {fileID: 1914743951}
   m_Layer: 0
   m_Name: Cat_Painting
   m_TagString: Untagged
@@ -9464,6 +9468,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c4655e6d2a7794798588cfcbc58ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1914743950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914743946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: 0.089
+  maxScale: 0.14
+  scaleSpeed: 6
+--- !u!61 &1914743951
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914743946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 22.83, y: 23.495398}
+    newSize: {x: 22.83, y: 23.495398}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 22.83, y: 23.495398}
+  m_EdgeRadius: 0
 --- !u!1 &1925703842
 GameObject:
   m_ObjectHideFlags: 0
