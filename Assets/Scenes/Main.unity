@@ -544,9 +544,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.07
-  maxScale: 0.075
-  scaleSpeed: 6
 --- !u!212 &134344911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9379,7 +9376,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1914743948}
   - component: {fileID: 1914743947}
-  - component: {fileID: 1914743949}
   - component: {fileID: 1914743950}
   - component: {fileID: 1914743951}
   m_Layer: 0
@@ -9456,18 +9452,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1416369549643982607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1914743949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914743946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c4655e6d2a7794798588cfcbc58ab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1914743950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9480,9 +9464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.089
-  maxScale: 0.14
-  scaleSpeed: 6
 --- !u!61 &1914743951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12857,9 +12838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.13
-  maxScale: 0.14
-  scaleSpeed: 7
 --- !u!224 &7726851612079666912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12891,9 +12869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.15
-  maxScale: 0.2
-  scaleSpeed: 8.32
 --- !u!224 &7745641498470886586
 RectTransform:
   m_ObjectHideFlags: 0
