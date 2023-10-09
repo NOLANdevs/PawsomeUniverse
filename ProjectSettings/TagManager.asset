@@ -9,6 +9,7 @@ TagManager:
   - LBoundary
   - RBoundary
   - Ground
+  - SnakeWalls
   layers:
   - Default
   - TransparentFX
