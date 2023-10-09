@@ -336,9 +336,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: bea65288f7113488197fe236d9ac4baa, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 517124787}
+        m_TargetAssemblyTypeName: Snake, Assembly-CSharp
+        m_MethodName: restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -347,7 +347,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &47642962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +857,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -978,7 +978,7 @@ Transform:
   m_GameObject: {fileID: 517124786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.11, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1948,7 +1948,7 @@ Transform:
   m_GameObject: {fileID: 1660372768}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.61, y: 0, z: -0.02772561}
+  m_LocalPosition: {x: 0, y: 0, z: -0.02772561}
   m_LocalScale: {x: 0.1795563, y: 0.17955633, z: 0.1795563}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2260,9 +2260,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: bea65288f7113488197fe236d9ac4baa, type: 3}
-        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 517124787}
+        m_TargetAssemblyTypeName: Snake, Assembly-CSharp
+        m_MethodName: goHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
