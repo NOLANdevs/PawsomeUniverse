@@ -13,7 +13,7 @@ public class Snake : MonoBehaviour
     // Segments
     private List<Transform> segments;
     public Transform segmentPrefab;
-    [SerializeField]public float segmentSpacing = 0.1f;
+    //[SerializeField]public float segmentSpacing = 0.1f;
     
     // Scoring 
     public int playerScore = 0;
@@ -58,7 +58,9 @@ public class Snake : MonoBehaviour
         {
             for (int i = segments.Count - 1; i > 0; i--)
             {
-                Vector3 newPos = segments[i - 1].position;
+                segments[i].position = segments[i - 1].position;
+
+                /*Vector3 newPos = segments[i - 1].position;
 
                 // Apply segment spacing
                 float distance = segmentSpacing;
@@ -67,7 +69,7 @@ public class Snake : MonoBehaviour
                     distance = 1.0f;
                 }
 
-                segments[i].position = Vector3.Lerp(segments[i].position, newPos, Time.fixedDeltaTime * 10f);
+                segments[i].position = Vector3.Lerp(segments[i].position, newPos, Time.fixedDeltaTime * 10f);*/
             }
 
             this.transform.position = new Vector3(
