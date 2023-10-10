@@ -425,9 +425,10 @@ GameObject:
   - component: {fileID: 276623921}
   - component: {fileID: 276623924}
   - component: {fileID: 276623923}
+  - component: {fileID: 276623925}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Spikes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -817,6 +818,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 54, y: 6}
   m_EdgeRadius: 0
+--- !u!114 &276623925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276623919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7d68d12b62341bf8fa819f42998899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logic: {fileID: 2033928423}
 --- !u!1839735485 &606727708
 Tilemap:
   m_ObjectHideFlags: 0
@@ -50627,6 +50641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1209f83d4db2142f98d77eb10dbf8556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverScreen: {fileID: 4061426997829136999}
 --- !u!4 &2033928424
 Transform:
   m_ObjectHideFlags: 0
@@ -51058,9 +51073,9 @@ GameObject:
   - component: {fileID: 4009596466468239738}
   - component: {fileID: 6838898392764877808}
   - component: {fileID: 4339448442485253513}
+  - component: {fileID: 606727708}
   - component: {fileID: 644717570173250335}
   - component: {fileID: 1588002326773209576}
-  - component: {fileID: 606727708}
   - component: {fileID: 606727709}
   m_Layer: 3
   m_Name: Animal
@@ -51493,7 +51508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4112768703231333209
 GameObject:
   m_ObjectHideFlags: 0
