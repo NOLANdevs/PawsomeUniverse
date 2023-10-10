@@ -10,6 +10,7 @@ TagManager:
   - RBoundary
   - Ground
   - Fruit
+  - Spikes
   layers:
   - Default
   - TransparentFX
