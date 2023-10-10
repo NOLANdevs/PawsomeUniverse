@@ -9,6 +9,7 @@ TagManager:
   - LBoundary
   - RBoundary
   - Ground
+  - Fruit
   layers:
   - Default
   - TransparentFX
