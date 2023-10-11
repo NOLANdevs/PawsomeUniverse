@@ -12,6 +12,8 @@ public class Accessory : MonoBehaviour
 
     public enum Type
     {
+        Hat,
+        Glasses
     }
 
     public Colour colour;

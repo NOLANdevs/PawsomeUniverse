@@ -496,6 +496,7 @@ Transform:
   m_Children:
   - {fileID: 230428625}
   - {fileID: 289978310}
+  - {fileID: 528431040}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124219087
@@ -2266,7 +2267,6 @@ Transform:
   - {fileID: 1098383757}
   - {fileID: 565327068}
   - {fileID: 299888967}
-  - {fileID: 528431040}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &521412683
@@ -2450,11 +2450,11 @@ Transform:
   m_GameObject: {fileID: 528431037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.63099146, y: -0.5280931, z: -0.009701745}
+  m_LocalPosition: {x: -4.8690085, y: 1.4719069, z: -0.009701745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 521412682}
+  m_Father: {fileID: 97571710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557767160
 GameObject:
@@ -4022,7 +4022,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1655201505
   m_SortingLayer: -2
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7f1cc7c2484811445844f102753f7a6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10660,6 +10660,7 @@ GameObject:
   - component: {fileID: 1398815352}
   - component: {fileID: 1398815351}
   - component: {fileID: 1398815353}
+  - component: {fileID: 1398815354}
   m_Layer: 0
   m_Name: AccessoryBox
   m_TagString: Untagged
@@ -10793,6 +10794,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.09, y: 18.790674}
   m_EdgeRadius: 0
+--- !u!114 &1398815354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398815349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bc84d3e9948dd46bbc0a7779f12615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accessoryMenu: {fileID: 724686273}
+  playerMovement: {fileID: 230428626}
 --- !u!1 &1511718002
 GameObject:
   m_ObjectHideFlags: 0
