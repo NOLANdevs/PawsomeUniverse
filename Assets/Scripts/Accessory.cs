@@ -15,7 +15,8 @@ public class Accessory : MonoBehaviour
     {
         Hat,
         Ears,
-        Glasses
+        Glasses,
+        TallHat,
     }
 
     public Colour colour;
