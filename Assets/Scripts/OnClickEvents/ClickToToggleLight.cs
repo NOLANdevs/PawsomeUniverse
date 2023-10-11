@@ -1,13 +1,13 @@
 using UnityEngine;
-
+using UnityEngine.Rendering.Universal;
 
 public class ClickToToggleLight : MonoBehaviour
 {
-    public UnityEngine.Rendering.Universal.Light2D light2D;  // Assign the 2D light GameObject in the Inspector
+    public Light2D light2D;  
+    private bool canInteract = true; // Flag to control interactions
 
     private void Start()
     {
-        // Make sure to assign the Light2D component in the Inspector
         if (light2D == null)
         {
             Debug.LogWarning("Light2D component not assigned!");
@@ -16,10 +16,22 @@ public class ClickToToggleLight : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Toggle the light on and off
+        if (canInteract && light2D != null)
+        {
+            ToggleLight();
+        }
+    }
+
+    public void ToggleLight()
+    {
         if (light2D != null)
         {
             light2D.enabled = !light2D.enabled;
         }
+    }
+
+    public void SetInteract(bool state)
+    {
+        canInteract = state;
     }
 }

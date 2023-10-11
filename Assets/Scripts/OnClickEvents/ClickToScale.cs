@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class ScaleOnButtonClick : MonoBehaviour
+public class ClickToScale : MonoBehaviour
 {
     private float scaleSpeed = 12f; // speed of scaling
     private Vector3 originalScale; // original scale of sprite
     private bool isScaling = false; // check if scaling
     private float scaleNum = 0.005f;
-
     private Coroutine scaleCoroutine; // ref to scaling coroutine
+    private bool canInteract = true; // Flag to control interactions
 
     private void Start()
     {
@@ -17,14 +17,14 @@ public class ScaleOnButtonClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isScaling)
+        if (canInteract && !isScaling)
         {
             // start scaling animation
             if (scaleCoroutine != null)
             {
-                // If prev animation is still running, stop prev animation
+                // If the previous animation is still running, stop the previous animation
                 StopCoroutine(scaleCoroutine);
-                ResetScale(); // reset scale to original size
+                ResetScale(); // reset scale to the original size
             }
 
             scaleCoroutine = StartCoroutine(ScaleSprite());
@@ -59,5 +59,10 @@ public class ScaleOnButtonClick : MonoBehaviour
     private void ResetScale()
     {
         transform.localScale = originalScale;
+    }
+
+    public void SetInteract(bool state)
+    {
+        canInteract = state;
     }
 }
