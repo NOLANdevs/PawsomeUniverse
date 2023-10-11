@@ -28,7 +28,9 @@ public class AccessoryManager : MonoBehaviour
             // If a different accessory is equipped, unequip the previous accessory
             if (currentAccessory != prevAccessory)
             {
-                UnequipAccessory(prevAccessory);
+                if (prevAccessory!= null){
+                    prevAccessory.isEquipped = false;
+                }
             }
 
             // Invert the state of the current accessory
@@ -39,6 +41,8 @@ public class AccessoryManager : MonoBehaviour
             if (currentAccessory.isEquipped)
             {
                 EquipAccessory(currentAccessory);
+            } else{
+                UnequipAccessory(currentAccessory);
             }
 
             // Update the previous accessory to the current one
@@ -57,7 +61,7 @@ public class AccessoryManager : MonoBehaviour
             playerHead.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
 
             // Check accessory type and position correctly
-            if (accessory.type == Accessory.Type.Hat)
+            if (accessory.type == Accessory.Type.Hat || accessory.type == Accessory.Type.Ears)
             {
                 // Position for hats
                 playerHead.transform.localPosition = new Vector3(0.45f, 11.6f, 0.1f);
@@ -82,7 +86,6 @@ public class AccessoryManager : MonoBehaviour
             SpriteRenderer playerHeadRenderer = playerHead.GetComponent<SpriteRenderer>();
 
             playerHeadRenderer.sprite = null;
-            accessory.isEquipped = false;
         }
     }
 }
