@@ -6,6 +6,7 @@ public class ClickToChangeSprite : MonoBehaviour
     public Sprite sprite2;
 
     private SpriteRenderer spriteRenderer;
+    private bool canInteract = true; // Flag to control interactions
 
     private void Start()
     {
@@ -14,11 +15,14 @@ public class ClickToChangeSprite : MonoBehaviour
 
     private void OnMouseDown()
     {
-        ChangeSprite();
-
+        if (canInteract)
+        {
+            ChangeSprite();
+        }
     }
 
-    public void ChangeSprite(){
+    public void ChangeSprite()
+    {
         if (spriteRenderer.sprite == sprite1)
         {
             spriteRenderer.sprite = sprite2;
@@ -27,5 +31,10 @@ public class ClickToChangeSprite : MonoBehaviour
         {
             spriteRenderer.sprite = sprite1;
         }
+    }
+
+    public void SetInteract(bool state)
+    {
+        canInteract = state;
     }
 }

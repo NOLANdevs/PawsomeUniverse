@@ -3,7 +3,9 @@ using UnityEngine;
 public class ToggleAccessoryMenu : MonoBehaviour
 {
     public GameObject accessoryMenu;  
-    public Movement playerMovement;  
+    public Movement playerMovement; 
+    public ToggleOnClick toggleOnClick; 
+    private bool canInteract = true;
 
     private bool isAccessoryMenuActive = false;
 
@@ -16,7 +18,15 @@ public class ToggleAccessoryMenu : MonoBehaviour
     // if clicked, toggle menu
     private void OnMouseDown()
     {
-        ToggleMenu();
+        if (canInteract){
+            ToggleMenu();
+            toggleOnClick.ToggleInteraction(false);
+            changeInteraction();
+        }
+    }
+
+    public void changeInteraction(){
+        canInteract = !canInteract;
     }
 
     public void ToggleMenu()
