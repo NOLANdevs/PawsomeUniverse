@@ -9,7 +9,7 @@ public class AccessoryManager : MonoBehaviour
     public TextMeshProUGUI equipButton;
 
     private Accessory currentAccessory = null;
-    private Accessory prevAccessory = null;
+    public Accessory prevAccessory = null;
     public GameObject playerHead; // Reference to accessory display area
 
     public void ShowDescription(Accessory accessory)
@@ -50,7 +50,7 @@ public class AccessoryManager : MonoBehaviour
     {
         if (playerHead != null && accessory.accessorySprite != null)
         {
-            SpriteRenderer playerHeadRenderer = playerHead.GetComponent<SpriteRenderer();
+            SpriteRenderer playerHeadRenderer = playerHead.GetComponent<SpriteRenderer>();
 
             playerHeadRenderer.sprite = accessory.accessorySprite;
 
@@ -79,9 +79,10 @@ public class AccessoryManager : MonoBehaviour
     {
         if (playerHead != null && accessory != null)
         {
-            SpriteRenderer playerHeadRenderer = playerHead.GetComponent<SpriteRenderer();
+            SpriteRenderer playerHeadRenderer = playerHead.GetComponent<SpriteRenderer>();
 
             playerHeadRenderer.sprite = null;
+            accessory.isEquipped = false;
         }
     }
 }
