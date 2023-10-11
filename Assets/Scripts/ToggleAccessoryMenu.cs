@@ -19,7 +19,7 @@ public class ToggleAccessoryMenu : MonoBehaviour
         ToggleMenu();
     }
 
-    private void ToggleMenu()
+    public void ToggleMenu()
     {
         isAccessoryMenuActive = !isAccessoryMenuActive;
 
