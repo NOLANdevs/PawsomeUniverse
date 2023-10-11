@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Accessory : MonoBehaviour
 {
@@ -13,12 +14,16 @@ public class Accessory : MonoBehaviour
     public enum Type
     {
         Hat,
+        Ears,
         Glasses
     }
 
     public Colour colour;
     public Type type;
 
-    private Sprite sprite;
+    public string description; 
+    public string title;
+    public bool isEquipped; 
+    public Sprite accessorySprite;
 
 }

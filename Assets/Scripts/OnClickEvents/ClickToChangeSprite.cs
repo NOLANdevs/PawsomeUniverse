@@ -14,6 +14,11 @@ public class ClickToChangeSprite : MonoBehaviour
 
     private void OnMouseDown()
     {
+        ChangeSprite();
+
+    }
+
+    public void ChangeSprite(){
         if (spriteRenderer.sprite == sprite1)
         {
             spriteRenderer.sprite = sprite2;
