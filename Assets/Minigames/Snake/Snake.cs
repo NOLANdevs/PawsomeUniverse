@@ -37,11 +37,11 @@ public class Snake : MonoBehaviour
     private void Update()
     {
         // Change Direction based on key clicked
-        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isAlive && direction != Vector2.down)
+        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isAlive && (direction != Vector2.down))
         {
             direction = Vector2.up;
         }
-        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && isAlive && direction != Vector2.right)
+        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && isAlive && (direction != Vector2.right))
         {
             direction = Vector2.left;
         }
@@ -49,7 +49,7 @@ public class Snake : MonoBehaviour
         {
             direction = Vector2.down;
         }
-        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && isAlive && direction != Vector2.left)
+        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && isAlive && (direction != Vector2.left))
         {
             direction = Vector2.right;
         }
@@ -63,16 +63,16 @@ public class Snake : MonoBehaviour
 
             if (moveTimer >= moveInterval)
             {
+                for (int i = segments.Count - 1; i > 0; i--)
+                {
+                    segments[i].position = segments[i - 1].position;
+                }
+
                 this.transform.position = new Vector3(
                     Mathf.Round(this.transform.position.x) + direction.x,
                     Mathf.Round(this.transform.position.y) + direction.y,
                     0.0f
                 );
-
-                for (int i = segments.Count - 1; i > 0; i--)
-                {
-                    segments[i].position = segments[i - 1].position;
-                }
 
                 moveTimer = 0.0f;
             }
@@ -112,6 +112,13 @@ public class Snake : MonoBehaviour
     public void GameOver()
     {
         isAlive = false;
+
+        this.transform.position = new Vector3(
+                   Mathf.Round(this.transform.position.x) - direction.x,
+                   Mathf.Round(this.transform.position.y) - direction.y,
+                   0.0f
+               );
+
         gameOverScreen.SetActive(true);
     }
 
