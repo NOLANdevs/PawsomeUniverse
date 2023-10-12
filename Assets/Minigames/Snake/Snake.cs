@@ -27,6 +27,10 @@ public class Snake : MonoBehaviour
     private Database coinsDB;
     public string homeScene;
 
+    private void Awake()
+    {
+        this.coinsDB = DatabaseInterface.statsDB;
+    }
 
     private void Start()
     {
