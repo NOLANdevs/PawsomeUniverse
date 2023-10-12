@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Fruit
   - Spikes
+  - SnakeWalls
   layers:
   - Default
   - TransparentFX
@@ -20,30 +21,30 @@ TagManager:
   - UI
   - Ground
   - Item
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ball
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Background
     uniqueID: 2639765791
