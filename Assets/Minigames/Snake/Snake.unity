@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 11729141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -14, z: 0}
+  m_LocalPosition: {x: 0, y: -14, z: -2}
   m_LocalScale: {x: 50, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -413,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 215474747}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25, y: 0, z: 0}
+  m_LocalPosition: {x: -25, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 29, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -822,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea65288f7113488197fe236d9ac4baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveInterval: 0.1
   segmentPrefab: {fileID: 4596401840334498415, guid: 0139eb0e79bc640218791ac17aa2454c, type: 3}
   playerScore: 0
   scoreIncrease: 1
@@ -1127,7 +1128,7 @@ Transform:
   m_GameObject: {fileID: 830999224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25, y: 0, z: 0}
+  m_LocalPosition: {x: 25, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 29, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1335,7 +1336,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129389975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1343,7 +1344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -696, y: 293}
+  m_AnchoredPosition: {x: -731, y: 344}
   m_SizeDelta: {x: 293.4258, y: 272.8467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129389977
@@ -1368,10 +1369,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a3129f05d86994577bee47c09a1efe39, type: 3}
-    m_FontSize: 200
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 200
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1890,7 +1891,7 @@ Transform:
   m_GameObject: {fileID: 1619836373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14, z: 0}
+  m_LocalPosition: {x: 0, y: 14, z: -2}
   m_LocalScale: {x: 50, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
