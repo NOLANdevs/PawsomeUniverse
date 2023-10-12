@@ -89,7 +89,7 @@ public class Snake : MonoBehaviour
         {
             Grow();
         }
-        else if (other.tag == "SnakeWalls")
+        else if ((other.tag == "SnakeWalls") && moveTimer == 0.0f)
         {
             GameOver();
         }
