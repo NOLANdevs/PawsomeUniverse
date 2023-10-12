@@ -7,20 +7,20 @@ public class SelectYourPetMenu : MonoBehaviour
 
     public enum ChosenPet
     {
-        FROG,
-        FOO,
+        Frog,
+        Octopus,
     }
 
     private ChosenPet chosenPet;
 
     public void SelectFrog()
     {
-        chosenPet = ChosenPet.FROG;
+        chosenPet = ChosenPet.Frog;
     }
 
-    public void SelectFoo()
+    public void SelectOctopus()
     {
-        chosenPet = ChosenPet.FOO;
+        chosenPet = ChosenPet.Octopus;
     }
 
     public void PetSelected()
