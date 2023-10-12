@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class ScaleOnButtonClick : MonoBehaviour
+public class ClickToScale : MonoBehaviour
 {
-    public float minScale = 0.5f;  // Minimum scale when shrunk
-    public float maxScale = 2f;    // Maximum scale when expanded
-    public float scaleSpeed = 1f;  // Speed of scaling
-
-    private Vector3 originalScale; // Original scale of the sprite
-    private bool isShrinking = false; // Track if sprite is shrinking
+    private float scaleSpeed = 12f; // speed of scaling
+    private Vector3 originalScale; // original scale of sprite
+    private bool isScaling = false; // check if scaling
+    private float scaleNum = 0.005f;
+    private Coroutine scaleCoroutine; // ref to scaling coroutine
+    private bool canInteract = true; // Flag to control interactions
 
     private void Start()
     {
@@ -17,35 +17,52 @@ public class ScaleOnButtonClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isShrinking)
+        if (canInteract && !isScaling)
         {
-            // Start shrinking coroutine
-            StartCoroutine(ShrinkSprite());
+            // start scaling animation
+            if (scaleCoroutine != null)
+            {
+                // If the previous animation is still running, stop the previous animation
+                StopCoroutine(scaleCoroutine);
+                ResetScale(); // reset scale to the original size
+            }
+
+            scaleCoroutine = StartCoroutine(ScaleSprite());
         }
     }
 
-    private IEnumerator ShrinkSprite()
+    private IEnumerator ScaleSprite()
     {
-        isShrinking = true;
+        isScaling = true;
 
-        // Shrink the sprite
-        float t = 0f;
-        while (t < 1f)
+        // scale down sprite
+        while (transform.localScale.x > originalScale.x - scaleNum)
         {
-            t += Time.deltaTime * scaleSpeed;
-            transform.localScale = Vector3.Lerp(originalScale, new Vector3(minScale, minScale, minScale), t);
+            transform.localScale -= new Vector3(scaleNum, scaleNum, scaleNum) * scaleSpeed * Time.deltaTime;
             yield return null;
         }
 
-        // Expand the sprite
-        t = 0f;
-        while (t < 1f)
+        transform.localScale = originalScale - new Vector3(scaleNum, scaleNum, scaleNum);
+
+        // scale up sprite
+        while (transform.localScale.x < originalScale.x + scaleNum)
         {
-            t += Time.deltaTime * scaleSpeed;
-            transform.localScale = Vector3.Lerp(new Vector3(minScale, minScale, minScale), originalScale, t);
+            transform.localScale += new Vector3(scaleNum, scaleNum, scaleNum) * scaleSpeed * Time.deltaTime;
             yield return null;
         }
 
-        isShrinking = false;
+        transform.localScale = originalScale + new Vector3(scaleNum, scaleNum, scaleNum);
+
+        isScaling = false;
+    }
+
+    private void ResetScale()
+    {
+        transform.localScale = originalScale;
+    }
+
+    public void SetInteract(bool state)
+    {
+        canInteract = state;
     }
 }
