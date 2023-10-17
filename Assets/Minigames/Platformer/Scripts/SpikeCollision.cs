@@ -6,7 +6,6 @@ public class SpikeCollision : MonoBehaviour
 {
     public PlatformerLogic logic;
 
-    // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Spikes").GetComponent<PlatformerLogic>();

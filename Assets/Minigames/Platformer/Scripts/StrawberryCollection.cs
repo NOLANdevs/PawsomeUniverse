@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StrawberryCollection : MonoBehaviour
 {
-    private int strawberry = 0;
+    public static int strawberry = 0;
     [SerializeField] private Text strawberryText;
 
     private void OnTriggerEnter2D(Collider2D collision)

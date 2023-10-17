@@ -12,6 +12,8 @@ public class PlatformerMovement : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
 
+    public static bool isAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +25,19 @@ public class PlatformerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        Vector2 moveDirection = new Vector2(x, 0f); // Store move direction for idle check
-        rigidBody.velocity = new Vector2(x * moveSpeed, rigidBody.velocity.y);
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (isAlive)
         {
-            Jump();
-        }
+            float x = Input.GetAxisRaw("Horizontal");
+            Vector2 moveDirection = new Vector2(x, 0f); // Store move direction for idle check
+            rigidBody.velocity = new Vector2(x * moveSpeed, rigidBody.velocity.y);
 
-        CheckIdle(moveDirection);
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
+            {
+                Jump();
+            }
+
+            CheckIdle(moveDirection);
+        }
     }
 
     public void CheckIdle(Vector2 moveDirection)
