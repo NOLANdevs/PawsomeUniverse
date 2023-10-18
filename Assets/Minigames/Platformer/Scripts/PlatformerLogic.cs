@@ -8,32 +8,32 @@ public class PlatformerLogic : MonoBehaviour
 {
     public Text scoreText;
     public GameObject GameOverScreen;
+    public GameObject animatorHolder;
     private Database coinsDB;
     public string homeScene;
 
     void Awake()
     {
         this.coinsDB = DatabaseInterface.statsDB;
+        PlatformerMovement.isAlive = true;
     }
 
-
-    [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
         StrawberryCollection.strawberry += scoreToAdd;
         scoreText.text = StrawberryCollection.strawberry.ToString();
     }
 
-    // Start is called before the first frame update
     public void gameRestart()
     {
+        PlatformerMovement.isAlive = true;
         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) + StrawberryCollection.strawberry);
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void gameOver()
-    {
+    { 
         PlatformerMovement.isAlive = false;
         GameOverScreen.SetActive(true);
     }
