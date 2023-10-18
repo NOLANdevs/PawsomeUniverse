@@ -1,31 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectYourPetMenu : MonoBehaviour
 {
 
-    public enum ChosenPet
-    {
-        Frog,
-        Octopus,
-    }
-
-    private ChosenPet chosenPet;
-
     public void SelectFrog()
     {
-        chosenPet = ChosenPet.Frog;
+        PlayerPrefs.SetString("NewPetType", "Frog");
     }
 
     public void SelectOctopus()
     {
-        chosenPet = ChosenPet.Octopus;
+        PlayerPrefs.SetString("NewPetType", "Octopus");
     }
 
     public void PetSelected()
     {
         Debug.Log("Unimplemented");
+        PlayerPrefs.SetInt("CreateNewPet", 1);
+        SceneManager.LoadScene("Main");
     }
 
 }

@@ -9,11 +9,11 @@ public class DatabaseInterface : MonoBehaviour
 {
     public static Database animalsDB, statsDB;
 
+    public Dictionary<int, Animal> animals;
     public Animal curAnimal;
     public int autosaveInterval = 60; // seconds
     public GameObject saveText;
 
-    private Dictionary<int, Animal> animals;
     private float timeSinceLastSave = 0;
 
     void Awake()
@@ -22,19 +22,12 @@ public class DatabaseInterface : MonoBehaviour
         statsDB = ScriptableObject.CreateInstance<Database>();
         animalsDB.Init("animals.db");
         statsDB.Init("stats.db");
+        loadAnimals();
+        loadStats();
     }
 
     void Start()
     {
-        loadAnimals();
-        loadStats();
-
-        List<Animal> list = new List<Animal>(this.animals.Values);
-        if (list.Count > 0)
-        {
-            Animal selected = list[0]; // default to first animal for now
-            applyToPlayer(selected);
-        }
     }
 
     void Update()
@@ -65,12 +58,6 @@ public class DatabaseInterface : MonoBehaviour
         // save to DB
         saveAnimals();
         saveStats();
-    }
-
-    private void applyToPlayer(Animal selected)
-    {
-        AnimalStore store = new AnimalStore(selected);
-        store.applyToAnimal(this.curAnimal);
     }
 
     private void storeCurAnimal()
