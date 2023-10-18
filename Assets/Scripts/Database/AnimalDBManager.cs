@@ -5,29 +5,21 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DatabaseInterface : MonoBehaviour
+public class AnimalDBManager : IDatabaseManager
 {
-    public static Database animalsDB, statsDB;
-
+    public static Database animalsDB;
+    public Dictionary<int, Animal> animals;
     public Animal curAnimal;
-    public int autosaveInterval = 60; // seconds
-    public GameObject saveText;
-
-    private Dictionary<int, Animal> animals;
-    private float timeSinceLastSave = 0;
 
     void Awake()
     {
         animalsDB = ScriptableObject.CreateInstance<Database>();
-        statsDB = ScriptableObject.CreateInstance<Database>();
         animalsDB.Init("animals.db");
-        statsDB.Init("stats.db");
     }
 
     void Start()
     {
         loadAnimals();
-        loadStats();
 
         List<Animal> list = new List<Animal>(this.animals.Values);
         if (list.Count > 0)
@@ -37,34 +29,13 @@ public class DatabaseInterface : MonoBehaviour
         }
     }
 
-    void Update()
+    public override void Save()
     {
-        // Autosaving
-        timeSinceLastSave += Time.deltaTime;
-        if (timeSinceLastSave > autosaveInterval)
-        {
-            Save();
-        }
-
-        // Hide saving text after 1 second
-        if (timeSinceLastSave > 1)
-        {
-            saveText.SetActive(false);
-        }
-    }
-
-    public void Save()
-    {
-        // show save text
-        timeSinceLastSave = 0;
-        saveText.SetActive(true);
-
         // save current animal to loaded list
         storeCurAnimal();
 
         // save to DB
         saveAnimals();
-        saveStats();
     }
 
     private void applyToPlayer(Animal selected)
@@ -126,23 +97,4 @@ public class DatabaseInterface : MonoBehaviour
         AnimalStore store = new AnimalStore(animal);
         animalsDB.Write(store.createCSVLine());
     }
-
-    private void saveStats()
-    {
-        statsDB.Clear();
-        statsDB.Write(PlayerPrefs.GetInt("Coins").ToString());
-    }
-
-    private void loadStats()
-    {
-        try
-        {
-            PlayerPrefs.SetInt("Coins", int.Parse(statsDB.Read()));
-        }
-        catch (FormatException)
-        {
-            // leave Coins undefined
-        }
-    }
-
 }
