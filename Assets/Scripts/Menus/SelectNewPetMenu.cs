@@ -18,7 +18,6 @@ public class SelectYourPetMenu : MonoBehaviour
 
     public void PetSelected()
     {
-        Debug.Log("Unimplemented");
         PlayerPrefs.SetInt("CreateNewPet", 1);
         SceneManager.LoadScene("Main");
     }

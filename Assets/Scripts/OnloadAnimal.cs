@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class OnloadAnimal : MonoBehaviour
 {
-    public DatabaseInterface database;
-    public Animal animalObject;
+    [System.Serializable]
+    public struct AnimalModelMap
+    {
+        public string animal;
+        public GameObject modelPrefab;
+    }
 
-    void Start()
+    public DatabaseInterface database;
+    public GameObject animalObject;
+    public AnimalModelMap[] animalModels;
+
+    void Awake()
     {
         bool doNewPet = PlayerPrefs.GetInt("CreateNewPet", 0) == 1;
         // exit if a new pet is not being made
         if (doNewPet)
         {
             setNewPet();
-            Debug.Log("setNewPet()");
         }
         else
         {
             setSavedPet();
-            Debug.Log("setSavedPet");
         }
 
+    }
+
+    void Start()
+    {
     }
 
     void Update()
@@ -30,7 +40,32 @@ public class OnloadAnimal : MonoBehaviour
 
     private void setNewPet()
     {
+        // Delete default animal data
+        Animal oldScript = animalObject.GetComponent<Animal>();
+        if (oldScript != null)
+        {
+            Destroy(oldScript);
+        }
+
+        // Load new pet
         string newPet = PlayerPrefs.GetString("NewPetType");
+        if (newPet == "Octopus")
+        {
+            Animal animal = animalObject.AddComponent<Animal>();
+            animal.species = Animal.Species.Octopus;
+            animal.colour = Animal.Colour.Magenta;
+        }
+        else
+        {
+            Debug.Log("Unimplemented.");
+            Animal animal = animalObject.AddComponent<Animal>();
+        }
+        GameObject animalPrefab = getPrefabForAnimal(newPet);
+        GameObject newAnimalObject = Instantiate(animalPrefab);
+        newAnimalObject.transform.parent = animalObject.transform;
+        newAnimalObject.transform.localPosition = animalPrefab.transform.localPosition;
+        newAnimalObject.transform.localScale = animalPrefab.transform.localScale;
+        newAnimalObject.tag = "Animated";
     }
 
     private void setSavedPet()
@@ -46,6 +81,18 @@ public class OnloadAnimal : MonoBehaviour
     private void applyToPlayer(Animal selected)
     {
         AnimalStore store = new AnimalStore(selected);
-        store.applyToAnimal(this.animalObject);
+        store.applyToAnimal(this.animalObject.GetComponent<Animal>());
+    }
+
+    private GameObject getPrefabForAnimal(string animal)
+    {
+        foreach (AnimalModelMap data in this.animalModels)
+        {
+            if (data.animal == animal)
+            {
+                return data.modelPrefab;
+            }
+        }
+        return null;
     }
 }

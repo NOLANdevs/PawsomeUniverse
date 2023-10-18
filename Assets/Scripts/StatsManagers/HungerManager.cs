@@ -6,20 +6,19 @@ public class HungerManager : MonoBehaviour
 {
 
     public Animal animal;
-    public GameObject animatorHolder;
     public HungerBar hungerBar;
     public float eatingTime = 0.1f;
 
     private Animator animator;
     private float timeSinceStartedEating = 0f;
 
-    public void Start()
+    void Start()
     {
         animal = GetComponent<Animal>();
-        animator = animatorHolder.GetComponent<Animator>();
+        animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
     }
 
-    private void Update()
+    void Update()
     {
         timeSinceStartedEating += Time.deltaTime;
         if (timeSinceStartedEating > eatingTime)
