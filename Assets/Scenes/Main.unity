@@ -1775,8 +1775,12 @@ MonoBehaviour:
   animalModels:
   - animal: Frog
     modelPrefab: {fileID: 7927454525812141008, guid: 78deb59ffb159dd4894751f8478854ba, type: 3}
+    species: 0
+    colour: 1
   - animal: Octopus
     modelPrefab: {fileID: 4238417247887557845, guid: 505baa16d36d98043b00fee468d59e58, type: 3}
+    species: 1
+    colour: 2
 --- !u!1 &372990899
 GameObject:
   m_ObjectHideFlags: 0

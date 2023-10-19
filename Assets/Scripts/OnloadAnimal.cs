@@ -9,6 +9,8 @@ public class OnloadAnimal : MonoBehaviour
     {
         public string animal;
         public GameObject modelPrefab;
+        public Animal.Species species;
+        public Animal.Colour colour;
     }
 
     public AnimalDBManager animalDB;
@@ -49,19 +51,14 @@ public class OnloadAnimal : MonoBehaviour
 
         // Load new pet
         string newPet = PlayerPrefs.GetString("NewPetType");
-        if (newPet == "Octopus")
-        {
-            Animal animal = animalObject.AddComponent<Animal>();
-            animal.species = Animal.Species.Octopus;
-            animal.colour = Animal.Colour.Magenta;
-        }
-        else
-        {
-            Debug.Log("Unimplemented.");
-            Animal animal = animalObject.AddComponent<Animal>();
-        }
-        GameObject animalPrefab = getPrefabForAnimal(newPet);
-        GameObject newAnimalObject = Instantiate(animalPrefab);
+        Animal animal = animalObject.AddComponent<Animal>(); // Create animal component
+        // Set animal's data
+        AnimalModelMap animalData = getDataForAnimal(newPet);
+        animal.species = animalData.species;
+        animal.colour = animalData.colour;
+        GameObject animalPrefab = animalData.modelPrefab;
+        GameObject newAnimalObject = Instantiate(animalPrefab); // Instantiate the prefab model
+        // Set animal's variables
         newAnimalObject.transform.parent = animalObject.transform;
         newAnimalObject.transform.localPosition = animalPrefab.transform.localPosition;
         newAnimalObject.transform.localScale = animalPrefab.transform.localScale;
@@ -84,15 +81,15 @@ public class OnloadAnimal : MonoBehaviour
         store.applyToAnimal(this.animalObject.GetComponent<Animal>());
     }
 
-    private GameObject getPrefabForAnimal(string animal)
+    private AnimalModelMap getDataForAnimal(string animal)
     {
         foreach (AnimalModelMap data in this.animalModels)
         {
             if (data.animal == animal)
             {
-                return data.modelPrefab;
+                return data;
             }
         }
-        return null;
+        return new AnimalModelMap();
     }
 }
