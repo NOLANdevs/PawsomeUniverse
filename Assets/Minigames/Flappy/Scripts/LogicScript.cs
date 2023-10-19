@@ -16,7 +16,7 @@ public class LogicScript : MonoBehaviour
 
     void Awake()
     {
-        this.coinsDB = DatabaseInterface.statsDB;
+        this.coinsDB = StatsDBManager.statsDB;
     }
 
     [ContextMenu("Increase Score")]
