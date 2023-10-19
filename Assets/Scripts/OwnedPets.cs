@@ -5,17 +5,10 @@ using UnityEngine;
 public class OwnedPets : MonoBehaviour
 {
 
-    [System.Serializable]
-    public struct AnimalModels
-    {
-        public Animal.Species species;
-        public GameObject prefab;
-    }
-
     public AnimalDBManager animalDB;
     public List<Animal> animals;
     public GameObject parent;
-    public AnimalModels[] animalModels;
+    public PrefabLoader prefabLoader;
 
     void Start()
     {
@@ -31,9 +24,8 @@ public class OwnedPets : MonoBehaviour
             // Instantiate animal
             GameObject animalObj = instantiateAnimal(animal);
             animalObj.transform.parent = parent.transform;
-            // Apply prefab model to the animal
-            GameObject animalPrefab = findAnimalData(animal.species).prefab;
-            GameObject animalModel = ObjectLoader.LoadPrefabAsChild(animalPrefab, animalObj);
+            // Spawn animal model as child of animal object
+            GameObject animalModel = prefabLoader.LoadAnimalAsChild(animal.species, animalObj);
             animalModel.tag = "Animated";
         }
     }
@@ -45,17 +37,5 @@ public class OwnedPets : MonoBehaviour
         Animal animalComponent = animalObj.AddComponent<Animal>();
         store.applyToAnimal(animalComponent);
         return animalObj;
-    }
-
-    private AnimalModels findAnimalData(Animal.Species species)
-    {
-        foreach (AnimalModels data in this.animalModels)
-        {
-            if (data.species == species)
-            {
-                return data;
-            }
-        }
-        return new AnimalModels();
     }
 }

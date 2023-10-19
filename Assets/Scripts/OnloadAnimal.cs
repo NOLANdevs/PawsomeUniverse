@@ -16,6 +16,7 @@ public class OnloadAnimal : MonoBehaviour
     public AnimalDBManager animalDB;
     public GameObject animalObject;
     public AnimalModelMap[] animalModels;
+    public PrefabLoader prefabLoader;
 
     void Awake()
     {
@@ -57,7 +58,7 @@ public class OnloadAnimal : MonoBehaviour
         animal.species = animalData.species;
         animal.colour = animalData.colour;
         // Load prefab as child
-        GameObject newAnimalObject = ObjectLoader.LoadPrefabAsChild(animalData.modelPrefab, animalObject);
+        GameObject newAnimalObject = prefabLoader.LoadPrefabAsChild(animalData.modelPrefab, animalObject);
         newAnimalObject.tag = "Animated";
     }
 

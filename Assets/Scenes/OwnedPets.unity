@@ -239,6 +239,7 @@ Transform:
   - {fileID: 248408440}
   - {fileID: 1851768782}
   - {fileID: 1594695917}
+  - {fileID: 799796155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248408437
@@ -411,6 +412,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &799796154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799796155}
+  - component: {fileID: 799796156}
+  m_Layer: 0
+  m_Name: PetModelLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799796155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799796154}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 130413258}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799796156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799796154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e8c0cc94f5cd34986469d0a9bd5d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalModels:
+  - species: 0
+    prefab: {fileID: 7927454525812141008, guid: 78deb59ffb159dd4894751f8478854ba, type: 3}
+  - species: 1
+    prefab: {fileID: 4238417247887557845, guid: 505baa16d36d98043b00fee468d59e58, type: 3}
 --- !u!1 &1217308698
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,11 +1022,7 @@ MonoBehaviour:
   animalDB: {fileID: 1594695918}
   animals: []
   parent: {fileID: 1468274316}
-  animalModels:
-  - species: 0
-    prefab: {fileID: 7927454525812141008, guid: 78deb59ffb159dd4894751f8478854ba, type: 3}
-  - species: 1
-    prefab: {fileID: 4238417247887557845, guid: 505baa16d36d98043b00fee468d59e58, type: 3}
+  prefabLoader: {fileID: 799796156}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
