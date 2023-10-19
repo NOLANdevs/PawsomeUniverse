@@ -971,6 +971,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalDB: {fileID: 1594695918}
   animals: []
+  parent: {fileID: 1468274316}
+  animalModels:
+  - species: 0
+    prefab: {fileID: 7927454525812141008, guid: 78deb59ffb159dd4894751f8478854ba, type: 3}
+  - species: 1
+    prefab: {fileID: 4238417247887557845, guid: 505baa16d36d98043b00fee468d59e58, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
