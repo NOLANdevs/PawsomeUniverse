@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class OwnedPets : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class OwnedPets : MonoBehaviour
     public List<Animal> animals;
     public GameObject parent;
     public PrefabLoader prefabLoader;
+    public GameObject textLabelPrefab;
 
     public int startX = 0;
     public int startY = 0;
@@ -37,13 +40,26 @@ public class OwnedPets : MonoBehaviour
     {
         foreach (var animal in animals)
         {
+            // Container
+            GameObject container = new GameObject("Animal" + animal.id + "Container");
+            container.transform.SetParent(parent.transform);
+            container.transform.localPosition = new Vector3(curX, curY, 0);
+            GameObject textLabelObj = prefabLoader.LoadPrefabAsChild(textLabelPrefab, container);
+
             // Instantiate animal
             GameObject animalObj = instantiateAnimal(animal);
             animalObj.transform.localScale = new Vector3(this.scale, this.scale, 1);
-            animalObj.transform.parent = parent.transform;
+            animalObj.transform.SetParent(container.transform);
+            animalObj.transform.localPosition = Vector3.zero;
 
-            // Set animal location
-            animalObj.transform.localPosition = new Vector3(curX, curY, 0);
+            // Instantiate label
+            var textComponent = textLabelObj.GetComponent<TextMeshProUGUI>();
+            if (animal.animalName.Length > 0)
+            {
+                textComponent.text = animal.animalName;
+            }
+
+            // Set objects' locations
 
             // Increase coordinates
             curX += separation;

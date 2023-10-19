@@ -1023,6 +1023,7 @@ MonoBehaviour:
   animals: []
   parent: {fileID: 1468274316}
   prefabLoader: {fileID: 799796156}
+  textLabelPrefab: {fileID: 841952129321554864, guid: d2aee1b155a89274092b2b7a72174176, type: 3}
   startX: -600
   startY: 0
   maxX: 1200
