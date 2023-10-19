@@ -19,14 +19,6 @@ public class AnimalDBManager : IDatabaseManager
 
     void Start()
     {
-        loadAnimals();
-
-        List<Animal> list = new List<Animal>(this.animals.Values);
-        if (list.Count > 0)
-        {
-            Animal selected = list[0]; // default to first animal for now
-            applyToPlayer(selected);
-        }
     }
 
     public override void Save()

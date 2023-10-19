@@ -1241,7 +1241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 5
-  animatorHolder: {fileID: 105642681}
 --- !u!114 &230428627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,7 +1255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   animalName: 
-  colour: 2
+  colour: 1
   species: 0
   love: 0.5
   hunger: 0.5
@@ -1399,7 +1398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: {fileID: 230428627}
-  animatorHolder: {fileID: 105642681}
   hungerBar: {fileID: 3059791525518707988}
   eatingTime: 0.1
 --- !u!114 &230428633
@@ -1772,7 +1770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baae071a310b9744ab9bd15717d9801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  database: {fileID: 299888969}
+  animalDB: {fileID: 299888971}
   animalObject: {fileID: 230428624}
   animalModels:
   - animal: Frog

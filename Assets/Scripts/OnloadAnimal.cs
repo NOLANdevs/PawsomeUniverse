@@ -11,7 +11,7 @@ public class OnloadAnimal : MonoBehaviour
         public GameObject modelPrefab;
     }
 
-    public DatabaseInterface database;
+    public AnimalDBManager animalDB;
     public GameObject animalObject;
     public AnimalModelMap[] animalModels;
 
@@ -70,7 +70,7 @@ public class OnloadAnimal : MonoBehaviour
 
     private void setSavedPet()
     {
-        List<Animal> list = new List<Animal>(database.animals.Values);
+        List<Animal> list = new List<Animal>(animalDB.animals.Values);
         if (list.Count > 0)
         {
             Animal selected = list[0]; // default to first animal for now // TODO
