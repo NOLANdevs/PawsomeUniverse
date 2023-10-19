@@ -28,9 +28,13 @@ public class OwnedPets : MonoBehaviour
     {
         foreach (var animal in animals)
         {
+            // Instantiate animal
             GameObject animalObj = instantiateAnimal(animal);
             animalObj.transform.parent = parent.transform;
-            instantiateAnimalModel(animal, animalObj);
+            // Apply prefab model to the animal
+            GameObject animalPrefab = findAnimalData(animal.species).prefab;
+            GameObject animalModel = ObjectLoader.LoadPrefabAsChild(animalPrefab, animalObj);
+            animalModel.tag = "Animated";
         }
     }
 
@@ -41,18 +45,6 @@ public class OwnedPets : MonoBehaviour
         Animal animalComponent = animalObj.AddComponent<Animal>();
         store.applyToAnimal(animalComponent);
         return animalObj;
-    }
-
-    private void instantiateAnimalModel(Animal animal, GameObject animalObject)
-    {
-        AnimalModels data = findAnimalData(animal.species);
-        GameObject animalPrefab = data.prefab;
-        GameObject animalModel = Instantiate(animalPrefab); // Instantiate the prefab model
-        // Set animal's variables
-        animalModel.transform.parent = animalObject.transform;
-        animalModel.transform.localPosition = animalPrefab.transform.localPosition;
-        animalModel.transform.localScale = animalPrefab.transform.localScale;
-        animalModel.tag = "Animated";
     }
 
     private AnimalModels findAnimalData(Animal.Species species)

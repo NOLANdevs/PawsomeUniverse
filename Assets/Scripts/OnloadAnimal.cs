@@ -56,12 +56,8 @@ public class OnloadAnimal : MonoBehaviour
         AnimalModelMap animalData = getDataForAnimal(newPet);
         animal.species = animalData.species;
         animal.colour = animalData.colour;
-        GameObject animalPrefab = animalData.modelPrefab;
-        GameObject newAnimalObject = Instantiate(animalPrefab); // Instantiate the prefab model
-        // Set animal's variables
-        newAnimalObject.transform.parent = animalObject.transform;
-        newAnimalObject.transform.localPosition = animalPrefab.transform.localPosition;
-        newAnimalObject.transform.localScale = animalPrefab.transform.localScale;
+        // Load prefab as child
+        GameObject newAnimalObject = ObjectLoader.LoadPrefabAsChild(animalData.modelPrefab, animalObject);
         newAnimalObject.tag = "Animated";
     }
 
