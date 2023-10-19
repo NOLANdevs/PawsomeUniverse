@@ -18,10 +18,14 @@ public class PlatformerLogic : MonoBehaviour
         PlatformerMovement.isAlive = true;
     }
 
+    private void Update()
+    {
+        scoreText.text = "Strawberries: " + StrawberryCollection.strawberry.ToString();
+    }
+
     public void addScore(int scoreToAdd)
     {
         StrawberryCollection.strawberry += scoreToAdd;
-        scoreText.text = StrawberryCollection.strawberry.ToString();
     }
 
     public void gameRestart()

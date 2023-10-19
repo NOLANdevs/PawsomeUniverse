@@ -14,7 +14,6 @@ public class StrawberryCollection : MonoBehaviour
         {
             Destroy(collision.gameObject);
             strawberry++;
-            strawberryText.text = "Strawberries: " + strawberry;
         }
     }
 }

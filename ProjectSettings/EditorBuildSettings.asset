@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/Platformer/Scene/Platformer1.unity
     guid: 608f261a4c0cc4c108adbd9038b10287
+  - enabled: 1
+    path: Assets/Minigames/Platformer/Scene/Platformer2.unity
+    guid: 83fae0bc9e5cc41ce87355c88a33c1f3
   m_configObjects: {}
