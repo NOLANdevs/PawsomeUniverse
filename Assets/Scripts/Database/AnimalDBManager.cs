@@ -19,6 +19,7 @@ public class AnimalDBManager : IDatabaseManager
 
     void Start()
     {
+        loadAnimals();
     }
 
     public override void Save()
@@ -28,6 +29,11 @@ public class AnimalDBManager : IDatabaseManager
 
         // save to DB
         saveAnimals();
+    }
+
+    public List<Animal> getAnimals()
+    {
+        return new List<Animal>(this.animals.Values);
     }
 
     private void storeCurAnimal()

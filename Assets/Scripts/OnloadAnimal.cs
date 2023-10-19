@@ -67,7 +67,7 @@ public class OnloadAnimal : MonoBehaviour
 
     private void setSavedPet()
     {
-        List<Animal> list = new List<Animal>(animalDB.animals.Values);
+        List<Animal> list = animalDB.getAnimals();
         if (list.Count > 0)
         {
             Animal selected = list[0]; // default to first animal for now // TODO

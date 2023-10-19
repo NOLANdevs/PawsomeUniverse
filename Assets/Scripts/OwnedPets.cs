@@ -5,16 +5,17 @@ using UnityEngine;
 public class OwnedPets : MonoBehaviour
 {
 
-    public DatabaseInterface database;
+    public AnimalDBManager animalDB;
     public List<Animal> animals;
 
     void Start()
     {
-        animals = new List<Animal>(database.animals.Values);
+        animals = animalDB.getAnimals();
     }
 
     void Update()
     {
+        return;
         foreach (var animal in animals)
         {
             Debug.Log(animal.id);
