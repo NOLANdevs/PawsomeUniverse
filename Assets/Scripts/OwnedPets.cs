@@ -10,6 +10,22 @@ public class OwnedPets : MonoBehaviour
     public GameObject parent;
     public PrefabLoader prefabLoader;
 
+    public int startX = 0;
+    public int startY = 0;
+    public int maxX = 1000;
+    public int maxY = 1000;
+    public int separation = 100;
+    public int scale = 1;
+
+    private int curX;
+    private int curY;
+
+    void Awake()
+    {
+        this.curX = startX;
+        this.curY = startY;
+    }
+
     void Start()
     {
         animals = animalDB.getAnimals();
@@ -23,7 +39,20 @@ public class OwnedPets : MonoBehaviour
         {
             // Instantiate animal
             GameObject animalObj = instantiateAnimal(animal);
+            animalObj.transform.localScale = new Vector3(this.scale, this.scale, 1);
             animalObj.transform.parent = parent.transform;
+
+            // Set animal location
+            animalObj.transform.localPosition = new Vector3(curX, curY, 0);
+
+            // Increase coordinates
+            curX += separation;
+            if (curX > maxX)
+            {
+                curX = startX;
+                curY += separation;
+            }
+
             // Spawn animal model as child of animal object
             GameObject animalModel = prefabLoader.LoadAnimalAsChild(animal.species, animalObj);
             animalModel.tag = "Animated";

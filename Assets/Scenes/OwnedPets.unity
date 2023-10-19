@@ -1023,6 +1023,12 @@ MonoBehaviour:
   animals: []
   parent: {fileID: 1468274316}
   prefabLoader: {fileID: 799796156}
+  startX: -600
+  startY: 0
+  maxX: 1200
+  maxY: 600
+  separation: 400
+  scale: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
