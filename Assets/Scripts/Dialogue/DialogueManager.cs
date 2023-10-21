@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        DisplayChoices(dialogue.playerResponse);
+
         DisplayNextSentence();
 
     }
@@ -42,7 +44,7 @@ public class DialogueManager : MonoBehaviour
             // if run out of sentence end the dialogue
             if (sentences.Count == 0)
             {
-                // display options
+                DisplayChoices(current.playerResponse);
             }
             else
             {
@@ -56,11 +58,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void DisplayChoices(string[] choices)
-    {
-        StartCoroutine(UpdateButtonChoices(choices));
-    }
-
-    private IEnumerator UpdateButtonChoices(string[] choices)
     {
         for (int i = 0; i < optionButton.Length; i++)
         {
@@ -80,8 +77,14 @@ public class DialogueManager : MonoBehaviour
             {
                 optionButton[i].gameObject.SetActive(false);
             }
+        }
+    }
 
-            yield return null; // Yield to allow UI to update
+    public void DisplayChoicesOnClick()
+    {
+        if (current != null)
+        {
+            DisplayChoices(current.playerResponse);
         }
     }
 
