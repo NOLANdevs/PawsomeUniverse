@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public Text dialogueText;
+    public Button[] optionButton;
+    public GameObject dialogueBox;
 
     private Queue<string> sentences;
 
@@ -16,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        dialogueBox.SetActive(true);
 
         // clear sentence
         sentences.Clear();
@@ -27,6 +30,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+        
     }
 
     public void DisplayNextSentence()
@@ -42,8 +46,9 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = sentence;
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
+        dialogueBox.SetActive(false);
         Debug.Log("End of Conversation");
     }
 
