@@ -8,4 +8,5 @@ public class Dialogue
     [TextArea(2, 3)]
     public string[] sentences;
     public string[] playerResponse;
+    public string[] responseSentences;
 }

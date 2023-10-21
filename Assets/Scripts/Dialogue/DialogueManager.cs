@@ -10,35 +10,44 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
 
     private Queue<string> sentences;
+    private Dialogue current;
 
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue)
     {
         dialogueBox.SetActive(true);
 
         // clear sentence
         sentences.Clear();
+        current = dialogue;
 
         // after a sentence que the next sentence
-        foreach(string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
 
         DisplayNextSentence();
-        
+
     }
 
     public void DisplayNextSentence()
     {
-        // if run out of sentence end the dialogue
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            // if run out of sentence end the dialogue
+            if (sentences.Count == 0)
+            {
+                // display options
+            }
+            else
+            {
+                EndDialogue();
+            }
             return;
         }
 
@@ -46,10 +55,51 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = sentence;
     }
 
+    public void DisplayChoices(string[] choices)
+    {
+        StartCoroutine(UpdateButtonChoices(choices));
+    }
+
+    private IEnumerator UpdateButtonChoices(string[] choices)
+    {
+        for (int i = 0; i < optionButton.Length; i++)
+        {
+            if (i < choices.Length)
+            {
+                if (optionButton[i] != null)
+                {
+                    optionButton[i].gameObject.SetActive(true);
+                    optionButton[i].GetComponentInChildren<Text>().text = choices[i];
+                }
+                else
+                {
+                    Debug.Log("Choice button is not assigned");
+                }
+            }
+            else
+            {
+                optionButton[i].gameObject.SetActive(false);
+            }
+
+            yield return null; // Yield to allow UI to update
+        }
+    }
+
     public void EndDialogue()
     {
         dialogueBox.SetActive(false);
         Debug.Log("End of Conversation");
+    }
+
+    public void OnChoice(int index)
+    {
+        string responseSentence = current.responseSentences[index];
+        dialogueText.text = responseSentence;
+
+        foreach (Button button in optionButton)
+        {
+            button.gameObject.SetActive(false);
+        }
     }
 
 }
