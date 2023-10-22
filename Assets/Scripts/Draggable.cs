@@ -32,7 +32,10 @@ public class Draggable : MonoBehaviour
         // Set the Rigidbody's velocity to zero when dragging starts
         rb.velocity = Vector3.zero;
 
-        gameObject.GetComponent<Animal>().isDragged = true;
+        if (gameObject.tag == "Player")
+        {
+            gameObject.GetComponent<Animal>().isDragged = true;
+        }
     }
 
     void OnMouseDrag()
@@ -67,7 +70,10 @@ public class Draggable : MonoBehaviour
         // Set the Rigidbody's velocity to zero when dragging ends
         rb.velocity = Vector3.zero;
 
-        gameObject.GetComponent<Animal>().isDragged = false;
+        if (gameObject.tag == "Player")
+        {
+            gameObject.GetComponent<Animal>().isDragged = false;
+        }
     }
 
 }
