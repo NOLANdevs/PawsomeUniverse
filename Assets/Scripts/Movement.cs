@@ -34,7 +34,6 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            jumpSound.Play();
             Jump();
         }
         CheckEat();
@@ -75,6 +74,7 @@ public class Movement : MonoBehaviour
         const float almostZero = 0.02f;
         if (Mathf.Abs(rigidBody.velocity.y) < almostZero)
         {
+            jumpSound.Play();
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
         }
     }
