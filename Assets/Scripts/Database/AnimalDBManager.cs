@@ -38,11 +38,11 @@ public class AnimalDBManager : IDatabaseManager
 
     private void saveAnimals()
     {
-        animalsDB.Clear();
         foreach (Animal animal in animals.Values)
         {
             writeAnimal(animal);
         }
+        animalsDB.Deduplicate(0);
 
         Debug.Log($"Saved {animals.Count} animals to database.");
     }
