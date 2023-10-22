@@ -56,8 +56,11 @@ public class ShowerManager : MonoBehaviour
         // Increase cleanliness
         if (cleanBar != null && other.CompareTag("Player"))
         {
-            showerSound.Play();
-            cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
+            if (!(other.GetComponent<Animal>().isDragged))
+            {
+                showerSound.Play();
+                cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
+            }
         }
     }
 }

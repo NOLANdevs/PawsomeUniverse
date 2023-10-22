@@ -7,12 +7,15 @@ public class PawManager : MonoBehaviour
 
     [SerializeField] private AudioSource petSound;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (loveBar != null && collision.gameObject.CompareTag("Player"))
+        if (loveBar != null && other.gameObject.CompareTag("Player"))
         {
-            petSound.Play();
-            loveBar.PetAnimal(pawItem.statsIncreaseAmount);
+            if (!(other.GetComponent<Animal>().isDragged))
+            {
+                petSound.Play();
+                loveBar.PetAnimal(pawItem.statsIncreaseAmount);
+            }       
         }
     }
 }

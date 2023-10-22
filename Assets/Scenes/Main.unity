@@ -1252,6 +1252,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   accessories: []
   isEating: 1
+  isDragged: 0
 --- !u!50 &230428628
 Rigidbody2D:
   serializedVersion: 4
@@ -1419,6 +1420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -2.59
   maxY: 5
+  minX: -12
+  maxX: 12
 --- !u!82 &230428635
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3508,6 +3511,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 726361994}
+  - {fileID: 1905210825}
   m_Father: {fileID: 97571710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550917105
@@ -4269,6 +4273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -3
   maxY: 109
+  minX: 0
+  maxX: 0
 --- !u!82 &593073283
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12871,7 +12877,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 528431040}
     m_Modifications:
     - target: {fileID: 2082677898723361724, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
       propertyPath: m_Name
@@ -12879,15 +12885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5037925604384877208, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.63099146
       objectReference: {fileID: 0}
     - target: {fileID: 5037925604384877208, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5280931
       objectReference: {fileID: 0}
     - target: {fileID: 5037925604384877208, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 10.009702
       objectReference: {fileID: 0}
     - target: {fileID: 5037925604384877208, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14075,7 +14081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainImage: {fileID: 0}
-  selectSound: {fileID: 1665727715}
+  selectSound: {fileID: 0}
 --- !u!82 &1665727715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15141,6 +15147,11 @@ CanvasRenderer:
 --- !u!82 &1905210824 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4505804081353067701, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
+  m_PrefabInstance: {fileID: 1405840080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1905210825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5037925604384877208, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
   m_PrefabInstance: {fileID: 1405840080}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1914743946
@@ -17163,18 +17174,6 @@ MonoBehaviour:
       - m_Target: {fileID: 7925291619003144581}
         m_TargetAssemblyTypeName: ShopMenu, Assembly-CSharp
         m_MethodName: BuyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4505804081353067701, guid: 986b600b1b25c4b6da503ea2fc567bc3, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20722,6 +20721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -3
   maxY: 100
+  minX: 0
+  maxX: 0
 --- !u!114 &9097606190265718664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20853,7 +20854,6 @@ AudioSource:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1405840080}
   - {fileID: 519420032}
   - {fileID: 407179545}
   - {fileID: 582428488}
