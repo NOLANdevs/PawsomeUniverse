@@ -9,6 +9,8 @@ TagManager:
   - LBoundary
   - RBoundary
   - Ground
+  - Fruit
+  - Spikes
   - SnakeWalls
   - Shower
   - Paw
