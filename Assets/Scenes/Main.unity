@@ -1543,6 +1543,8 @@ GameObject:
   m_Component:
   - component: {fileID: 299888967}
   - component: {fileID: 299888969}
+  - component: {fileID: 299888971}
+  - component: {fileID: 299888970}
   m_Layer: 0
   m_Name: Database
   m_TagString: Untagged
@@ -1577,9 +1579,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c577233908d4a44832d77ba079fd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  databaseManagers: []
+  databaseManagers:
+  - {fileID: 299888971}
+  - {fileID: 299888970}
   autosaveInterval: 30
   saveText: {fileID: 356934436}
+--- !u!114 &299888970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299888966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e6cf66f3ee43e4f943f68c162c46ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &299888971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299888966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591e8fec06b84fa44a5fb8c52012db99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curAnimal: {fileID: 230428627}
 --- !u!1 &356934436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,7 +1787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baae071a310b9744ab9bd15717d9801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalDB: {fileID: 299888971}
+  animalDB: {fileID: 0}
   animalObject: {fileID: 230428624}
   animalModels:
   - animal: Frog
