@@ -1173,6 +1173,7 @@ GameObject:
   - component: {fileID: 230428632}
   - component: {fileID: 230428626}
   - component: {fileID: 230428633}
+  - component: {fileID: 230428634}
   m_Layer: 3
   m_Name: Animal
   m_TagString: Player
@@ -1385,6 +1386,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallThresholdAngle: 45
   rightingSpeed: 5
+--- !u!114 &230428634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230428624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c6bd65c791fc74dabbe8e26a75154b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: -2.59
+  maxY: 5
+  minX: -12
+  maxX: 12
 --- !u!1 &289978309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,6 +3925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -3
   maxY: 109
+  minX: 0
+  maxX: 0
 --- !u!1 &594471143
 GameObject:
   m_ObjectHideFlags: 0
@@ -19610,6 +19629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -3
   maxY: 100
+  minX: 0
+  maxX: 0
 --- !u!114 &9097606190265718664
 MonoBehaviour:
   m_ObjectHideFlags: 0
