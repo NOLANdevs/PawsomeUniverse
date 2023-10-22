@@ -6,7 +6,6 @@ using TMPro;
 
 public class InputMenu : MonoBehaviour
 {
-    public Animal animal;
     public TMP_InputField inputName;
 
     [SerializeField] private NameMenu inputMenu;
@@ -44,7 +43,7 @@ public class InputMenu : MonoBehaviour
         playerNameText = inputName.text;
         // Ensure current name displays when clicking on input field
         inputName.placeholder.GetComponent<TextMeshProUGUI>().text = playerNameText;
-        animal.animalName = playerNameText;
+        GameLogic.activeAnimal.animalName = playerNameText;
         DisplayName(playerNameText);
         HideNameMenu();
     }

@@ -9,7 +9,6 @@ public class AnimalDBManager : IDatabaseManager
 {
     public static Database animalsDB;
     public Dictionary<int, Animal> animals;
-    public Animal curAnimal;
 
     void Awake()
     {
@@ -33,7 +32,8 @@ public class AnimalDBManager : IDatabaseManager
 
     private void storeCurAnimal()
     {
-        this.animals[this.curAnimal.id] = this.curAnimal;
+        Animal curAnimal = GameLogic.activeAnimal;
+        this.animals[curAnimal.id] = curAnimal;
     }
 
     private void saveAnimals()

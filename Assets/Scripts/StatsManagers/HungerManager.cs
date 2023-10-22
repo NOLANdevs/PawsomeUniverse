@@ -5,7 +5,6 @@ using UnityEngine;
 public class HungerManager : MonoBehaviour
 {
 
-    public Animal animal;
     public HungerBar hungerBar;
     public float eatingTime = 0.1f;
 
@@ -14,7 +13,6 @@ public class HungerManager : MonoBehaviour
 
     void Start()
     {
-        animal = GetComponent<Animal>();
         animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
     }
 
@@ -23,7 +21,7 @@ public class HungerManager : MonoBehaviour
         timeSinceStartedEating += Time.deltaTime;
         if (timeSinceStartedEating > eatingTime)
         {
-            animal.isEating = false;
+            GameLogic.activeAnimal.isEating = false;
             animator.SetBool("IsEating", false);
         }
     }
@@ -36,7 +34,7 @@ public class HungerManager : MonoBehaviour
         {
             hungerBar.FeedAnimal(itemComponent.statsIncreaseAmount);
             Destroy(collision.gameObject);
-            animal.isEating = true;
+            GameLogic.activeAnimal.isEating = true;
             animator.Play("eatfrog");
             animator.SetBool("IsEating", true);
             timeSinceStartedEating = 0;

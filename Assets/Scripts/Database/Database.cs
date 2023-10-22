@@ -66,7 +66,6 @@ public class Database : ScriptableObject
             {
                 // ID is not in the set, so add it to the set and add the line to the unique list
                 uniqueIDs.Add(id);
-                Debug.Log("|" + line + "|");
                 uniqueLines.Add(line);
             }
         }
