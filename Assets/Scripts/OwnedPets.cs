@@ -18,7 +18,7 @@ public class OwnedPets : MonoBehaviour
     public int maxX = 1000;
     public int maxY = 1000;
     public int separation = 100;
-    public int scale = 1;
+    public float scale = 1;
 
     private int curX;
     private int curY;
@@ -27,6 +27,7 @@ public class OwnedPets : MonoBehaviour
     {
         this.curX = startX;
         this.curY = startY;
+        this.separation = (int)(this.separation * this.scale);
     }
 
     void Start()
@@ -66,7 +67,7 @@ public class OwnedPets : MonoBehaviour
             if (curX > maxX)
             {
                 curX = startX;
-                curY += separation;
+                curY -= separation;
             }
 
             // Spawn animal model as child of animal object
