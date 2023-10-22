@@ -14,7 +14,7 @@ public class PlatformerLogic : MonoBehaviour
 
     void Awake()
     {
-        this.coinsDB = DatabaseInterface.statsDB;
+        this.coinsDB = StatsDBManager.statsDB;
         PlatformerMovement.isAlive = true;
     }
 
