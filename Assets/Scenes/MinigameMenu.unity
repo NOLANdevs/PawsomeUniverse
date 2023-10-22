@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96131e094c9f256499b3a24aa4219bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: Platformer1
 --- !u!212 &321025572
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96131e094c9f256499b3a24aa4219bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: level 1
+  sceneToLoad: Platformer1
 --- !u!114 &644830313
 MonoBehaviour:
   m_ObjectHideFlags: 0
