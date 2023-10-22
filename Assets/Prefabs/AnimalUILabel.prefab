@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1137129500922931665}
   - component: {fileID: 8459149703438497200}
   m_Layer: 0
-  m_Name: AnimalLabel
+  m_Name: AnimalUILabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

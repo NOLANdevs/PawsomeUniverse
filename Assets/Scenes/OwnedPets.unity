@@ -895,8 +895,9 @@ MonoBehaviour:
   parent: {fileID: 1468274316}
   prefabLoader: {fileID: 799796156}
   textLabelPrefab: {fileID: 841952129321554864, guid: d2aee1b155a89274092b2b7a72174176, type: 3}
+  buttonPrefab: {fileID: 5042135930854744845, guid: 393fff1df3b49f54aa3bc6f90bc78e86, type: 3}
   startX: -600
-  startY: 200
+  startY: 150
   maxX: 600
   maxY: 600
   separation: 250

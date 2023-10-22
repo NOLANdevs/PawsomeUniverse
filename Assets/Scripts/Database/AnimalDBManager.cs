@@ -15,11 +15,11 @@ public class AnimalDBManager : IDatabaseManager
     {
         animalsDB = ScriptableObject.CreateInstance<Database>();
         animalsDB.Init("animals.db");
+        loadAnimals();
     }
 
     void Start()
     {
-        loadAnimals();
     }
 
     public override void Save()

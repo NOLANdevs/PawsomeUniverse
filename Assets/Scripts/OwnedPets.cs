@@ -13,6 +13,7 @@ public class OwnedPets : MonoBehaviour
     public GameObject parent;
     public PrefabLoader prefabLoader;
     public GameObject textLabelPrefab;
+    public GameObject buttonPrefab;
 
     public int startX = 0;
     public int startY = 0;
@@ -46,7 +47,11 @@ public class OwnedPets : MonoBehaviour
             GameObject container = new GameObject("Animal" + animal.id + "Container");
             container.transform.SetParent(parent.transform);
             container.transform.localPosition = new Vector3(curX, curY, 0);
-            GameObject textLabelObj = prefabLoader.LoadPrefabAsChild(textLabelPrefab, container);
+
+            // Instantiate button
+            GameObject buttonObj = prefabLoader.LoadPrefabAsChild(buttonPrefab, container);
+            buttonObj.name = "Animal" + animal.id + "Button";
+            buttonObj.GetComponent<Button>().onClick.AddListener(() => ChoosePet(animal.id));
 
             // Instantiate animal
             GameObject animalObj = instantiateAnimal(animal);
@@ -55,13 +60,13 @@ public class OwnedPets : MonoBehaviour
             animalObj.transform.localPosition = Vector3.zero;
 
             // Instantiate label
+            GameObject textLabelObj = prefabLoader.LoadPrefabAsChild(textLabelPrefab, container);
+            textLabelObj.name = "Animal" + animal.id + "Label";
             var textComponent = textLabelObj.GetComponent<TextMeshProUGUI>();
             if (animal.animalName.Length > 0)
             {
                 textComponent.text = animal.animalName;
             }
-
-            // Set objects' locations
 
             // Increase coordinates
             curX += separation;
@@ -73,6 +78,7 @@ public class OwnedPets : MonoBehaviour
 
             // Spawn animal model as child of animal object
             GameObject animalModel = prefabLoader.LoadAnimalAsChild(animal.species, animalObj);
+            animalModel.name = "Animal" + animal.id + "Model";
             animalModel.tag = "Animated";
         }
     }
@@ -80,6 +86,13 @@ public class OwnedPets : MonoBehaviour
     public void OpenCreatePetMenu()
     {
         SceneManager.LoadScene("SelectNewPet");
+    }
+
+    public void ChoosePet(int id)
+    {
+        PlayerPrefs.SetInt("SelectedPetID", id);
+        PlayerPrefs.SetInt("CreateNewPet", 0);
+        SceneManager.LoadScene("Main");
     }
 
     private GameObject instantiateAnimal(Animal animal)

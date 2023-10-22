@@ -24,7 +24,7 @@ public class PrefabLoader : MonoBehaviour
         // Instantiate the prefab model
         GameObject loadedPrefab = Instantiate(prefab);
         // Set position to be the same as parent
-        loadedPrefab.transform.parent = parent.transform;
+        loadedPrefab.transform.SetParent(parent.transform);
         // Re-set position and scale
         loadedPrefab.transform.localPosition = prefab.transform.localPosition;
         loadedPrefab.transform.localScale = prefab.transform.localScale;

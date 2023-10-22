@@ -28,7 +28,7 @@ public class OnloadAnimal : MonoBehaviour
         }
         else
         {
-            setSavedPet();
+            loadSavedPet();
         }
 
     }
@@ -58,17 +58,24 @@ public class OnloadAnimal : MonoBehaviour
         animal.species = animalData.species;
         animal.colour = animalData.colour;
         // Load prefab as child
-        GameObject newAnimalObject = prefabLoader.LoadPrefabAsChild(animalData.modelPrefab, animalObject);
-        newAnimalObject.tag = "Animated";
+        GameObject animalModel = prefabLoader.LoadPrefabAsChild(animalData.modelPrefab, animalObject);
+        animalModel.tag = "Animated";
     }
 
-    private void setSavedPet()
+    private void loadSavedPet()
     {
+        int id = PlayerPrefs.GetInt("SelectedPetID");
         List<Animal> list = animalDB.getAnimals();
-        if (list.Count > 0)
+
+        foreach (Animal animal in list)
         {
-            Animal selected = list[0]; // default to first animal for now // TODO
-            applyToPlayer(selected);
+            Debug.Log(animal.id + "=" + id);
+            // If matches, apply the pet to player
+            if (animal.id == id)
+            {
+                applyToPlayer(animal);
+                return;
+            }
         }
     }
 
@@ -76,6 +83,7 @@ public class OnloadAnimal : MonoBehaviour
     {
         AnimalStore store = new AnimalStore(selected);
         store.applyToAnimal(this.animalObject.GetComponent<Animal>());
+        this.animalObject.tag = "Player";
     }
 
     private AnimalModelMap getDataForAnimal(string animal)
