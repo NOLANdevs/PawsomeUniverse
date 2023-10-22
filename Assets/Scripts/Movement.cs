@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
 
+    [SerializeField] private AudioSource jumpSound;
+
     void Start()
     {
         animal = GetComponent<Animal>();
@@ -32,6 +34,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
+            jumpSound.Play();
             Jump();
         }
         CheckEat();
