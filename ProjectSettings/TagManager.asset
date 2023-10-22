@@ -10,6 +10,8 @@ TagManager:
   - RBoundary
   - Ground
   - SnakeWalls
+  - Shower
+  - Paw
   layers:
   - Default
   - TransparentFX
