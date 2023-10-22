@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class OwnedPets : MonoBehaviour
@@ -74,6 +75,11 @@ public class OwnedPets : MonoBehaviour
             GameObject animalModel = prefabLoader.LoadAnimalAsChild(animal.species, animalObj);
             animalModel.tag = "Animated";
         }
+    }
+
+    public void OpenCreatePetMenu()
+    {
+        SceneManager.LoadScene("SelectNewPet");
     }
 
     private GameObject instantiateAnimal(Animal animal)
