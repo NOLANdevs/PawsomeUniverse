@@ -3756,8 +3756,8 @@ MonoBehaviour:
     min: -1.5
     max: Infinity
   zoomBounds:
-    min: 3
-    max: 5
+    min: 5
+    max: 7
 --- !u!1 &521412680
 GameObject:
   m_ObjectHideFlags: 0
