@@ -8,9 +8,11 @@ public class LoveBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public Slider loveSlider;
+
     public float initialLove = 0.1f;
     public float loveDecayAmount = 0.2f;
     public float delay = 10.0f;
+
 
     private Animal animal;
     private float startTime = 5.0f;

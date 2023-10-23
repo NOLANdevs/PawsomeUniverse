@@ -77,9 +77,9 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 44b9c55285a904ec999b41c2039f7914, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.506056, y: 25.98}
+  m_Size: {x: 5.33, y: 21.87543}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2989975226797288674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca3df9cf82a04aadafd0f2a6c7fd2a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dfd0611d291a4cd1ae0d2a1c937c39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
@@ -265,11 +265,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7977077366578157050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a906cfd8df1a4bb48ebab4c569373b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f0d74fcf016840e39cf5d6a903cabc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   deadZone: -40
+  initialSpeed: 5
+  acceleration: 0.1
 --- !u!1 &8661111488876417649
 GameObject:
   m_ObjectHideFlags: 0

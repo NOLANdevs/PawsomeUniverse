@@ -8,9 +8,11 @@ public class CleanBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public Slider cleanlinessSlider;
+
     public float initialCleanliness = 0.5f;
     public float cleanlinessDecayAmount = 0.05f;
     public float decayDelay = 10.0f;
+
 
     private Animal animal;
     private float startTime = 5.0f;

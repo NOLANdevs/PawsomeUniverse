@@ -8,6 +8,7 @@ public class HungerBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public Slider hungerSlider;
+
     public float initialHunger = 0.5f;
     public float hungerDecayAmount = 0.05f;
     public float delay = 10.0f;
