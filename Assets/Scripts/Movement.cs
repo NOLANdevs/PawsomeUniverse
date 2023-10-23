@@ -7,7 +7,6 @@ public class Movement : MonoBehaviour
 
     public float moveSpeed = 1f;
     public float jumpForce = 1f;
-    public GameObject animatorHolder;
 
     private Animal animal;
     private Rigidbody2D rigidBody;
@@ -19,7 +18,7 @@ public class Movement : MonoBehaviour
     {
         animal = GetComponent<Animal>();
         rigidBody = GetComponent<Rigidbody2D>();
-        animator = animatorHolder.GetComponent<Animator>(); // Get the animator from the animatorHolder
+        animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
     }
 
     void Update()

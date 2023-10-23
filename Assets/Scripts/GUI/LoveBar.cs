@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class LoveBar : MonoBehaviour
 {
-    public Animal animal;
     public Gradient gradient;
     public Image fill;
     public Slider loveSlider;
     public float initialLove = 0.1f;
     public float loveDecayAmount = 0.2f;
-
-    private float startTime = 5.0f;
     public float delay = 10.0f;
+
+    private Animal animal;
+    private float startTime = 5.0f;
 
     void Start()
     {
@@ -31,6 +31,8 @@ public class LoveBar : MonoBehaviour
 
     void Update()
     {
+        animal = GameLogic.activeAnimal;
+
         // Set fill colour to be proportional to the fill percentage
         loveSlider.value = fromPercent(animal.love);
         fill.color = gradient.Evaluate(loveSlider.normalizedValue);

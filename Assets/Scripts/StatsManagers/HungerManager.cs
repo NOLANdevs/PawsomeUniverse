@@ -5,8 +5,6 @@ using UnityEngine;
 public class HungerManager : MonoBehaviour
 {
 
-    public Animal animal;
-    public GameObject animatorHolder;
     public HungerBar hungerBar;
     public float eatingTime = 0.1f;
 
@@ -15,18 +13,17 @@ public class HungerManager : MonoBehaviour
 
     [SerializeField] private AudioSource eatSound;
 
-    public void Start()
+    void Start()
     {
-        animal = GetComponent<Animal>();
-        animator = animatorHolder.GetComponent<Animator>();
+        animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
     }
 
-    private void Update()
+    void Update()
     {
         timeSinceStartedEating += Time.deltaTime;
         if (timeSinceStartedEating > eatingTime)
         {
-            animal.isEating = false;
+            GameLogic.activeAnimal.isEating = false;
             animator.SetBool("IsEating", false);
         }
     }
@@ -40,7 +37,7 @@ public class HungerManager : MonoBehaviour
             hungerBar.FeedAnimal(itemComponent.statsIncreaseAmount);
             eatSound.Play();
             Destroy(collision.gameObject);
-            animal.isEating = true;
+            GameLogic.activeAnimal.isEating = true;
             animator.Play("eatfrog");
             animator.SetBool("IsEating", true);
             timeSinceStartedEating = 0;

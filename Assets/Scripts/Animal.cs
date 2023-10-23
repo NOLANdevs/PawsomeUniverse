@@ -8,13 +8,15 @@ public class Animal : MonoBehaviour
     public enum Species
     {
         Frog,
+        Octopus,
     }
 
     public enum Colour
     {
         Black,
-        White,
         Green,
+        Magenta,
+        White,
     }
 
     // metadata
