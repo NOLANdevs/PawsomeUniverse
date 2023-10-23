@@ -40,11 +40,16 @@ public class Animal : MonoBehaviour
 
     public bool isHungry = false;
 
-    // Components
-    public GameObject stomachGrowl = null;
+    public bool isSad = false;
+
+    public bool isDirty = false;
 
     public bool isDragged = false;
 
+    // Components
+    public GameObject stomachGrowl = null;
+    public GameObject dirtyMarks = null;
+    public GameObject eyebrows = null;
 
     private Sprite sprite;
 
@@ -76,6 +81,8 @@ public class Animal : MonoBehaviour
     public void Update()
     {
         isHungry = hunger < 0.1f;
+        isSad = love < 0.1f;
+        isDirty = cleanliness < 0.1f;
 
     // if stomachGrowl variable is assigned
         if (stomachGrowl){
@@ -88,5 +95,28 @@ public class Animal : MonoBehaviour
                 stomachGrowl.SetActive(false);
             }
         }
+            // if dirty variable is assigned
+        if (dirtyMarks){
+            if(isDirty)
+            {
+                dirtyMarks.SetActive(true);
+            }
+            else
+            {
+                dirtyMarks.SetActive(false);
+            }
+        }
+    // if eyebrows variable is assigned
+        if (eyebrows){
+            if(isSad)
+            {
+                eyebrows.SetActive(true);
+            }
+            else
+            {
+                eyebrows.SetActive(false);
+            }
+        }  
     }
+          
 }
