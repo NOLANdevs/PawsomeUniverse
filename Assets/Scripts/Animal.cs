@@ -8,13 +8,15 @@ public class Animal : MonoBehaviour
     public enum Species
     {
         Frog,
+        Octopus,
     }
 
     public enum Colour
     {
         Black,
-        White,
         Green,
+        Magenta,
+        White,
     }
 
     // metadata
@@ -33,6 +35,7 @@ public class Animal : MonoBehaviour
     public Accessory[] accessories;
     // statuses
     public bool isEating = false;
+    public bool isDragged = false;
 
     private Sprite sprite;
 

@@ -11,6 +11,8 @@ public class ShowerManager : MonoBehaviour
 
     private ParticleSystem.EmissionModule em;
 
+    [SerializeField] private AudioSource showerSound;
+
 
     void OnMouseDown()
     {
@@ -54,7 +56,11 @@ public class ShowerManager : MonoBehaviour
         // Increase cleanliness
         if (cleanBar != null && other.CompareTag("Player"))
         {
-            cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
+            if (!(other.GetComponent<Animal>().isDragged))
+            {
+                showerSound.Play();
+                cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
+            }
         }
     }
 }

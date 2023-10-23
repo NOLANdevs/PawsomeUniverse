@@ -35,9 +35,46 @@ public class Database : ScriptableObject
         File.AppendAllText(dbFullPath, data);
     }
 
+    public void WriteLines(List<string> data)
+    {
+        Write(string.Join("\n", data) + "\n");
+    }
+
     public void Clear()
     {
         File.WriteAllText(dbFullPath, "");
+    }
+
+    public void Deduplicate(int idCol)
+    {
+        List<string> allLines = new List<string>(ReadLines());
+        HashSet<string> uniqueIDs = new HashSet<string>();
+        List<string> uniqueLines = new List<string>();
+
+        allLines.Reverse();
+
+        // Loop through all lines
+        foreach (string line in allLines)
+        {
+            string[] parts = line.Split(",");
+            // Skip if empty line
+            if (parts.Length == 0) continue;
+
+            // Get ID from the stated column
+            string id = parts[idCol];
+            if (!uniqueIDs.Contains(id))
+            {
+                // ID is not in the set, so add it to the set and add the line to the unique list
+                uniqueIDs.Add(id);
+                uniqueLines.Add(line);
+            }
+        }
+
+        uniqueLines.Reverse();
+
+        // Write back to file
+        Clear();
+        WriteLines(uniqueLines);
     }
 
 }
