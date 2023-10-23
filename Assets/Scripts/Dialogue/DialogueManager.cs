@@ -91,7 +91,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         dialogueBox.SetActive(false);
-        Debug.Log("End of Conversation");
     }
 
     public void OnChoice(int index)
