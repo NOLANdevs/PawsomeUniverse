@@ -12,6 +12,8 @@ TagManager:
   - Fruit
   - Spikes
   - SnakeWalls
+  - Shower
+  - Paw
   layers:
   - Default
   - TransparentFX

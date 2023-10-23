@@ -33,6 +33,7 @@ public class Animal : MonoBehaviour
     public Accessory[] accessories;
     // statuses
     public bool isEating = false;
+    public bool isDragged = false;
 
     private Sprite sprite;
 
