@@ -43,23 +43,15 @@ public class OnloadAnimal : MonoBehaviour
 
     private void setNewPet()
     {
-        // Delete default animal data
-        Animal oldScript = animalObject.GetComponent<Animal>();
-        if (oldScript != null)
-        {
-            Destroy(oldScript);
-        }
-
-        // Load new pet
+        // Load new pet depending on Species
         string newPet = PlayerPrefs.GetString("NewPetType");
-        Animal animal = animalObject.AddComponent<Animal>(); // Create animal component
-        // Set animal's data
-        AnimalModelMap animalData = getDataForAnimal(newPet);
-        animal.species = animalData.species;
-        animal.colour = animalData.colour;
-        // Load prefab as child
-        GameObject animalModel = prefabLoader.LoadPrefabAsChild(animalData.modelPrefab, animalObject);
-        animalModel.tag = "Animated";
+        foreach (AnimalModelMap modelData in animalModels)
+        {
+            if (newPet == modelData.animal)
+            {
+                GameObject newAnimalObj = prefabLoader.LoadAnimalPrefabAsChild(modelData.species, this.animalObject);
+            }
+        }
     }
 
     private void loadSavedPet()
@@ -69,21 +61,25 @@ public class OnloadAnimal : MonoBehaviour
 
         foreach (Animal animal in list)
         {
-            Debug.Log(animal.id + "=" + id);
             // If matches, apply the pet to player
             if (animal.id == id)
             {
-                applyToPlayer(animal);
+                // Create the animal model
+                prefabLoader.LoadAnimalPrefabAsChild(animal.species, this.animalObject);
+                // Apply the animal's stats to the animal object
+                applyToPlayer(this.animalObject, animal);
+                // Return as the loading of the selected animal is complete
                 return;
             }
         }
     }
 
-    private void applyToPlayer(Animal selected)
+    // Apply a selected animal's stats and data to the player game object
+    private void applyToPlayer(GameObject player, Animal selected)
     {
         AnimalStore store = new AnimalStore(selected);
-        store.applyToAnimal(this.animalObject.GetComponent<Animal>());
-        this.animalObject.tag = "Player";
+        store.applyToAnimal(player.GetComponent<Animal>());
+        player.tag = "Player";
     }
 
     private AnimalModelMap getDataForAnimal(string animal)

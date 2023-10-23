@@ -77,7 +77,7 @@ public class OwnedPets : MonoBehaviour
             }
 
             // Spawn animal model as child of animal object
-            GameObject animalModel = prefabLoader.LoadAnimalAsChild(animal.species, animalObj);
+            GameObject animalModel = prefabLoader.LoadAnimalPrefabAsChild(animal.species, animalObj);
             animalModel.name = "Animal" + animal.id + "Model";
             animalModel.tag = "Animated";
         }

@@ -14,7 +14,7 @@ public class PrefabLoader : MonoBehaviour
 
     public AnimalModels[] animalModels;
 
-    public GameObject LoadAnimalAsChild(Animal.Species species, GameObject parent)
+    public GameObject LoadAnimalPrefabAsChild(Animal.Species species, GameObject parent)
     {
         return LoadPrefabAsChild(findAnimalPrefab(species), parent);
     }
