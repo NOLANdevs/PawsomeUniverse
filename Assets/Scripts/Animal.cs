@@ -51,14 +51,6 @@ public class Animal : MonoBehaviour
     public GameObject dirtyMarks = null;
     public GameObject eyebrows = null;
 
-    public Sprite hungrySprite;
-    public Sprite dirtySprite;
-    public Sprite sadSprite;
-
-    public SpriteRenderer stomachGrowlRenderer; // Reference to the SpriteRenderer component
-    public SpriteRenderer dirtyMarksRenderer; // Reference to the SpriteRenderer component
-    public SpriteRenderer eyebrowsRenderer; // Reference to the SpriteRenderer component
-
     private Sprite sprite;
 
     void Awake()
@@ -88,54 +80,48 @@ public class Animal : MonoBehaviour
         hunger += amount;
     }
 
-    public GameObject findGameObject(string name)
-    {
-        GameObject foundObject = GameObject.Find(name);
-        if (foundObject == null)
-        {
-            Debug.LogWarning("GameObject not found: " + name);
-        }
-        return foundObject;
-    }
-
 
 
 public void Update()
 {
-    if (stomachGrowlRenderer == null)
-    {
-        stomachGrowl = findGameObject("StomachGrowl");
-        stomachGrowlRenderer = stomachGrowl.GetComponent<SpriteRenderer>();
-    }
-    if (dirtyMarksRenderer == null)
-    {
-        dirtyMarks = findGameObject("DirtyMarks");
-        dirtyMarksRenderer = dirtyMarks.GetComponent<SpriteRenderer>();
-    }
-    if (eyebrowsRenderer == null)
-    {
-        eyebrows = findGameObject("eyebrows");
-        eyebrowsRenderer = eyebrows.GetComponent<SpriteRenderer>();
-    }
 
-    isHungry = hunger < 0.1f;
-    isSad = love < 0.1f;
-    isDirty = cleanliness < 0.1f;
+        isHungry = hunger < 0.1f;
+        isSad = love < 0.1f;
+        isDirty = cleanliness < 0.1f;
 
-    if (stomachGrowlRenderer != null)
-    {
-        stomachGrowlRenderer.sprite = isHungry ? hungrySprite : hungrySprite;
-    }
-
-    if (dirtyMarksRenderer != null)
-    {
-        dirtyMarksRenderer.sprite = isDirty ? dirtySprite : null;
-    }
-
-    if (eyebrowsRenderer != null)
-    {
-        eyebrowsRenderer.sprite = isSad ? sadSprite : null;
-    }
+    // if stomachGrowl variable is assigned
+        if (stomachGrowl){
+            if(isHungry)
+            {
+                stomachGrowl.SetActive(true);
+            }
+            else
+            {
+                stomachGrowl.SetActive(false);
+            }
+        }
+            // if dirty variable is assigned
+        if (dirtyMarks){
+            if(isDirty)
+            {
+                dirtyMarks.SetActive(true);
+            }
+            else
+            {
+                dirtyMarks.SetActive(false);
+            }
 }
+    // if eyebrows variable is assigned
+        if (eyebrows){
+            if(isSad)
+            {
+                eyebrows.SetActive(true);
+            }
+            else
+            {
+                eyebrows.SetActive(false);
+            }
+        }  
 
+}
 }
