@@ -18,9 +18,8 @@ public class OwnedPets : MonoBehaviour
     public int startX = 0;
     public int startY = 0;
     public int maxX = 1000;
-    public int maxY = 1000;
     public int separation = 100;
-    public float scale = 1;
+    public int labelOffset = -200;
 
     private int curX;
     private int curY;
@@ -29,7 +28,6 @@ public class OwnedPets : MonoBehaviour
     {
         this.curX = startX;
         this.curY = startY;
-        this.separation = (int)(this.separation * this.scale);
     }
 
     void Start()
@@ -47,6 +45,7 @@ public class OwnedPets : MonoBehaviour
             GameObject container = new GameObject("Animal" + animal.id + "Container");
             container.transform.SetParent(parent.transform);
             container.transform.localPosition = new Vector3(curX, curY, 0);
+            container.transform.localScale = new Vector3(1, 1, 0);
 
             // Instantiate button
             GameObject buttonObj = prefabLoader.LoadPrefabAsChild(buttonPrefab, container);
@@ -55,13 +54,14 @@ public class OwnedPets : MonoBehaviour
 
             // Instantiate animal
             GameObject animalObj = instantiateAnimal(animal);
-            animalObj.transform.localScale = new Vector3(this.scale, this.scale, 1);
+            // animalObj.transform.localScale = new Vector3(this.scale, this.scale, 1);
             animalObj.transform.SetParent(container.transform);
-            animalObj.transform.localPosition = Vector3.zero;
+            animalObj.transform.localPosition = new Vector3(0, 1, 0);
 
             // Instantiate label
             GameObject textLabelObj = prefabLoader.LoadPrefabAsChild(textLabelPrefab, container);
             textLabelObj.name = "Animal" + animal.id + "Label";
+            textLabelObj.transform.localPosition = new Vector3(0, labelOffset, 0);
             var textComponent = textLabelObj.GetComponent<TextMeshProUGUI>();
             if (animal.animalName.Length > 0)
             {
@@ -79,7 +79,6 @@ public class OwnedPets : MonoBehaviour
             // Spawn animal model as child of animal object
             GameObject animalModel = prefabLoader.LoadAnimalPrefabAsChild(animal.species, animalObj);
             Vector3 defaultModelPos = animalModel.transform.position;
-            animalModel.transform.position = new Vector3(defaultModelPos.x, defaultModelPos.y, -0.1f); // Moves model in front
             animalModel.name = "Animal" + animal.id + "Model";
             animalModel.tag = "Animated";
         }
