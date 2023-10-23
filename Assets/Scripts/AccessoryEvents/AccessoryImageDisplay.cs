@@ -14,7 +14,9 @@ public class AccessoryImageDisplay : MonoBehaviour
     }
     public void DisplayAccessoryImage(Sprite accessorySprite)
     {
-        selectSound.Play();
+        if (selectSound != null){
+            selectSound.Play();
+        }
         mainImage.preserveAspect = true;
         // set to display image
         mainImage.sprite = accessorySprite;

@@ -52,6 +52,18 @@ public class AccessoryManager : MonoBehaviour
 
     private void EquipAccessory(Accessory accessory)
     {
+        if (playerHead == null)
+        {
+            // Find the playerHead GameObject by name
+            playerHead = GameObject.Find("playerHead");
+            
+            if (playerHead == null)
+            {
+                Debug.LogError("PlayerHead GameObject not found.");
+                return; // Return early if the playerHead GameObject is not found.
+            }
+        }
+
         if (playerHead != null && accessory.accessorySprite != null)
         {
             SpriteRenderer playerHeadRenderer = playerHead.GetComponent<SpriteRenderer>();
