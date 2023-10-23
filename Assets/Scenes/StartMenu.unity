@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 396521146}
   - component: {fileID: 396521145}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,8 +816,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 330.35}
-  m_SizeDelta: {x: 963.2861, y: -383.09106}
+  m_AnchoredPosition: {x: 0, y: 396.84778}
+  m_SizeDelta: {x: 963.2861, y: -250.09555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396521145
 MonoBehaviour:
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 403558856}
   - component: {fileID: 403558855}
   m_Layer: 5
-  m_Name: Quit Button
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -952,7 +952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00067806, y: -138}
+  m_AnchoredPosition: {x: 0, y: -138}
   m_SizeDelta: {x: 379.3715, y: 136.3019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403558855
@@ -2216,7 +2216,7 @@ GameObject:
   - component: {fileID: 879848521}
   - component: {fileID: 879848520}
   m_Layer: 5
-  m_Name: Play Button
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2239,7 +2239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000020981, y: 132}
+  m_AnchoredPosition: {x: 0, y: 132}
   m_SizeDelta: {x: 379.37, y: 136.3019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879848520
@@ -2373,7 +2373,7 @@ RectTransform:
   m_GameObject: {fileID: 957156801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1351307143}
@@ -2395,8 +2395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.28800002}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -275.79}
-  m_SizeDelta: {x: 1737, y: -65.432}
+  m_AnchoredPosition: {x: 0, y: -375}
+  m_SizeDelta: {x: 1737, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &969199890
 GameObject:
@@ -4009,7 +4009,7 @@ GameObject:
   - component: {fileID: 1698116546}
   - component: {fileID: 1698116545}
   m_Layer: 5
-  m_Name: Options Button
+  m_Name: OptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4233,7 +4233,7 @@ GameObject:
   - component: {fileID: 1714712570}
   - component: {fileID: 1714712569}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4248,7 +4248,7 @@ RectTransform:
   m_GameObject: {fileID: 1714712567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1867292766}
@@ -4656,11 +4656,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1714712568}
-  - {fileID: 1803338495}
   - {fileID: 957156802}
   - {fileID: 56712404}
   - {fileID: 611035979}
   - {fileID: 1588972077}
+  - {fileID: 1803338495}
   - {fileID: 1925259534}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
