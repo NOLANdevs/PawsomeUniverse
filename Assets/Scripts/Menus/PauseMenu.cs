@@ -9,6 +9,32 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        pauseMenu.SetActive(GameLogic.isPaused);
+        // Check if the pause menu is active
+        if (pauseMenu.activeSelf)
+        {
+            // if active check for esc press to close
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                BackToGame();
+            }
+        }
+        else
+        {
+            // if not active check for esc press to open
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameLogic.PauseGame();
+                pauseMenu.SetActive(true);
+            }
+        }
+    }
+
+    public void BackToGame()
+    {
+        if (pauseMenu.activeSelf)
+        {
+            GameLogic.UnpauseGame();
+            pauseMenu.SetActive(false);
+        }
     }
 }

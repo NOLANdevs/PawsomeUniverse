@@ -22,6 +22,7 @@ public class Animal : MonoBehaviour
     public string animalName;
     public Colour colour;
     public Species species;
+
     // stats
     // values are from 0 to 1
     public float love = 0.5f;
@@ -31,8 +32,13 @@ public class Animal : MonoBehaviour
     // items
     public Inventory inventory;
     public Accessory[] accessories;
+
     // statuses
     public bool isEating = false;
+    public bool isHungry = false;
+
+    // Components
+    public GameObject stomachGrowl;
 
     private Sprite sprite;
 
@@ -61,4 +67,17 @@ public class Animal : MonoBehaviour
         hunger += amount;
     }
 
+    public void Update()
+    {
+        isHungry = hunger < 0.1f;
+
+        if(isHungry)
+        {
+            stomachGrowl.SetActive(true);
+        }
+        else
+        {
+            stomachGrowl.SetActive(false);
+        }
+    }
 }

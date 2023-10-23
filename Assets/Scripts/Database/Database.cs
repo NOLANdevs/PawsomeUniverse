@@ -20,6 +20,11 @@ public class Database : ScriptableObject
         this.Write("");
     }
 
+    public string Read()
+    {
+        return string.Join("\n", ReadLines());
+    }
+
     public string[] ReadLines()
     {
         return File.ReadAllLines(dbFullPath);

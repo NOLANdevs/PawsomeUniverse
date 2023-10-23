@@ -8,7 +8,8 @@ TagManager:
   - Food
   - LBoundary
   - RBoundary
-  - Shower
+  - Ground
+  - SnakeWalls
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - Ground
   - Item
-  - 
+  - Ball
   - 
   - 
   - 
@@ -45,6 +46,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2639765791
+    locked: 0
+  - name: Items
+    uniqueID: 2866374669
     locked: 0
   - name: Default
     uniqueID: 0

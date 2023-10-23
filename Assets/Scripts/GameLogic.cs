@@ -8,27 +8,21 @@ public class GameLogic : MonoBehaviour
 
     void Update()
     {
-        // Pause game when Escape pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isPaused = !isPaused;
-        }
-
         // Halt all physics when game is paused
         Time.timeScale = isPaused ? 0 : 1; // set progression of time percentage: 0% if paused, 100% if not
     }
 
-    public void PauseGame()
+    public static void PauseGame()
+    {
+        isPaused = true;
+    }
+
+    public static void UnpauseGame()
     {
         isPaused = false;
     }
 
-    public void UnpauseGame()
-    {
-        isPaused = false;
-    }
-
-    public void ForceQuit()
+    public static void ForceQuit()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

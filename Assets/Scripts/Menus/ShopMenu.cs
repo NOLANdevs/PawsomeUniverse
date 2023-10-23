@@ -11,7 +11,7 @@ public class ShopMenu : MonoBehaviour
     private int maxIndex = 10;
     private int minIndex = 0;
     private int index = 0;
-    public List<ShopItemData> items;
+    public List<Item> items;
 
     private int playerBalance;
 
@@ -25,22 +25,20 @@ public class ShopMenu : MonoBehaviour
 
     public void SpawnItem()
     {
-        GameObject itemPrefab = items[index].itemPrefab; // Get the item's prefab from ShopItemData
+        GameObject itemPrefab = items[index].prefab;
         Instantiate(itemPrefab, itemPrefab.transform.position, itemPrefab.transform.rotation);
-
     }
 
     public void BuyItem()
     {
         playerBalance = PlayerPrefs.GetInt("Coins", 0);
 
-        if (!GameObject.FindWithTag("Food") && playerBalance >= items[index].itemPrice)
+        if (!GameObject.FindWithTag("Food") && playerBalance >= items[index].price)
         {
             SpawnItem();
 
             // Deduct the item cost from the player's balance.
-            PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) - items[index].itemPrice);
-            Debug.Log(PlayerPrefs.GetInt("Coins", 0));
+            PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins", 0) - items[index].price);
         }
     }
 
