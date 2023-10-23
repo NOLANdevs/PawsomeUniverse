@@ -56,12 +56,11 @@ public class AnimalDBManager : IDatabaseManager
     {
         if (this.animals.ContainsKey(id))
         {
-            Debug.Log($"Loaded animal {id} from database.");
             return this.animals[id];
         }
         else
         {
-            Debug.Log($"Animal ID {id} does not exist.");
+            Debug.LogWarning($"Animal ID {id} does not exist.");
             return null;
         }
     }
@@ -81,7 +80,6 @@ public class AnimalDBManager : IDatabaseManager
             Animal animal = store.loadAnimal();
             this.animals[animal.id] = animal;
         }
-        Debug.Log($"Loaded {this.animals.Count} animals from database.");
     }
 
     private void writeAnimal(Animal animal)
