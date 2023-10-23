@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 5
-  jumpSound: {fileID: 0}
+  jumpSound: {fileID: 230428639}
 --- !u!114 &230428627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 3059791525518707988}
   eatingTime: 0.1
-  eatSound: {fileID: 0}
+  eatSound: {fileID: 230428638}
 --- !u!114 &230428633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3927,7 +3927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loveBar: {fileID: 844670137}
   pawItem: {fileID: 593073281}
-  petSound: {fileID: 0}
+  petSound: {fileID: 593073283}
 --- !u!50 &593073277
 Rigidbody2D:
   serializedVersion: 4
@@ -12475,7 +12475,7 @@ MonoBehaviour:
   accessoryMenu: {fileID: 724686273}
   playerMovement: {fileID: 230428626}
   toggleOnClick: {fileID: 724686277}
-  openSound: {fileID: 0}
+  openSound: {fileID: 1398815355}
 --- !u!82 &1398815355
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19539,7 +19539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 4341917784809452291, guid: 69d71f66393994033b7d4ac74231b97e, type: 3}
-  buySound: {fileID: 0}
+  buySound: {fileID: 7925291619003144583}
 --- !u!210 &7925291619003144582
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -20388,7 +20388,7 @@ MonoBehaviour:
   cleanBar: {fileID: 1603504895}
   showerItem: {fileID: 9097606190265718664}
   particleSystemHolder: {fileID: 1057350912}
-  showerSound: {fileID: 0}
+  showerSound: {fileID: 9097606190265718666}
 --- !u!82 &9097606190265718666
 AudioSource:
   m_ObjectHideFlags: 0
