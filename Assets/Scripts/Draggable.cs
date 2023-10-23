@@ -11,8 +11,8 @@ public class Draggable : MonoBehaviour
     public float minY;
     public float maxY;
 
-    public float minX;
-    public float maxX;
+    public float minX = -12;
+    public float maxX = 12;
 
     void Start()
     {

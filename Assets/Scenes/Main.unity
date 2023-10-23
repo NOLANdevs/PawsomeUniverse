@@ -4628,7 +4628,7 @@ MonoBehaviour:
   - {fileID: 134344910}
   - {fileID: 1914743950}
   - {fileID: 7742677649207442478}
-  selectSound: {fileID: 0}
+  selectSound: {fileID: 724686278}
 --- !u!82 &724686278
 AudioSource:
   m_ObjectHideFlags: 0
