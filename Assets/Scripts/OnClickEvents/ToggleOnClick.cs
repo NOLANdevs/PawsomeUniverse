@@ -8,10 +8,11 @@ public class ToggleOnClick : MonoBehaviour
     public ClickToPlayAudio[] AudioSpriteScripts;
     public ClickToScale[] ScaleSpriteScripts;
 
-
+    [SerializeField] private AudioSource selectSound;
 
     public void ToggleInteraction(bool state)
     {
+        selectSound.Play();
         setSpriteChange(state);
         setSpriteLight(state);
         setBall(state);
