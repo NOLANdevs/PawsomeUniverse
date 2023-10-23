@@ -18,8 +18,8 @@ public class ClickToBall : MonoBehaviour
     {
         if (canInteract && isGrounded)
         {
-            HitBall(force);
             audioSource.Play();
+            HitBall(force);
         }
     }
 

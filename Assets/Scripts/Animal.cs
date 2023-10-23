@@ -8,13 +8,15 @@ public class Animal : MonoBehaviour
     public enum Species
     {
         Frog,
+        Octopus,
     }
 
     public enum Colour
     {
         Black,
-        White,
         Green,
+        Magenta,
+        White,
     }
 
     // metadata
@@ -35,10 +37,14 @@ public class Animal : MonoBehaviour
 
     // statuses
     public bool isEating = false;
+
     public bool isHungry = false;
 
     // Components
     public GameObject stomachGrowl = null;
+
+    public bool isDragged = false;
+
 
     private Sprite sprite;
 

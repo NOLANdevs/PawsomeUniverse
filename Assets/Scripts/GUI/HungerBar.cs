@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class HungerBar : MonoBehaviour
 {
-    public Animal animal;
     public Gradient gradient;
     public Image fill;
     public Slider hungerSlider;
 
     public float initialHunger = 0.5f;
     public float hungerDecayAmount = 0.05f;
-
-    private float startTime = 5.0f;
     public float delay = 10.0f;
+
+    private Animal animal;
+    private float startTime = 5.0f;
 
     void Start()
     {
@@ -32,6 +32,7 @@ public class HungerBar : MonoBehaviour
 
     void Update()
     {
+        animal = GameLogic.activeAnimal;
         // Set fill colour to be proportional to the fill percentage
         hungerSlider.value = fromPercent(animal.hunger);
         fill.color = gradient.Evaluate(hungerSlider.normalizedValue);

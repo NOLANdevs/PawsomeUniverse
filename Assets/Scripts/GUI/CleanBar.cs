@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class CleanBar : MonoBehaviour
 {
-    public Animal animal;
     public Gradient gradient;
     public Image fill;
     public Slider cleanlinessSlider;
 
-    public float cleanlinessDecayAmount = 0.1f;
-
-    private float startTime = 5.0f;
+    public float initialCleanliness = 0.5f;
+    public float cleanlinessDecayAmount = 0.05f;
     public float decayDelay = 10.0f;
+
+
+    private Animal animal;
+    private float startTime = 5.0f;
 
     void Start()
     {
@@ -25,12 +27,14 @@ public class CleanBar : MonoBehaviour
         fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
 
         // Initialize cleanliness
-        cleanlinessSlider.value = fromPercent(animal.cleanliness);
+        cleanlinessSlider.value = fromPercent(initialCleanliness);
         cleanlinessSlider.maxValue = fromPercent(1);
     }
 
     void Update()
     {
+        animal = GameLogic.activeAnimal;
+
         // Update the cleanliness slider and UI color
         cleanlinessSlider.value = fromPercent(animal.cleanliness);
         fill.color = gradient.Evaluate(cleanlinessSlider.normalizedValue);
