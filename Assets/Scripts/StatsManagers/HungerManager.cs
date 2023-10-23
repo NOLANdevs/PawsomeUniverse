@@ -11,6 +11,8 @@ public class HungerManager : MonoBehaviour
     private Animator animator;
     private float timeSinceStartedEating = 0f;
 
+    [SerializeField] private AudioSource eatSound;
+
     void Start()
     {
         animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
@@ -33,6 +35,7 @@ public class HungerManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Food"))
         {
             hungerBar.FeedAnimal(itemComponent.statsIncreaseAmount);
+            eatSound.Play();
             Destroy(collision.gameObject);
             GameLogic.activeAnimal.isEating = true;
             animator.Play("eatfrog");

@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
 
+    [SerializeField] private AudioSource jumpSound;
+
     void Start()
     {
         animal = GetComponent<Animal>();
@@ -71,6 +73,7 @@ public class Movement : MonoBehaviour
         const float almostZero = 0.02f;
         if (Mathf.Abs(rigidBody.velocity.y) < almostZero)
         {
+            jumpSound.Play();
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
         }
     }
