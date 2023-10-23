@@ -1602,6 +1602,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 105642682}
+  - {fileID: 1129316771}
   m_Father: {fileID: 97571710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &230428626
@@ -1641,12 +1642,9 @@ MonoBehaviour:
   inventory: {fileID: 0}
   accessories: []
   isEating: 1
-
   isHungry: 0
-  stomachGrowl: {fileID: 1129316769}
-
+  stomachGrowl: {fileID: 0}
   isDragged: 0
-
 --- !u!50 &230428628
 Rigidbody2D:
   serializedVersion: 4
@@ -2491,7 +2489,6 @@ MonoBehaviour:
     species: 1
     colour: 2
   prefabLoader: {fileID: 1952096328}
-  nametagContainer: {fileID: 1943556879}
   nametagTag: {fileID: 416164021}
 --- !u!1 &372990899
 GameObject:
@@ -12337,11 +12334,11 @@ Transform:
   m_GameObject: {fileID: 1129316769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6634891, y: -5.8646717, z: 0.1544118}
-  m_LocalScale: {x: 11.724938, y: 11.534993, z: 11.724938}
+  m_LocalPosition: {x: 0.04, y: -0.23, z: 0}
+  m_LocalScale: {x: 0.5745997, y: 0.551572, z: 0.5745997}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1301561614}
+  m_Father: {fileID: 230428625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130732034
 GameObject:
@@ -13034,23 +13031,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312704050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-
-  m_LocalPosition: {x: 0.04928911, y: 0.1497643, z: -0.02772561}
-  m_LocalScale: {x: 0.1795563, y: 0.17955633, z: 0.1795563}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1129316771}
-  - {fileID: 921276515}
-  - {fileID: 557767161}
-  - {fileID: 578207217}
-  - {fileID: 575269219}
-  m_Father: {fileID: 1511718003}
-
+  m_Children: []
+  m_Father: {fileID: 1603504891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -4.8}
-  m_SizeDelta: {x: 0.0010986328, y: 0.001192}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1312704052
 MonoBehaviour:
@@ -16640,6 +16630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 230428624}
   playerNameTag: {fileID: 416164021}
+  defaultName: 
 --- !u!1 &1952096326
 GameObject:
   m_ObjectHideFlags: 0
