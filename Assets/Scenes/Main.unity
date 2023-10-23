@@ -1643,7 +1643,7 @@ MonoBehaviour:
   accessories: []
   isEating: 1
   isHungry: 0
-  stomachGrowl: {fileID: 0}
+  stomachGrowl: {fileID: 1129316769}
   isDragged: 0
 --- !u!50 &230428628
 Rigidbody2D:
