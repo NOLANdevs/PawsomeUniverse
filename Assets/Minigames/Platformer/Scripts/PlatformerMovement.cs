@@ -14,6 +14,8 @@ public class PlatformerMovement : MonoBehaviour
 
     public static bool isAlive = true;
 
+    [SerializeField] private AudioSource jumpSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,7 @@ public class PlatformerMovement : MonoBehaviour
         const float almostZero = 0.02f;
         if (Mathf.Abs(rigidBody.velocity.y) < almostZero)
         {
+            jumpSound.Play();
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
         }
     }
