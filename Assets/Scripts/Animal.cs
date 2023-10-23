@@ -38,7 +38,7 @@ public class Animal : MonoBehaviour
     public bool isHungry = false;
 
     // Components
-    public GameObject stomachGrowl;
+    public GameObject stomachGrowl = null;
 
     private Sprite sprite;
 
@@ -71,13 +71,16 @@ public class Animal : MonoBehaviour
     {
         isHungry = hunger < 0.1f;
 
-        if(isHungry)
-        {
-            stomachGrowl.SetActive(true);
-        }
-        else
-        {
-            stomachGrowl.SetActive(false);
+    // if stomachGrowl variable is assigned
+        if (stomachGrowl){
+            if(isHungry)
+            {
+                stomachGrowl.SetActive(true);
+            }
+            else
+            {
+                stomachGrowl.SetActive(false);
+            }
         }
     }
 }
