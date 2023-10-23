@@ -11241,6 +11241,7 @@ GameObject:
   - component: {fileID: 1095931313}
   - component: {fileID: 1095931312}
   - component: {fileID: 1095931311}
+  - component: {fileID: 1095931314}
   m_Layer: 0
   m_Name: Homesign
   m_TagString: Untagged
@@ -11257,7 +11258,7 @@ Transform:
   m_GameObject: {fileID: 1095931309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.85, y: 0.05, z: 9.939819}
+  m_LocalPosition: {x: -9.29, y: 0.05, z: 9.939819}
   m_LocalScale: {x: 0.13048933, y: 0.11946165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11372,6 +11373,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1095931314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095931309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3689e72e179043bbb1b4e3dd8a84180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - Are you walking home? We can play some more :(
+    playerResponse:
+    - I'm tired
+    - I'll play more
+    responseSentences:
+    - keep walking forward and go home :)
+    - walk to the right and we can play some more games!
+  dialogueBox: {fileID: 627002943}
+  player: {fileID: 230428624}
 --- !u!1 &1098383754
 GameObject:
   m_ObjectHideFlags: 0
@@ -18845,7 +18869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &5723714847091329659
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18996,6 +19020,7 @@ GameObject:
   - component: {fileID: 4501422235088306899}
   - component: {fileID: 7712433445489063558}
   - component: {fileID: 7459329172481008744}
+  - component: {fileID: 7712433445489063559}
   m_Layer: 0
   m_Name: Gamesign
   m_TagString: Untagged
@@ -19745,6 +19770,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdca1113440f3448a9e9a78d328917d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7712433445489063559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078682712714591488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3689e72e179043bbb1b4e3dd8a84180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - Would you like to come and play??
+    playerResponse:
+    - Yes! Money!
+    - No, scary :(
+    responseSentences:
+    - Walk forwards :)
+    - Walk backwards :(
+  dialogueBox: {fileID: 627002943}
+  player: {fileID: 230428624}
 --- !u!224 &7726851612079666912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20617,7 +20665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8595498593134064456
 Transform:
   m_ObjectHideFlags: 0
