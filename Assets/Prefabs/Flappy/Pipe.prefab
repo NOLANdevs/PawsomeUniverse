@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2989975226797288674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfd0611d291a4cd1ae0d2a1c937c39b, type: 3}
+  m_Script: {fileID: 11500000, guid: aca3df9cf82a04aadafd0f2a6c7fd2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424120858706965119}
-  - component: {fileID: 4410124953845442526}
+  - component: {fileID: 1789597665698658431}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -256,7 +256,7 @@ Transform:
   - {fileID: 5063261191136875267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4410124953845442526
+--- !u!114 &1789597665698658431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,12 +265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7977077366578157050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f0d74fcf016840e39cf5d6a903cabc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a906cfd8df1a4bb48ebab4c569373b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
   deadZone: -40
-  initialSpeed: 5
-  acceleration: 0.1
 --- !u!1 &8661111488876417649
 GameObject:
   m_ObjectHideFlags: 0
