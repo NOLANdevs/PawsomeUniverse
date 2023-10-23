@@ -8,15 +8,13 @@ public class Animal : MonoBehaviour
     public enum Species
     {
         Frog,
-        Octopus,
     }
 
     public enum Colour
     {
         Black,
-        Green,
-        Magenta,
         White,
+        Green,
     }
 
     // metadata
@@ -24,7 +22,6 @@ public class Animal : MonoBehaviour
     public string animalName;
     public Colour colour;
     public Species species;
-
     // stats
     // values are from 0 to 1
     public float love = 0.5f;
@@ -34,17 +31,8 @@ public class Animal : MonoBehaviour
     // items
     public Inventory inventory;
     public Accessory[] accessories;
-
     // statuses
     public bool isEating = false;
-
-    public bool isHungry = false;
-
-    // Components
-    public GameObject stomachGrowl = null;
-
-    public bool isDragged = false;
-
 
     private Sprite sprite;
 
@@ -73,20 +61,4 @@ public class Animal : MonoBehaviour
         hunger += amount;
     }
 
-    public void Update()
-    {
-        isHungry = hunger < 0.1f;
-
-    // if stomachGrowl variable is assigned
-        if (stomachGrowl){
-            if(isHungry)
-            {
-                stomachGrowl.SetActive(true);
-            }
-            else
-            {
-                stomachGrowl.SetActive(false);
-            }
-        }
-    }
 }

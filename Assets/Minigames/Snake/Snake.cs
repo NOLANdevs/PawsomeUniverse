@@ -27,10 +27,6 @@ public class Snake : MonoBehaviour
     private Database coinsDB;
     public string homeScene;
 
-    // Sound
-    [SerializeField] private AudioSource gameOverSound;
-    [SerializeField] private AudioSource collectFoodSound;
-
     private void Awake()
     {
         this.coinsDB = StatsDBManager.statsDB;
@@ -91,12 +87,10 @@ public class Snake : MonoBehaviour
     {
         if (other.tag == "Food")
         {
-            collectFoodSound.Play();
             Grow();
         }
         else if ((other.tag == "SnakeWalls") && moveTimer == 0.0f)
         {
-            gameOverSound.Play();
             GameOver();
         }
     }

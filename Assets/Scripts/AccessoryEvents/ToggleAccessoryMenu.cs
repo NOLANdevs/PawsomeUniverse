@@ -9,8 +9,6 @@ public class ToggleAccessoryMenu : MonoBehaviour
 
     private bool isAccessoryMenuActive = false;
 
-    [SerializeField] private AudioSource openSound;
-
     private void Start()
     {
         SetAccessoryMenuActive(false);
@@ -21,7 +19,6 @@ public class ToggleAccessoryMenu : MonoBehaviour
     private void OnMouseDown()
     {
         if (canInteract){
-            openSound.Play();
             ToggleMenu();
             toggleOnClick.ToggleInteraction(false);
             changeInteraction();

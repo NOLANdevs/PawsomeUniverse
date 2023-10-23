@@ -15,8 +15,6 @@ public class ShopMenu : MonoBehaviour
 
     private int playerBalance;
 
-    [SerializeField] private AudioSource buySound;
-
     void Start()
     {
     }
@@ -37,7 +35,6 @@ public class ShopMenu : MonoBehaviour
 
         if (!GameObject.FindWithTag("Food") && playerBalance >= items[index].price)
         {
-            buySound.Play();
             SpawnItem();
 
             // Deduct the item cost from the player's balance.

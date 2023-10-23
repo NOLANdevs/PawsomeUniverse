@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CorrectOrientation : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     // The threshold angle for considered as "fallen over"
     public float fallThresholdAngle = 45f;
-    // The speed
+        // The speed
     public float rightingSpeed = 5f;
 
     // Update is called once per frame
@@ -15,7 +15,7 @@ public class CorrectOrientation : MonoBehaviour
         GetUp();
     }
 
-    private void GetUp()
+        private void GetUp()
     {
         // Check if rotation is not upright
         if (Mathf.Abs(transform.rotation.eulerAngles.z) > fallThresholdAngle)

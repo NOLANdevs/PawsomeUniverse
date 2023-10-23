@@ -36,10 +36,9 @@ public class AnimalStore
 
     public Animal loadAnimal()
     {
-        GameObject animalObj = new GameObject("TEMPORARY_Animal" + this.id);
+        GameObject animalObj = new GameObject("Animal" + this.id);
         Animal animal = animalObj.AddComponent<Animal>();
         applyToAnimal(animal);
-        // TODO delete animalObj
         return animal;
     }
 

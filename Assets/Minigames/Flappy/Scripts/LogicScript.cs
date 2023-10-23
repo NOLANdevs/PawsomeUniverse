@@ -14,9 +14,6 @@ public class LogicScript : MonoBehaviour
 
     private Database coinsDB;
 
-    [SerializeField] private AudioSource scoreSound;
-    [SerializeField] private AudioSource gameOverSound;
-
     void Awake()
     {
         this.coinsDB = StatsDBManager.statsDB;
@@ -25,7 +22,6 @@ public class LogicScript : MonoBehaviour
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
-        scoreSound.Play();
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
     }
@@ -39,11 +35,6 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
-        // Check game over is not already active
-        if (gameOverScreen.activeSelf == false)
-        {
-            gameOverSound.Play();
-        }
         gameOverScreen.SetActive(true);
     }
 

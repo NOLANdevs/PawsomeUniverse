@@ -9,7 +9,6 @@ public class FlappyMovement : MonoBehaviour
     public Animator flap_animator;
 
     [SerializeField] int jumpMultiplier = 5;
-    [SerializeField] private AudioSource flapSound;
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class FlappyMovement : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && logic.isAlive)
         {
-            flapSound.Play();
             myRigidbody.velocity = Vector2.up * jumpMultiplier;
             flap_animator.SetTrigger("Flap");
         }

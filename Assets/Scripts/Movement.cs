@@ -7,18 +7,17 @@ public class Movement : MonoBehaviour
 
     public float moveSpeed = 1f;
     public float jumpForce = 1f;
+    public GameObject animatorHolder;
 
     private Animal animal;
     private Rigidbody2D rigidBody;
     private Animator animator;
 
-    [SerializeField] private AudioSource jumpSound;
-
     void Start()
     {
         animal = GetComponent<Animal>();
         rigidBody = GetComponent<Rigidbody2D>();
-        animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
+        animator = animatorHolder.GetComponent<Animator>(); // Get the animator from the animatorHolder
     }
 
     void Update()
@@ -73,7 +72,6 @@ public class Movement : MonoBehaviour
         const float almostZero = 0.02f;
         if (Mathf.Abs(rigidBody.velocity.y) < almostZero)
         {
-            jumpSound.Play();
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
         }
     }
