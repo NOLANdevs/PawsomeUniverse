@@ -14,7 +14,7 @@ public class AnimalDBManager : IDatabaseManager
     {
         animalsDB = ScriptableObject.CreateInstance<Database>();
         animalsDB.Init("animals.db");
-        this.animals = new Dictionary<int, Animal>();
+        loadAnimals();
     }
 
     void Start()
@@ -28,6 +28,11 @@ public class AnimalDBManager : IDatabaseManager
 
         // save to DB
         saveAnimals();
+    }
+
+    public List<Animal> getAnimals()
+    {
+        return new List<Animal>(this.animals.Values);
     }
 
     private void storeCurAnimal()

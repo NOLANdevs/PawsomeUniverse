@@ -7,6 +7,8 @@ using TMPro;
 public class NameTag : MonoBehaviour
 {
     public GameObject player;
+    public GameObject playerNameTag;
+    public string defaultName;
     private float horizOffset = 0;
     private float vertOffset = 2.3f;
 
@@ -15,8 +17,11 @@ public class NameTag : MonoBehaviour
 
     void Start()
     {
-        playerName = transform.Find("PlayerName").GetComponent<TextMeshProUGUI>();
-        Hide();
+        playerName = playerNameTag.GetComponent<TextMeshProUGUI>();
+        if (playerName.text == defaultName)
+        {
+            Hide();
+        }
     }
 
     void Update()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OnloadAnimal : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class OnloadAnimal : MonoBehaviour
     public AnimalDBManager animalDB;
     public GameObject animalObject;
     public AnimalModelMap[] animalModels;
+    public PrefabLoader prefabLoader;
+    public GameObject nametagTag;
 
     void Awake()
     {
@@ -27,7 +30,7 @@ public class OnloadAnimal : MonoBehaviour
         }
         else
         {
-            setSavedPet();
+            loadSavedPet();
         }
 
     }
@@ -42,43 +45,47 @@ public class OnloadAnimal : MonoBehaviour
 
     private void setNewPet()
     {
-        // Delete default animal data
-        Animal oldScript = animalObject.GetComponent<Animal>();
-        if (oldScript != null)
-        {
-            Destroy(oldScript);
-        }
-
-        // Load new pet
+        // Load new pet depending on Species
         string newPet = PlayerPrefs.GetString("NewPetType");
-        Animal animal = animalObject.AddComponent<Animal>(); // Create animal component
-        // Set animal's data
-        AnimalModelMap animalData = getDataForAnimal(newPet);
-        animal.species = animalData.species;
-        animal.colour = animalData.colour;
-        GameObject animalPrefab = animalData.modelPrefab;
-        GameObject newAnimalObject = Instantiate(animalPrefab); // Instantiate the prefab model
-        // Set animal's variables
-        newAnimalObject.transform.parent = animalObject.transform;
-        newAnimalObject.transform.localPosition = animalPrefab.transform.localPosition;
-        newAnimalObject.transform.localScale = animalPrefab.transform.localScale;
-        newAnimalObject.tag = "Animated";
-    }
-
-    private void setSavedPet()
-    {
-        List<Animal> list = new List<Animal>(animalDB.animals.Values);
-        if (list.Count > 0)
+        foreach (AnimalModelMap modelData in animalModels)
         {
-            Animal selected = list[0]; // default to first animal for now // TODO
-            applyToPlayer(selected);
+            if (newPet == modelData.animal)
+            {
+                GameObject newAnimalObj = prefabLoader.LoadAnimalPrefabAsChild(modelData.species, this.animalObject);
+            }
         }
     }
 
-    private void applyToPlayer(Animal selected)
+    private void loadSavedPet()
     {
+        int id = PlayerPrefs.GetInt("SelectedPetID");
+        List<Animal> list = animalDB.getAnimals();
+
+        foreach (Animal animal in list)
+        {
+            // If matches, apply the pet to player
+            if (animal.id == id)
+            {
+                // Create the animal model
+                prefabLoader.LoadAnimalPrefabAsChild(animal.species, this.animalObject);
+                // Apply the animal's stats to the animal object
+                applyToPlayer(this.animalObject, animal);
+                // Return as the loading of the selected animal is complete
+                return;
+            }
+        }
+    }
+
+    // Apply a selected animal's stats and data to the player game object
+    private void applyToPlayer(GameObject player, Animal selected)
+    {
+        // Load animal data
         AnimalStore store = new AnimalStore(selected);
-        store.applyToAnimal(this.animalObject.GetComponent<Animal>());
+        // Apply data to animal
+        store.applyToAnimal(player.GetComponent<Animal>());
+        player.tag = "Player";
+        // Show pet name tag
+        nametagTag.GetComponent<TextMeshProUGUI>().text = selected.animalName;
     }
 
     private AnimalModelMap getDataForAnimal(string animal)
