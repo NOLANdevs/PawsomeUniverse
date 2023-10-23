@@ -78,6 +78,8 @@ public class OwnedPets : MonoBehaviour
 
             // Spawn animal model as child of animal object
             GameObject animalModel = prefabLoader.LoadAnimalPrefabAsChild(animal.species, animalObj);
+            Vector3 defaultModelPos = animalModel.transform.position;
+            animalModel.transform.position = new Vector3(defaultModelPos.x, defaultModelPos.y, -0.1f); // Moves model in front
             animalModel.name = "Animal" + animal.id + "Model";
             animalModel.tag = "Animated";
         }
