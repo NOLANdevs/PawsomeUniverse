@@ -12,6 +12,8 @@ public class PlatformerLogic : MonoBehaviour
     private Database coinsDB;
     public string homeScene;
 
+    [SerializeField] private AudioSource gameOverSound;
+
     void Awake()
     {
         this.coinsDB = StatsDBManager.statsDB;
@@ -37,7 +39,8 @@ public class PlatformerLogic : MonoBehaviour
     }
 
     public void gameOver()
-    { 
+    {
+        gameOverSound.Play();
         PlatformerMovement.isAlive = false;
         GameOverScreen.SetActive(true);
     }
