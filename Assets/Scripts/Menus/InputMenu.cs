@@ -19,8 +19,12 @@ public class InputMenu : MonoBehaviour
 
     void Update()
     {
-        // Open pet name menu on N keypress
-        if (!GameLogic.isPaused && Input.GetKeyDown(KeyCode.N))
+
+    }
+
+    public void StartInputMenu()
+    {
+        if (!GameLogic.isPaused)
         {
             ShowNameMenu();
             GameLogic.PauseGame();
