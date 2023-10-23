@@ -468,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105642682}
   m_Layer: 3
-  m_Name: AnimalSprite
+  m_Name: UNUSED_AnimalSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,8 +1470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -2.59
   maxY: 5
-  minX: 0
-  maxX: 0
 --- !u!82 &230428635
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2151,6 +2149,8 @@ MonoBehaviour:
     species: 1
     colour: 2
   prefabLoader: {fileID: 1952096328}
+  nametagContainer: {fileID: 1943556879}
+  nametagTag: {fileID: 416164021}
 --- !u!1 &372990899
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,8 +4073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -3
   maxY: 109
-  minX: 0
-  maxX: 0
 --- !u!82 &593073283
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15230,6 +15228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 230428624}
+  playerNameTag: {fileID: 416164021}
 --- !u!1 &1952096326
 GameObject:
   m_ObjectHideFlags: 0
@@ -20407,8 +20406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -3
   maxY: 100
-  minX: 0
-  maxX: 0
 --- !u!114 &9097606190265718664
 MonoBehaviour:
   m_ObjectHideFlags: 0

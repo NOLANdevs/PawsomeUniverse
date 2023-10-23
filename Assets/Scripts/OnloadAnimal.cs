@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OnloadAnimal : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class OnloadAnimal : MonoBehaviour
     public GameObject animalObject;
     public AnimalModelMap[] animalModels;
     public PrefabLoader prefabLoader;
+    public GameObject nametagTag;
 
     void Awake()
     {
@@ -77,9 +79,13 @@ public class OnloadAnimal : MonoBehaviour
     // Apply a selected animal's stats and data to the player game object
     private void applyToPlayer(GameObject player, Animal selected)
     {
+        // Load animal data
         AnimalStore store = new AnimalStore(selected);
+        // Apply data to animal
         store.applyToAnimal(player.GetComponent<Animal>());
         player.tag = "Player";
+        // Show pet name tag
+        nametagTag.GetComponent<TextMeshProUGUI>().text = selected.animalName;
     }
 
     private AnimalModelMap getDataForAnimal(string animal)
