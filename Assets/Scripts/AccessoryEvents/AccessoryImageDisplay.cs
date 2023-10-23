@@ -3,17 +3,20 @@ using UnityEngine.UI;
 
 public class AccessoryImageDisplay : MonoBehaviour
 {
-    public Image mainImage; 
+    public Image mainImage;
 
-       private void Start()
+    [SerializeField] private AudioSource selectSound;
+
+    private void Start()
     {
         mainImage = GetComponent<Image>();
 
     }
     public void DisplayAccessoryImage(Sprite accessorySprite)
     {
-            mainImage.preserveAspect = true;
-            // set to display image
-            mainImage.sprite = accessorySprite;
+        selectSound.Play();
+        mainImage.preserveAspect = true;
+        // set to display image
+        mainImage.sprite = accessorySprite;
     }
 }

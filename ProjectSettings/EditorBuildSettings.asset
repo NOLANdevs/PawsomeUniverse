@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 773fbc5368d1a644ab1d437eff0c0e3e
   - enabled: 1
     path: Assets/Scenes/Main.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: aa0cf04a823064a7fb823b982ff8e441
   - enabled: 1
     path: Assets/Scenes/MinigameMenu.unity
     guid: 2fbf911e084cdd440b34308051a872a1
@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/Snake/Snake.unity
     guid: 3e3221bb685b9400aa6bde157fd27e27
+  - enabled: 1
+    path: Assets/Minigames/Platformer/Scene/Platformer1.unity
+    guid: 608f261a4c0cc4c108adbd9038b10287
+  - enabled: 1
+    path: Assets/Minigames/Platformer/Scene/Platformer2.unity
+    guid: 83fae0bc9e5cc41ce87355c88a33c1f3
   m_configObjects: {}

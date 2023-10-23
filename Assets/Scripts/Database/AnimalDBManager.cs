@@ -9,13 +9,13 @@ public class AnimalDBManager : IDatabaseManager
 {
     public static Database animalsDB;
     public Dictionary<int, Animal> animals;
-    public Animal curAnimal;
 
     void Awake()
     {
         animalsDB = ScriptableObject.CreateInstance<Database>();
         animalsDB.Init("animals.db");
-        loadAnimals();
+        this.animals = new Dictionary<int, Animal>();
+        // loadAnimals();
     }
 
     void Start()
@@ -38,16 +38,17 @@ public class AnimalDBManager : IDatabaseManager
 
     private void storeCurAnimal()
     {
-        animals[this.curAnimal.id] = this.curAnimal;
+        Animal curAnimal = GameLogic.activeAnimal;
+        this.animals[curAnimal.id] = curAnimal;
     }
 
     private void saveAnimals()
     {
-        animalsDB.Clear();
         foreach (Animal animal in animals.Values)
         {
             writeAnimal(animal);
         }
+        animalsDB.Deduplicate(0);
 
         Debug.Log($"Saved {animals.Count} animals to database.");
     }

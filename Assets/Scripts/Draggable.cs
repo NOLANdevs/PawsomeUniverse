@@ -11,6 +11,9 @@ public class Draggable : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public float minX;
+    public float maxX;
+
     void Start()
     {
         // Store the initial position and rotation when the game starts
@@ -28,6 +31,11 @@ public class Draggable : MonoBehaviour
 
         // Set the Rigidbody's velocity to zero when dragging starts
         rb.velocity = Vector3.zero;
+
+        if (gameObject.tag == "Player")
+        {
+            gameObject.GetComponent<Animal>().isDragged = true;
+        }
     }
 
     void OnMouseDrag()
@@ -37,6 +45,10 @@ public class Draggable : MonoBehaviour
             Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
 
             newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+            if (gameObject.tag == "Player")
+            {
+                newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+            }
 
             // Set the new position while maintaining the X and Z values
             transform.position = new Vector3(newPosition.x, newPosition.y, 0f);
@@ -47,12 +59,21 @@ public class Draggable : MonoBehaviour
     {
         isDragging = false;
 
+        // Check if object to return
         // Return the GameObject to its initial position and rotation
-        transform.position = initialPosition;
-        transform.rotation = initialRotation;
+        if (!(gameObject.tag == "Player"))
+        {
+            transform.position = initialPosition;
+            transform.rotation = initialRotation;
+        }
 
         // Set the Rigidbody's velocity to zero when dragging ends
         rb.velocity = Vector3.zero;
+
+        if (gameObject.tag == "Player")
+        {
+            gameObject.GetComponent<Animal>().isDragged = false;
+        }
     }
 
 }
