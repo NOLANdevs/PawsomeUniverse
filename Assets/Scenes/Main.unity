@@ -1210,7 +1210,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 5
+<<<<<<< Updated upstream
   animatorHolder: {fileID: 1511718002}
+=======
+  jumpSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!114 &230428627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,6 +1237,12 @@ MonoBehaviour:
   inventory: {fileID: 0}
   accessories: []
   isEating: 1
+<<<<<<< Updated upstream
+=======
+  isHungry: 0
+  stomachGrowl: {fileID: 1129316769}
+  isDragged: 0
+>>>>>>> Stashed changes
 --- !u!50 &230428628
 Rigidbody2D:
   serializedVersion: 4
@@ -1371,6 +1381,10 @@ MonoBehaviour:
   animatorHolder: {fileID: 1511718002}
   hungerBar: {fileID: 3059791525518707988}
   eatingTime: 0.1
+<<<<<<< Updated upstream
+=======
+  eatSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!114 &230428633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3794,6 +3808,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loveBar: {fileID: 844670137}
   pawItem: {fileID: 593073281}
+<<<<<<< Updated upstream
+=======
+  petSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!50 &593073277
 Rigidbody2D:
   serializedVersion: 4
@@ -4395,6 +4413,10 @@ MonoBehaviour:
   - {fileID: 134344910}
   - {fileID: 1914743950}
   - {fileID: 7742677649207442478}
+<<<<<<< Updated upstream
+=======
+  selectSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &833302300
 GameObject:
   m_ObjectHideFlags: 0
@@ -12089,6 +12111,10 @@ MonoBehaviour:
   accessoryMenu: {fileID: 724686273}
   playerMovement: {fileID: 230428626}
   toggleOnClick: {fileID: 724686277}
+<<<<<<< Updated upstream
+=======
+  openSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1451411015
 GameObject:
   m_ObjectHideFlags: 0
@@ -12189,7 +12215,11 @@ GameObject:
   - component: {fileID: 1511718004}
   m_Layer: 3
   m_Name: AnimalSprite
+<<<<<<< Updated upstream
   m_TagString: Untagged
+=======
+  m_TagString: Animated
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13229,6 +13259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainImage: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+  selectSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1723318943
 GameObject:
   m_ObjectHideFlags: 0
@@ -14642,6 +14676,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 230428624}
+<<<<<<< Updated upstream
+=======
+  playerNameTag: {fileID: 416164021}
+  defaultName: 
+>>>>>>> Stashed changes
 --- !u!1 &1985938154
 GameObject:
   m_ObjectHideFlags: 0
@@ -18929,6 +18968,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 4341917784809452291, guid: 69d71f66393994033b7d4ac74231b97e, type: 3}
+<<<<<<< Updated upstream
+=======
+  buySound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!210 &7925291619003144582
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -19678,6 +19721,10 @@ MonoBehaviour:
   cleanBar: {fileID: 1603504895}
   showerItem: {fileID: 9097606190265718664}
   particleSystemHolder: {fileID: 1057350912}
+<<<<<<< Updated upstream
+=======
+  showerSound: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
