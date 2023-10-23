@@ -15,11 +15,14 @@ public class HungerManager : MonoBehaviour
 
     void Start()
     {
-        animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
     }
 
     void Update()
     {
+        // Set animator
+        animator = GameObject.FindWithTag("Animated").GetComponent<Animator>();
+
+        // Time since last ate
         timeSinceStartedEating += Time.deltaTime;
         if (timeSinceStartedEating > eatingTime)
         {
