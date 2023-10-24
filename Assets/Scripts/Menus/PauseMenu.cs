@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (pauseMenu.activeSelf)
         {
+            GameLogic.UnpauseGame();
             SceneManager.LoadScene("StartMenu");
         }
     }
