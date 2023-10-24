@@ -830,7 +830,7 @@ MonoBehaviour:
   scoreIncrease: 1
   scoreText: {fileID: 1129389977}
   gameOverScreen: {fileID: 1930135723}
-  homeScene: Main
+  homeScene: MinigameMenu
   gameOverSound: {fileID: 517124795}
   collectFoodSound: {fileID: 517124794}
 --- !u!61 &517124788

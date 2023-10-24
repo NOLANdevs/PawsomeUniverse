@@ -22,4 +22,9 @@ public class SelectYourPetMenu : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void GoBack()
+    {
+        SceneManager.LoadScene("OwnedPets");
+    }
+
 }

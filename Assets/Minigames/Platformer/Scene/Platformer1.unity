@@ -55684,7 +55684,7 @@ MonoBehaviour:
   scoreText: {fileID: 8839690696699023462}
   GameOverScreen: {fileID: 6656891472790756207}
   animatorHolder: {fileID: 636090967585742576}
-  homeScene: Main
+  homeScene: MinigameMenu
   gameOverSound: {fileID: 2033928425}
 --- !u!4 &2033928424
 Transform:
