@@ -89,6 +89,11 @@ public class OwnedPets : MonoBehaviour
         SceneManager.LoadScene("SelectNewPet");
     }
 
+    public void GoBack()
+    {
+        SceneManager.LoadScene("StartMenu");
+    }
+
     public void ChoosePet(int id)
     {
         PlayerPrefs.SetInt("SelectedPetID", id);
