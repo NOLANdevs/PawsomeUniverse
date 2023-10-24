@@ -1431,7 +1431,12 @@ MonoBehaviour:
   inventory: {fileID: 0}
   accessories: []
   isEating: 1
-  petSprites: []
+  petSprites:
+  - {fileID: 1301561615}
+  - {fileID: 557767162}
+  - {fileID: 578207218}
+  - {fileID: 298670453}
+  - {fileID: 1529453858}
 --- !u!50 &230428628
 Rigidbody2D:
   serializedVersion: 4
@@ -1598,8 +1603,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -2.59
   maxY: 5
-  minX: 0
-  maxX: 0
+  minX: -12
+  maxX: 12
 --- !u!82 &230428635
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13092,7 +13097,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: {fileID: 230428627}
-  colours: []
+  colours:
+  - {fileID: 1230493237}
+  - {fileID: 1260309416}
+  - {fileID: 1258730309}
+  - {fileID: 1294558773}
+  - {fileID: 309466942}
+  - {fileID: 1012369921}
+  - {fileID: 621049251}
+  - {fileID: 817755955}
 --- !u!1 &1109703471
 GameObject:
   m_ObjectHideFlags: 0
@@ -15574,6 +15587,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1993681618}
         m_TargetAssemblyTypeName: HoverMenu, Assembly-CSharp
         m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1108622990}
+        m_TargetAssemblyTypeName: ColourMenu, Assembly-CSharp
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21797,7 +21822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4621215015547258612
 MonoBehaviour:
   m_ObjectHideFlags: 0
