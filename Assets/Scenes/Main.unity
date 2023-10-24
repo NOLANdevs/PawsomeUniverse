@@ -4253,6 +4253,7 @@ MonoBehaviour:
   loveBar: {fileID: 4557135475507348575}
   pawItem: {fileID: 593073281}
   petSound: {fileID: 593073283}
+  animal: {fileID: 230428627}
 --- !u!50 &593073277
 Rigidbody2D:
   serializedVersion: 4
@@ -22012,6 +22013,7 @@ MonoBehaviour:
   showerItem: {fileID: 9097606190265718664}
   particleSystemHolder: {fileID: 1057350912}
   showerSound: {fileID: 9097606190265718666}
+  animal: {fileID: 230428627}
 --- !u!82 &9097606190265718666
 AudioSource:
   m_ObjectHideFlags: 0

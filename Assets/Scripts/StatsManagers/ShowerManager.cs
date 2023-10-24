@@ -13,6 +13,8 @@ public class ShowerManager : MonoBehaviour
 
     [SerializeField] private AudioSource showerSound;
 
+    public Animal animal;
+
 
     void OnMouseDown()
     {
@@ -49,17 +51,21 @@ public class ShowerManager : MonoBehaviour
                 em.enabled = false;
             }
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Increase cleanliness
-        if (cleanBar != null && other.CompareTag("Player"))
+        if (!animal.isDragged)
         {
-            if (!(other.GetComponent<Animal>().isDragged))
+            // Increase cleanliness
+            if (cleanBar != null && other.CompareTag("Player"))
             {
-                showerSound.Play();
-                cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
+                if (!(other.GetComponent<Animal>().isDragged))
+                {
+                    showerSound.Play();
+                    cleanBar.CleanAnimal(showerItem.statsIncreaseAmount);
+                }
             }
         }
     }
