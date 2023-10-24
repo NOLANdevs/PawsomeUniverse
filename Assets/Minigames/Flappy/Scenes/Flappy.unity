@@ -158,7 +158,7 @@ MonoBehaviour:
   scoreText: {fileID: 4718333846390068119}
   gameOverScreen: {fileID: 5479261981891068068}
   isAlive: 1
-  homeScene: Main
+  homeScene: MinigameMenu
   scoreSound: {fileID: 98849672}
   gameOverSound: {fileID: 98849673}
 --- !u!4 &98849671
