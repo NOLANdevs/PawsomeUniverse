@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -35,6 +36,14 @@ public class PauseMenu : MonoBehaviour
         {
             GameLogic.UnpauseGame();
             pauseMenu.SetActive(false);
+        }
+    }
+
+    public void ExitToMenu()
+    {
+        if (pauseMenu.activeSelf)
+        {
+            SceneManager.LoadScene("StartMenu");
         }
     }
 }
