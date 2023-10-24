@@ -15825,6 +15825,8 @@ MonoBehaviour:
   player: {fileID: 230428624}
   playerNameTag: {fileID: 416164021}
   defaultName: 
+  horizOffset: 0
+  vertOffset: 2.5
 --- !u!1 &1952096326
 GameObject:
   m_ObjectHideFlags: 0
