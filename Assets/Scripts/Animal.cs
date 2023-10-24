@@ -55,16 +55,20 @@ public class Animal : MonoBehaviour
 
     void Awake()
     {
-        System.Random random = new System.Random();
         // Set random ID if it is not manually set
         if (id == 0)
-            id = random.Next(10000, 99999 + 1); // random 5-digit ID
+            id = Animal.ID();
     }
 
     void Start()
     {
-     
+    }
 
+    // Generate a Random ID for the pet to have
+    public static int ID()
+    {
+        System.Random random = new System.Random();
+        return random.Next(10000, 99999 + 1); // random 5-digit ID
     }
 
     public void equipAccessory(Accessory accessory)

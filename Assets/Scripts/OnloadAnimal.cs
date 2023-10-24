@@ -52,6 +52,10 @@ public class OnloadAnimal : MonoBehaviour
             if (newPet == modelData.animal)
             {
                 GameObject newAnimalObj = prefabLoader.LoadAnimalPrefabAsChild(modelData.species, this.animalObject);
+                Animal animal = animalObject.GetComponent<Animal>();
+                animal.species = modelData.species;
+                animal.colour = modelData.colour;
+                animal.id = Animal.ID();
             }
         }
     }
